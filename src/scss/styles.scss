@@ -1,0 +1,109 @@
+@charset 'utf-8';
+
+/** -----------------------------------------------------------
+ *
+ * SETTINGS : collection of variables & other stuff that do not generate CSS.
+ *
+ */
+
+@import '00-settings/config',
+	'00-settings/function',
+	'00-settings/color',
+	'00-settings/typography';
+
+/** -----------------------------------------------------------
+ *
+ * TOOLS : preprocessor functions that help write or extend properties on classes.
+ *
+ */
+
+@import '01-tools/media-queries',
+	'01-tools/mixins',
+	'01-tools/placeholders';
+
+/** -----------------------------------------------------------
+ *
+ * VENDORS : third-party styles.
+ *
+ */
+
+@import '02-vendors/normalize',
+	'02-vendors/grid',
+	'02-vendors/browser-update';
+
+/** -----------------------------------------------------------
+ *
+ * ELEMENTS : HTML elements default appearance
+ *
+ */
+
+@import '03-elements/elements';
+
+/** -----------------------------------------------------------
+ *
+ * OBJECTS : design patterns, such as layouts, where items are being arranged rather than
+ *           decorated. They are used across all pages.
+ *
+ */
+
+@import '04-objects/aspect-ratio',
+	'04-objects/skip-links',
+	'04-objects/animation';
+
+/** -----------------------------------------------------------
+ *
+ * COMPONENTS : each component is fully functional by itself and does not rely on any other
+ *              components.
+ *
+ */
+
+@import
+	'05-components/badge', 
+	'05-components/loader',
+	'05-components/button',
+	'05-components/pagination',
+	'05-components/panel',
+	'05-components/breadcrumb';
+
+/** -----------------------------------------------------------
+ *
+ * PATTERNS : combination of components not scalable
+ *
+ */
+
+@import '06-patterns/offcanvas',
+	'06-patterns/slider',
+	'06-patterns/accordion',
+	'06-patterns/tabs',
+	'06-patterns/modal',
+	'06-patterns/dropdown',
+	'06-patterns/tooltip';
+
+/** -----------------------------------------------------------
+ *
+ * UTILITIES : Here are overrides, helpers, and specific classes that affect
+ *             single pieces of the DOM. Because the purpose is to override settings coming from other
+ *             layers, this is the only place where !important is permitted.
+ *             
+ */
+
+@import '07-utilities/text',
+	'07-utilities/spacing',
+	'07-utilities/colors',
+	'07-utilities/backgrounds',
+	'07-utilities/borders',
+	'07-utilities/display',
+	'07-utilities/flexbox',
+	'07-utilities/position',
+	'07-utilities/radius',
+	'07-utilities/size',
+	'07-utilities/shadow';
+
+/** -----------------------------------------------------------
+ *
+ * EXTRA 
+ *
+ */
+
+@import '08-extra/header',
+	'08-extra/footer';

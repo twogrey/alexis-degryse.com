@@ -1,0 +1,182 @@
+/** --------------------------------------------
+ * 
+ * Alignments
+ * 
+ -------------------------------------------- */
+
+@each $value in('left', 'center', 'right') {
+	.text-#{$value} {
+		text-align: #{$value} !important;
+	}
+
+	@each $name, $prefix in($grid-mq) {
+		@include mq(map-get($mq, $name)) {
+			.#{$prefix}\:text-#{$value} {
+				text-align: #{$value} !important;
+			}
+		}
+	}
+}
+
+/** --------------------------------------------
+ * 
+ * Sizes
+ * 
+ -------------------------------------------- */
+
+.fs-smaller {
+	font-size: 75% !important;
+}
+
+.fs-larger {
+	font-size: 125% !important;
+}
+
+.fs-1 {
+	font-size: 1.375rem !important;
+}
+
+.fs-2 {
+	font-size: 1.1875rem !important;
+}
+
+.fs-3 {
+	font-size: 1rem !important;
+}
+
+.fs-4 {
+	font-size: 0.8125rem !important;
+}
+
+.fs-5 {
+	font-size: 0.6875rem !important;
+}
+
+.fs-fluid {
+	font-size: clamp(calc(var(--min) * 1rem), calc(var(--min) * 100 / var(--mq-sm-unitless) * 0.5vw), calc(var(--max) * 1rem)) !important;
+}
+
+/** --------------------------------------------
+ * 
+ * Reset a text's color, so that it inherits the color from its parent.
+ * 
+ -------------------------------------------- */
+
+.text-reset {
+	color: inherit !important;
+}
+
+/** --------------------------------------------
+ * 
+ * Text wrapping
+ * 
+ -------------------------------------------- */
+
+.text-nowrap {
+	white-space: nowrap !important;
+}
+
+/** --------------------------------------------
+ * 
+ * Word break
+ * 
+ -------------------------------------------- */
+
+.text-break {
+	word-break: break-word !important; // To avoid issues with flex containers
+	overflow-wrap: break-word !important;
+}
+
+/** --------------------------------------------
+ * 
+ * Text transform
+ * 
+ -------------------------------------------- */
+
+.text-lower {
+	text-transform: lowercase !important;
+}
+
+.text-caps {
+	text-transform: uppercase !important;
+}
+
+/** --------------------------------------------
+ * 
+ * Font weight & italic
+ * 
+ -------------------------------------------- */
+
+.fw-regular {
+	font-weight: $regular !important;
+}
+
+.fw-semibold {
+	font-weight: $semibold !important;
+}
+
+.fw-bold {
+	font-weight: $bold !important;
+} 
+
+.fst-i {
+	font-style: italic !important;
+} 
+
+/** --------------------------------------------
+ * 
+ * Line height
+ * 
+ -------------------------------------------- */
+
+.lh-1 {
+	line-height: 1 !important;
+}
+
+.lh-sm {
+	line-height: 1.25 !important;
+}
+
+.lh-base {
+	line-height: 1.5 !important;
+}
+
+.lh-lg {
+	line-height: 2 !important;
+}
+
+/** --------------------------------------------
+ * 
+ * Serif font
+ * 
+ -------------------------------------------- */
+
+.text-serif {
+	font-family: $typo-font-family-serif !important;
+}
+
+/** --------------------------------------------
+ * 
+ * Text decoration
+ * 
+ -------------------------------------------- */
+
+.text-underline {
+	text-decoration: underline !important;
+}
+
+.text-decoration-none {
+	text-decoration: none !important;
+}
+
+/** --------------------------------------------
+ * 
+ * Text truncation
+ * 
+ -------------------------------------------- */
+
+.text-truncate {
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+	white-space: nowrap !important;
+}

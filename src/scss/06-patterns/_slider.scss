@@ -1,0 +1,76 @@
+@import '../02-vendors/tiny-slider';
+
+@if $enable-slider {
+
+	@include tns;
+   
+	.slider {
+		position: relative;
+		display: none;
+		user-select: none;
+
+		&__controls {
+			display: none;
+
+			@include large {
+				display: block;
+			}
+		}
+
+		&__control {
+			@include large {
+				position: absolute;
+				top: 50%;
+
+				&--prev {
+					left: 0;
+					transform: translate(-50%, -50%);
+				}
+
+				&--next {
+					right: 0;
+					transform: translate(50%, -50%);
+				}
+			}
+		}
+
+		&__content {
+			display: flex;
+		} 
+
+		.tns-nav {
+			$size: 30px;
+			$outline-width: 4px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin: calc(var(--sp) - #{$outline-width}) 0 $outline-width * -1;
+
+			button {
+				box-sizing: content-box;
+				width: $size / 2;
+				height: $size / 2;
+				padding: $size / 4;
+				border: 0;
+				margin: $outline-width;
+				border-radius: 50%;
+				background-color: var(--color-primary-lightest);
+				background-clip: content-box;
+				box-shadow: none;
+				cursor: pointer;
+				transition: background-color 0.2s;
+				outline: none;
+
+				&:hover,
+				&:focus-visible {
+					outline: $outline-width / 2 dotted var(--color-primary);
+				}
+			}
+
+			.tns-nav-active {
+				background-color: var(--color-primary);
+			}
+		}
+	}
+
+}

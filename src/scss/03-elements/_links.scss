@@ -1,0 +1,38 @@
+a {
+	text-decoration: none;
+	color: var(--color-primary-lightest);
+
+	.text-black & {
+		color: var(--color-primary);
+	}
+
+	html:not(.touch) & {
+		transition-timing-function: ease;
+		transition-duration: 0.2s;
+		transition-property: color, border-color, background-color;
+	}
+
+	p & {
+		text-decoration: underline;
+
+		&:focus-visible {
+			outline-color: currentColor;
+			outline-style: dotted;
+			outline-width: rem(2px);
+		}
+	}
+
+	&:hover {
+		text-decoration: underline;
+	}
+
+	&:not(.btn):focus-visible,
+	&:not(.btn):hover,
+	&.is-active {
+		color: var(--color-primary-light);
+
+		.text-black & {
+			color: var(--color-primary-dark);
+		}
+	}
+}

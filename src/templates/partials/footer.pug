@@ -1,0 +1,31 @@
+div(class="skewed skewed--top")
+	footer(class="py-3 md:py-4 lg:pt-5 bg-black text-center", id="footer", aria-labelledby="footer-title")
+		.container
+			.row.justify-center
+				div(class="col-12 mb-0.5 lg:mb-1 lg:mt-2")
+					h2(class="h2-gradient", id="footer-title")
+						span Find me on
+						span.sr-only the following networks
+				div(class="col-auto mt mb-0")
+					a(href="https://codepen.io/twogrey", target="_blank", class="fs-fluid px-0.5", rel="noopener noreferrer", aria-describedby="new-window", style="--min:2; --max:4")
+						svg(class="icon")
+							title Codepen
+							use(xlink:href="#icon-codepen")
+				div(class="col-auto mt mb-0")
+					a(href="https://twitter.com/twogrey", target="_blank", class="fs-fluid px-0.5", rel="noopener noreferrer", aria-describedby="new-window", style="--min:2; --max:4")
+						svg(class="icon")
+							title Twitter
+							use(xlink:href="#icon-twitter")
+				div(class="col-auto mt mb-0")
+					a(href="https://www.linkedin.com/in/%F0%9F%8E%B2-alexis-degryse-02b640b0", target="_blank", class="fs-fluid px-0.5", rel="noopener noreferrer", aria-describedby="new-window", style="--min:2; --max:4")
+						svg(class="icon")
+							title Linkedin
+							use(xlink:href="#icon-linkedin")
+				div(class="col-auto mt mb-0")
+					a(href="mailto:alexis.degryse@gmail.com", class="fs-fluid px-0.5", style="--min:2; --max:4")
+						svg(class="icon")
+							title Email
+							use(xlink:href="#icon-envelop")
+
+div(hidden)
+	#new-window Ce lien ouvre un nouvel onglet.

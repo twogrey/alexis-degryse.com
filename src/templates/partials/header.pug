@@ -1,0 +1,36 @@
+header.header.js-header(data-computed-style="height", data-computed-style-name="header", data-computed-style-root)
+	.container
+		.row.align-center.py
+			div(class="col mb-0")
+				h1.lh-1.text-white.text-nowrap(aria-labelledby="mainTitle")
+					span.text-lower.fw-bold.text-serif.fs-smaller Alexis
+					span.text-caps  Degryse
+					span(hidden, id="mainTitle") Alexis DEGRYSE - Front-end developper
+			div(class="col-auto mb-0 ml-a")
+				nav(aria-labelledby="navTitle")
+					button(class="btn btn--transparent btn--large js-offcanvas md:d-none", type="button", data-offcanvas-id="navOffcanvas", aria-expanded="false", style="--px: 0.25em") 
+						svg(class="icon")
+							title Open the menu
+							use(xlink:href="#icon-menu")
+					div(class="offcanvas offcanvas--right offcanvas--mq", id="navOffcanvas")
+						.offcanvas__wrap.nav.js-offcanvas-stop
+							.offcanvas__content
+								.offcanvas__header(class="md:d-none")
+									h2(id="navTitle", class="offcanvas__title text-black") Menu
+									button.offcanvas__close.btn.btn--white.js-offcanvas-close(type="button")
+										svg(class="icon")
+											title Close the menu
+											use(xlink:href="#icon-x")
+								.offcanvas__body
+									ul.list-unstyled.mb-0.nav__list
+										li.nav__item
+											a(href="#about-me" class="nav__link") About me
+										li.nav__item
+											a(href="#skills" class="nav__link") Skills
+										li.nav__item
+											a(href="#certifications" class="nav__link") Certifications
+										li.nav__item
+											a(href="#extra-stuff" class="nav__link") Extra stuff
+										li.nav__item
+											a(href="#career" class="nav__link") Career
+.js-start-opaque-header

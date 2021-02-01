@@ -1,0 +1,17 @@
+@if $enable-backgrounds {
+
+	@each $name, $color in($all-colors) {
+		.bg-#{$name} {
+			background-color: var(--color-#{$name}) !important;
+		}
+	}
+
+	.bg-white {
+		background-color: #fff !important;
+	}
+
+	.bg-transparent {
+		background-color: transparent !important;
+	}
+
+}

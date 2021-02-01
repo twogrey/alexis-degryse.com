@@ -1,0 +1,43 @@
+doctype html
+
+include partials/mixin.pug 
+
+html(lang="en", class="touch")
+	head
+		include partials/head.pug 
+ 
+	block vars
+
+	body(class=bodyClass)
+
+		include partials/skip-links.pug 
+ 	
+		div(style="display: none", aria-hidden="true")
+			include ../../dest/img/sprite.svg 
+
+		include partials/header.pug 
+			
+		block before-main
+
+		main#content
+			block main
+			
+		block after-main
+
+		include partials/footer.pug 
+
+		//- Display a modal for old browsers users
+		script.
+			var $buoop = {required:{e:-2},mobile:false,style:"corner",newwindow:true,api:2019.03 }; 
+			function $buo_f(){ 
+			 var e = document.createElement("script"); 
+			 e.src = "//browser-update.org/update.min.js"; 
+			 document.body.appendChild(e);
+			};
+			try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+			catch(e){window.attachEvent("onload", $buo_f)}
+
+		//- Scripts
+		block scripts-footer 
+			script(src="dest/js/scripts.min.js")
+			script(src="dest/js/components/offcanvas.min.js")

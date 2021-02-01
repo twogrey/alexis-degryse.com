@@ -1,0 +1,19 @@
+:root {
+	@each $name, $color in($all-colors) {
+		--color-#{$name}: #{$color};
+	}
+}
+
+@if $enable-colors {
+
+	@each $name, $color in($all-colors) {
+		.text-#{$name} {
+			color: var(--color-#{$name}) !important;
+		}
+	}
+
+	.text-white {
+		color: #fff !important;
+	}
+
+}

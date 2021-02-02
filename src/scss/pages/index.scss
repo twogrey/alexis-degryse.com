@@ -101,6 +101,12 @@ $assets-base-path: '../../';
 	}
 }
 
+main {
+	section[id] {
+		scroll-margin-top: var(--header-height);
+	}
+}
+
 /** --------------------------------------------
  * 
  * Section : About me

@@ -115,30 +115,15 @@ module.exports = function (grunt) {
 		    	[
 		    		'The “dialog” element is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
 		    		'The “date” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
-		    		'Consider using the “h1” element as a top-level heading only (all “h1” elements are treated as top-level headings by many screen readers and other tools).'
+		    		'Consider using the “h1” element as a top-level heading only (all “h1” elements are treated as top-level headings by many screen readers and other tools).',
+		    		'The “banner” role is unnecessary for element “header”.',
+		    		'The “contentinfo” role is unnecessary for element “footer”.',
+		    		'The “main” role is unnecessary for element “main”.',
+		    		'The “navigation” role is unnecessary for element “nav”.'
 		    	]
 		  },
     	all: [ 'index.html' ]
     },
-		/**
-     * [A11y tests]
-     */
-		accessibility: {
-			options: {
-				accessibilityLevel: 'WCAG2AA'
-			},
-      dist: {
-        options: {
-          force: true,
-          reportLevels: {
-            notice: false,
-            warning: false,
-            error: true
-          }
-        },
-        src: [ 'index.html' ]
-      }
-		},
 		/**
 	   * [Sass compiler]
 	   */
@@ -438,7 +423,6 @@ module.exports = function (grunt) {
 			},
 			pug: {
 				files: `${templatesPath}**/*`,
-				//tasks: [ 'pug', 'htmlmin:dist', 'htmllint', 'accessibility' ],
 				tasks: [ 'pug', 'htmlmin:dist', 'htmllint' ],
 			},
 			style: {
@@ -446,11 +430,11 @@ module.exports = function (grunt) {
 					spawn: true
 				},
 				files: [ `${scssPath}**/*.scss`, `!${scssPath}pages/**/*.scss` ],
-				tasks: [ 'sass:dist', 'postcss:dist' ],
+				tasks: [ 'shell:lint', 'sass:dist', 'postcss:dist' ],
 			},
 			stylePages: {
 				files: [ `${scssPath}pages/**/*.scss` ],
-				tasks: [ 'newer:sass:pages', 'newer:postcss:pages' ],
+				tasks: [ 'shell:lint', 'newer:sass:pages', 'newer:postcss:pages' ],
 			},
 			sprite: {
 				files: `${iconsPath}*.svg`,

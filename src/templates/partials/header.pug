@@ -8,18 +8,16 @@ header.header.js-header(role="banner", data-computed-style="height", data-comput
 					span(hidden, id="mainTitle") Alexis DEGRYSE - Front-end developper
 			div(class="col-auto mb-0 ml-a")
 				nav(role="navigation", aria-labelledby="navTitle")
-					button(class="btn btn--transparent btn--large js-offcanvas md:d-none", type="button", data-offcanvas-id="navOffcanvas", aria-expanded="false", style="--px: 0.25em") 
-						svg(class="icon")
-							title Open the menu
+					button(class="btn btn--transparent btn--large js-offcanvas md:d-none", type="button", data-offcanvas-id="navOffcanvas", aria-label="Open the menu", aria-expanded="false", style="--px: 0.25em") 
+						svg(class="icon", aria-hidden="true")
 							use(xlink:href="#icon-menu")
 					div(class="offcanvas offcanvas--right offcanvas--mq", id="navOffcanvas")
 						.offcanvas__wrap.nav.js-offcanvas-stop
 							.offcanvas__content
 								.offcanvas__header(class="md:d-none")
 									h2(id="navTitle", class="offcanvas__title text-black") Menu
-									button.offcanvas__close.btn.btn--white.js-offcanvas-close(type="button")
-										svg(class="icon")
-											title Close the menu
+									button.offcanvas__close.btn.btn--white.js-offcanvas-close(type="button", aria-label="Close the menu")
+										svg(class="icon", aria-hidden="true")
 											use(xlink:href="#icon-x")
 								.offcanvas__body
 									ul.list-unstyled.mb-0.nav__list

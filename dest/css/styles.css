@@ -1184,34 +1184,55 @@ body::before {
   fill: currentColor;
 }
 
-a {
+a,
+.btn-as-link {
   text-decoration: none;
   color: var(--color-primary-lightest);
 }
-.text-black a {
+.text-black a,
+.text-black .btn-as-link {
   color: var(--color-primary);
 }
-html:not(.touch) a {
+html:not(.touch) a,
+html:not(.touch) .btn-as-link {
   transition-timing-function: ease;
   transition-duration: 0.2s;
   transition-property: color, border-color, background-color;
 }
-p a {
+p a,
+p .btn-as-link {
   text-decoration: underline;
 }
-p a:focus-visible {
+p a:focus-visible,
+p .btn-as-link:focus-visible {
   outline-color: currentColor;
   outline-style: dotted;
   outline-width: 0.125rem;
 }
-a:hover {
+a:hover,
+.btn-as-link:hover {
   text-decoration: underline;
 }
-a:not(.btn):focus-visible, a:not(.btn):hover, a.is-active {
+a:not(.btn):focus-visible, a:not(.btn):hover, a.is-active,
+.btn-as-link:not(.btn):focus-visible,
+.btn-as-link:not(.btn):hover,
+.btn-as-link.is-active {
   color: var(--color-primary-light);
 }
-.text-black a:not(.btn):focus-visible, .text-black a:not(.btn):hover, .text-black a.is-active {
+.text-black a:not(.btn):focus-visible, .text-black a:not(.btn):hover, .text-black a.is-active,
+.text-black .btn-as-link:not(.btn):focus-visible,
+.text-black .btn-as-link:not(.btn):hover,
+.text-black .btn-as-link.is-active {
   color: var(--color-primary-dark);
+}
+
+.btn-as-link {
+  padding: 0;
+  border: 0;
+  line-height: inherit;
+  background-color: transparent;
+  box-shadow: none;
+  cursor: pointer;
 }
 
 h1,
@@ -1474,6 +1495,22 @@ img {
   }
   to {
     opacity: 0;
+  }
+}
+@keyframes translate-from-top {
+  from {
+    transform: translateY(calc(var(--sp-2) * -1));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes translate-to-bottom {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(var(--sp-2));
   }
 }
 /** -----------------------------------------------------------
@@ -1760,6 +1797,161 @@ html:not(.touch) .btn {
     transform: translateX(calc(100% * var(--i)));
   }
 }
+.modal-is-open {
+  overflow: hidden;
+}
+.not-touch .modal-is-open {
+  padding-right: var(--scrollbar-width);
+}
+
+.modal {
+  --p: var(--sp);
+  --section-p: var(--p);
+  --body-border: 1px solid var(--color-lightgrey);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-max);
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: var(--p);
+  border: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+.modal:not([open]) {
+  display: none;
+}
+.modal[open] {
+  display: flex;
+  animation: fade-in 0.3s both;
+}
+.modal.is-hiding {
+  animation-name: fade-out;
+}
+.modal__dialog {
+  position: relative;
+  max-width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: #fff;
+  animation: translate-from-top 0.3s both;
+}
+.is-hiding > .modal__dialog {
+  animation-name: translate-to-bottom;
+}
+.modal__dialog--small {
+  width: 100%;
+  max-width: 36rem;
+}
+.modal__dialog--medium {
+  width: 100%;
+  max-width: 48rem;
+}
+.modal__dialog--large {
+  width: 100%;
+  max-width: 75rem;
+}
+.modal__dialog--large-plus {
+  width: 100%;
+  max-width: 90rem;
+}
+.modal__dialog--viewport {
+  display: flex;
+  max-height: 100%;
+}
+.modal__dialog--lightbox {
+  --section-p: 0;
+  --header-position: absolute;
+  --body-border: none;
+  overflow: visible;
+  background-color: transparent;
+  pointer-events: none;
+}
+.modal__dialog--lightbox img {
+  display: block;
+  width: auto;
+  max-height: 100%;
+  margin: auto;
+  border-radius: var(--radius);
+  pointer-events: auto;
+}
+.modal__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 100%;
+}
+.modal__header {
+  position: var(--header-position);
+  top: 0;
+  left: 0;
+  display: flex;
+  flex: 0 0 auto;
+  align-self: flex-start;
+  width: 100%;
+  padding: var(--p);
+}
+.modal__title {
+  display: block;
+  margin: var(--sp) 0;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: clamp(calc(var(--min) * 1rem), calc(var(--min) * 100 / var(--mq-sm-unitless) * 0.5vw), var(--max));
+  font-weight: 600;
+  line-height: 1.1;
+  word-break: break-word;
+  --min: 1.25;
+  --max: 1.5rem;
+  align-self: center;
+  margin-right: var(--sp);
+  margin-bottom: 0;
+}
+.modal__title:first-child {
+  margin-top: 0;
+}
+.modal__title:only-child, .modal__title:last-child {
+  margin-bottom: 0;
+}
+.modal__body {
+  width: 100%;
+  padding: var(--section-p);
+  border-top: var(--body-border);
+  border-bottom: var(--body-border);
+  overflow-y: auto;
+}
+.modal__footer {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 0 var(--section-p) var(--section-p);
+}
+@media screen and (min-width: 36rem) {
+  .modal__footer {
+    flex-direction: row;
+  }
+}
+.modal__footer > * {
+  width: 100%;
+  margin-top: var(--sp);
+}
+@media screen and (min-width: 36rem) {
+  .modal__footer > * {
+    width: auto;
+    margin-right: var(--sp-1-2);
+    margin-left: var(--sp-1-2);
+  }
+}
+.modal__close {
+  margin-left: auto;
+  pointer-events: auto;
+}
+
 /** -----------------------------------------------------------
  *
  * UTILITIES : Here are overrides, helpers, and specific classes that affect

@@ -26,6 +26,9 @@ html(lang="en", class="touch")
 
 		include partials/footer.pug 
 
+		div(hidden)
+			#new-window Ce lien ouvre un nouvel onglet.
+
 		//- Display a modal for old browsers users
 		script.
 			var $buoop = {required:{e:-2},mobile:false,style:"corner",newwindow:true,api:2019.03 }; 
@@ -41,3 +44,4 @@ html(lang="en", class="touch")
 		block scripts-footer 
 			script(src="dest/js/scripts.min.js")
 			script(src="dest/js/components/offcanvas.min.js")
+			script(src="dest/js/components/modals.min.js")

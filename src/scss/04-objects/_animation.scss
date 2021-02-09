@@ -24,22 +24,22 @@
 	}
 }
 
-// @keyframes translate-from-top {
-// 	from {
-// 		transform: translateY(calc(var(--sp-2) * -1));
-// 	}
+@keyframes translate-from-top {
+	from {
+		transform: translateY(calc(var(--sp-2) * -1));
+	}
 
-// 	to {
-// 		transform: translateY(0);
-// 	}
-// }
+	to {
+		transform: translateY(0);
+	}
+}
 
-// @keyframes translate-to-bottom {
-// 	from {
-// 		transform: translateY(0);
-// 	}
+@keyframes translate-to-bottom {
+	from {
+		transform: translateY(0);
+	}
 
-// 	to {
-// 		transform: translateY(var(--sp-2));
-// 	}
-// }
+	to {
+		transform: translateY(var(--sp-2));
+	}
+}

@@ -418,7 +418,7 @@ main {
 		right: calc(var(--border) * -1);
 		bottom: calc(var(--border) * -1);
 		left: calc(var(--border) * -1);
-		background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 0.28) 40%, rgba(255, 255, 255, 0) 40.1%, rgba(255, 255, 255, 0));
+		background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 0.18) 40%, rgba(255, 255, 255, 0) 40.1%, rgba(255, 255, 255, 0));
 		pointer-events: none;
 	}
 }

@@ -1,4 +1,4 @@
-mixin skill(icon, title, text, linkFramework)
+mixin skill(icon, title, text)
 	article(class="skills__item")
 		.row.align-center
 			div(class="col-auto mb md:col-12")
@@ -6,23 +6,23 @@ mixin skill(icon, title, text, linkFramework)
 					use(xlink:href="#icon-"+icon)
 			div(class="col md:col-12 mb md:mt-0.25")
 				h3.fs-2.lh-sm.text-serif.fw-bold= title
-		p.pos-relative= text 
-			if(linkFramework)
-				|  
-				a(href="https://github.com/twogrey/baCSSet", target="_blank", rel="noopener noreferrer", aria-describedby="new-window") Take a look
-				svg(class="icon", aria-hidden="true")
-					use(xlink:href="#icon-new-tab")
-				| .
+		div !{text} 
+			//- if(linkFramework)
+			//- 	|  
+			//- 	a(href="https://github.com/twogrey/baCSSet", target="_blank", rel="noopener noreferrer", aria-describedby="new-window") Take a look
+			//- 	svg(class="icon", aria-hidden="true")
+			//- 		use(xlink:href="#icon-new-tab")
+			//- 	| .
 
 div(class="skills__grid")
-	+skill('code', 'Modern and semantic HTML', 'Thoughtful use of implicits roles, ARIA attributes and sectioning elements. I like to use PugJS for pre-processing, when it’s possible.')
-	+skill('brackets', 'Solid & advanced CSS (or Sass)', 'Methodology (BEM, ITCSS, OOCSS). Use of PostCSS and Stylelint.')
-	+skill('smartphone', 'RWD', 'Best practices in responsive design. Mobile-First approach.')
-	+skill('selection', 'SVG', 'SVG images & SVG sprite icons. Optimized with SVGO.')
-	//- +skill('bacsset', 'baCSSet', 'Creating my own CSS framework.', true)
-	+skill('js', 'JavaScript', 'Mainly for DOM manipulation and accessibility purposes.')
-	+skill('cog', 'Grunt', 'For automated workflow.')
-	+skill('stack', 'Working in various environments', 'Symfony, JS frameworks (Angular, Vue), CMS (Wordpress, Prestashop).')
-	+skill('search', 'Progressive Enhancement', 'Being aware of cross-browser compatibility issues.')
-	+skill('image', 'Working with various UX tools', 'Adobe Creative Suite (Illustrator, Photoshop, Xd), Zeplin, Invision, Figma.')
-	+skill('atlassian', 'Working with Atlassian tools', 'Jira, Trello, Confluence, Bitbucket.')
+	+skill('code', 'Modern and semantic HTML', '<p>Thoughtful use of implicits roles, ARIA attributes and sectioning elements.</p><p>I like to use PugJS for pre-processing, when it’s possible.</p>')
+	+skill('brackets', 'Solid & advanced CSS (or Sass)', '<p>Methodology (BEM, ITCSS, OOCSS). Use of PostCSS and Stylelint.</p><p>Really hyped about some incoming mind-blowing stuff like Container queries, Cascade layers, Dynamic viewports units and :has().</p>')
+	+skill('smartphone', 'RWD', '<p>Best practices in responsive design. Mobile-First approach.</p>')
+	+skill('selection', 'SVG', '<p>SVG images & SVG sprite icons. Optimized with SVGO.</p>')
+	//- +skill('bacsset', 'baCSSet', '<p>Creating my own CSS framework.', true)
+	+skill('js', 'JavaScript', '<p>Mainly for DOM manipulation and accessibility purposes.</p>')
+	+skill('cog', 'Grunt', '<p>For automated workflow.</p>')
+	+skill('stack', 'Working in various environments', '<p>Symfony, JS frameworks (Angular, Vue), CMS (Wordpress, Prestashop).</p>')
+	+skill('search', 'Progressive Enhancement', '<p>Being aware of cross-browser compatibility issues.</p>')
+	+skill('image', 'Working with various UX tools', '<p>Adobe Creative Suite (Illustrator, Photoshop, Xd), Zeplin, Invision, Figma.</p>')
+	+skill('atlassian', 'Working with Atlassian tools', '<p>Jira, Trello, Confluence, Bitbucket.</p>')

@@ -285,6 +285,7 @@ main {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			grid-auto-rows: 1fr;
+			justify-content: center;
 		}
 
 		@include large {
@@ -357,6 +358,12 @@ main {
 				&::before {
 					--hexagon-color: #{$color-primary-r-g-b};
 				}
+			}
+		}
+
+		&:nth-last-of-type(2):nth-of-type(4n+1) {
+			@include large {
+				grid-column: 2;
 			}
 		}
 	}
@@ -438,10 +445,11 @@ main {
 .extra-stuff {
 	margin-bottom: var(--sp-2);
 
-	&:nth-child(1) { --bubble: 30% 70% 70% 30% / 30% 30% 70% 70%;	}
-	&:nth-child(2) { --bubble: 65% 35% 30% 70% / 75% 70% 30% 30%;	}
-	&:nth-child(3) { --bubble: 75% 30% 65% 40% / 35% 35% 65% 65%;	}
-	&:nth-child(4) { --bubble: 60% 40% 35% 65% / 60% 56% 66% 40%;	}
+	@for $i from 2 through 7 {
+		&:nth-child(#{$i}) {
+			--d: calc(#{$i} * -3s); 
+		}
+	}
 
 	&__content {
 		@include small {
@@ -470,12 +478,12 @@ main {
 			left: 50%;
 			width: calc(var(--h) / 1.1);
 			height: calc(var(--h) / 1.1);
-			border-radius: var(--bubble);
+			border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 			background-color: rgba(#fff, 0.05);
 			transform: translate(-50%, -50%);
 
 			@include large {
-				animation: bubble 25s infinite linear;
+				animation: bubble 25s var(--d , 0s) infinite linear;
 			}
 		}
 	}

@@ -44,26 +44,32 @@ block main
 						p I’m really into <strong class="text-primary-lightest fw-semibold">HTML</strong class="text-primary-lightest fw-semibold"> &amp; <strong class="text-primary-lightest fw-semibold">CSS</strong class="text-primary-lightest fw-semibold">. Those languages, which are - as I like to say - easy to learn but hard to master, are my daily tools and constitute the main thread of my self-learning.
 						p I do my best to keep my skills updated in order to always provide the most suitable solutions for any project and give best advices about the <strong class="text-primary-lightest fw-semibold">implications</strong class="text-primary-lightest fw-semibold"> and <strong class="text-primary-lightest fw-semibold">feasibility</strong class="text-primary-lightest fw-semibold"> of UI ideas.
 					.text-center.mt
-						a(href="#skills", class="btn btn--primary btn--large btn--rounded", title="See more about me")
+						a(href="#skills", class="btn btn--primary btn--large btn--rounded", aria-label="See more about me")
 							svg(class="icon", aria-hidden="true")
 								use(xlink:href="#icon-chevron-down")
-		aside.about-me__networks(aria-labelledby="about-me-networks-title")
-			h3(id="about-me-networks-title", class="sr-only") You can find me on
-			a(href="https://twitter.com/twogrey", target="_blank", rel="noopener noreferrer", title="Twitter", aria-describedby="new-window")
-				svg(class="icon", aria-hidden="true")
-					use(xlink:href="#icon-twitter")
-			a(href="https://h4.io/@twogrey", target="_blank", rel="noopener noreferrer", title="Mastodon", aria-describedby="new-window")
-				svg(class="icon", aria-hidden="true")
-					use(xlink:href="#icon-mastodon")
-			a(href="https://codepen.io/twogrey", target="_blank", rel="noopener noreferrer", title="Codepen", aria-describedby="new-window")
-				svg(class="icon", aria-hidden="true")
-					use(xlink:href="#icon-codepen")
-			a(href="https://www.linkedin.com/in/%F0%9F%8E%B2-alexis-degryse-02b640b0", target="_blank", rel="noopener noreferrer", title="Linkedin", aria-describedby="new-window")
-				svg(class="icon", aria-hidden="true")
-					use(xlink:href="#icon-linkedin")
-			a(href="mailto:alexis.degryse@gmail.com", title="Contact me by email at the following address : alexis.degryse@gmail.com")
-				svg(class="icon", aria-hidden="true")
-					use(xlink:href="#icon-envelop")
+		.about-me__networks
+			h3(class="sr-only") You can find me on
+			ul(class="list-unstyled mb-0", role="list")
+				li
+					a(href="https://twitter.com/twogrey", target="_blank", rel="noopener noreferrer", aria-label="Twitter", aria-describedby="new-window")
+						svg(class="icon", aria-hidden="true")
+							use(xlink:href="#icon-twitter")
+				li
+					a(href="https://h4.io/@twogrey", target="_blank", rel="noopener noreferrer", aria-label="Mastodon", aria-describedby="new-window")
+						svg(class="icon", aria-hidden="true")
+							use(xlink:href="#icon-mastodon")
+				li
+					a(href="https://codepen.io/twogrey", target="_blank", rel="noopener noreferrer", aria-label="Codepen", aria-describedby="new-window")
+						svg(class="icon", aria-hidden="true")
+							use(xlink:href="#icon-codepen")
+				li
+					a(href="https://www.linkedin.com/in/%F0%9F%8E%B2-alexis-degryse-02b640b0", target="_blank", rel="noopener noreferrer", aria-label="Linkedin", aria-describedby="new-window")
+						svg(class="icon", aria-hidden="true")
+							use(xlink:href="#icon-linkedin")
+				li
+					a(href="mailto:alexis.degryse@gmail.com", aria-label="Contact me by email at the following address : alexis.degryse@gmail.com")
+						svg(class="icon", aria-hidden="true")
+							use(xlink:href="#icon-envelop")
 	.skewed.skewed--bottom
 		section(aria-labelledby="skills-title", id="skills", class="skills py-3 md:py-4 lg:py-5")
 			.container

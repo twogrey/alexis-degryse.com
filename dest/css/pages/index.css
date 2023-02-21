@@ -649,9 +649,11 @@ main section[id] {
   position: sticky;
   top: calc(var(--header-height) + var(--gutter));
   align-self: flex-start;
+  width: 4ch;
   font-family: "Merienda", serif;
   font-size: 1.125rem;
   font-weight: 700;
+  text-align: right;
   background: linear-gradient(var(--color-secondary), var(--color-primary));
   background-clip: text;
   -webkit-text-fill-color: transparent;

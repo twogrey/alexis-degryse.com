@@ -1141,7 +1141,7 @@ body::before {
 }
 
 ::selection {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary, #246e9f);
   color: #fff;
 }
 

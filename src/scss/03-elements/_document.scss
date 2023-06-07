@@ -59,9 +59,9 @@ body {
 }
 
 ::selection {
-	background-color: var(--color-primary);
+	background-color: var(--color-primary, $color-primary);
 	color: #fff;
-}
+} 
 
 .sr-only,
 .invisible {

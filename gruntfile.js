@@ -387,7 +387,7 @@ module.exports = function (grunt) {
 		image: {
 			dist: {
 				expand: true,
-				src: [ '*.jpg', '*.png' ],
+				src: [ '*.jpg', '*.png', '*webp' ],
 				cwd: imgMiscPath,
 				dest: imgMiscBuildPath,
 			},

@@ -1081,6 +1081,27 @@ body #buorgig {
  *
  */
 @font-face {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("../font/Open Sans/OpenSans-Regular.woff2") format("woff2"), url("../font/Open Sans/OpenSans-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("../font/Open Sans/OpenSans-Semibold.woff2") format("woff2"), url("../font/Open Sans/OpenSans-Semibold.woff") format("woff");
+}
+@font-face {
+  font-family: "Merienda";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("../font/Merienda/Merienda-Bold.woff2") format("woff2"), url("../font/Merienda/Merienda-Bold.woff") format("woff");
+}
+@font-face {
   font-family: "icons";
   font-weight: normal;
   font-style: normal;

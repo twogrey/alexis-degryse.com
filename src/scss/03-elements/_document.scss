@@ -1,6 +1,6 @@
-// @include font-face('XXX', 'XXX-Regular', $regular, normal, swap); 
-// @include font-face('XXX', 'XXX-SemiBold', $semibold, normal, swap); 
-// @include font-face('XXX', 'XXX-Bold', $bold, normal, swap); 
+@include font-face('Open Sans', 'OpenSans-Regular', $regular, normal, swap); 
+@include font-face('Open Sans', 'OpenSans-Semibold', $semibold, normal, swap); 
+@include font-face('Merienda', 'Merienda-Bold', $bold, normal, swap); 
 
 @include font-face('icons', 'icons', $display: block); 
 

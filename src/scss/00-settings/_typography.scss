@@ -1,15 +1,10 @@
-@mixin font-face($font-name, $file-name, $weight: normal, $style: normal, $display: optional, $woff2: true) {
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal, $display: optional) {
 	@font-face {
 		font-family: quote($font-name);
 		font-weight: $weight;
 		font-style: $style;
 		font-display: $display; // optional for text, swap for headings, block for font icon
-		@if $woff2 {
-			src: url('../font/' + $font-name + '/' + $file-name + '.woff2') format('woff2'),
-				url('../font/' + $font-name + '/' + $file-name + '.woff') format('woff');
-		} @else {
-			src: url('../font/' + $font-name + '/' + $file-name + '.woff') format('woff');
-		}
+		src: url('../font/' + $font-name + '/' + $file-name + '.woff2') format('woff2');
 	}
 }
  

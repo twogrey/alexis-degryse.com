@@ -1,3 +1,14 @@
+.site-logo {
+	circle,
+	path:first-of-type {
+		fill: var(--color-primary);
+	}
+
+	path:last-of-type {
+		fill: var(--text-color);
+	}
+}
+
 .header {
 	--line-h: #{rem(4px)};
 	position: sticky;

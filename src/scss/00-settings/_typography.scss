@@ -12,10 +12,9 @@ $regular: 400;
 $semibold: 600;
 $bold: 700;
 
-$typo-font-family: 'Open Sans', Arial, sans-serif;
-$typo-font-family-serif: 'Merienda', serif;
+$typo-font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
 
-$typo-color: #fff;
+$typo-color: #222;
 
 $heading-font-family: $typo-font-family;
 $heading-line-height: 1.1;
@@ -25,7 +24,6 @@ $heading-weight: $semibold;
 $heading-color: $typo-color;
 
 $text-color: $typo-color;
-$text-line-height: 1.5;
 $text-margin-bottom: var(--sp);
 
 $link-color: var(--color-primary);

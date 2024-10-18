@@ -1,0 +1,155 @@
+$name-spacings: (
+	'margin'  : 'm', 
+	'padding' : 'p' );
+
+$direction-spacings: (
+	'-top'    : 't', 
+	'-right'  : 'r',
+	'-bottom' : 'b',
+	'-left'   : 'l' );
+
+$utility-spacings: (
+	'-0'   : '0', 
+	'-0#{\.}25' : #{to-fixed(($spacing / 4), 2)},
+	'-0#{\.}33' : #{to-fixed(($spacing / 3), 2)},
+	'-0#{\.}5' : #{to-fixed(($spacing / 2), 2)},
+	''     : #{$spacing},
+	'-2'   : #{$spacing * 2},
+	'-3'   : #{$spacing * 3},
+	'-4'   : #{$spacing * 4},
+	'-5'   : #{$spacing * 5} );
+
+/** --------------------------------------------
+ * 
+ * Only one axis for padding & margin
+ * 
+ -------------------------------------------- */
+
+@each $spacing, $sp in($name-spacings) {
+	@each $direction, $dir in($direction-spacings) {
+		@each $name, $value in($utility-spacings) {
+			.#{$sp}#{$dir}#{$name} { #{$spacing}#{$direction}: #{$value} !important; }
+			@each $bp, $prefix in($grid-mq) {
+				@include mq(map-get($mq, $bp)) {
+					.#{$prefix}\:#{$sp}#{$dir}#{$name} {
+						#{$spacing}#{$direction}: #{$value} !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+/** --------------------------------------------
+ * 
+ * Only one axis for margin but with negatives values
+ * 
+ -------------------------------------------- */
+ 
+@each $direction, $dir in($direction-spacings) {
+	@each $name, $value in($utility-spacings) {
+		@if $value != '0' { 
+			.nm#{$dir}#{$name} { margin#{$direction}: calc(#{$value} * -1) !important; }
+			@each $bp, $prefix in($grid-mq) {
+				@include mq(map-get($mq, $bp)) {
+					.#{$prefix}\:nm#{$dir}#{$name} {
+						margin#{$direction}: calc(#{$value} * -1) !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+/** --------------------------------------------
+ * 
+ * Axis X, Y or both for padding & margin
+ * 
+ -------------------------------------------- */
+
+@each $spacing, $sp in($name-spacings) {
+	@each $name, $value in($utility-spacings) {
+		.#{$sp}x#{$name} { 
+			#{$spacing}-left: #{$value} !important;
+			#{$spacing}-right: #{$value} !important; 
+		}
+
+		.#{$sp}y#{$name} { 
+			#{$spacing}-top: #{$value} !important;
+			#{$spacing}-bottom: #{$value} !important; 
+		}
+
+		.#{$sp}#{$name} { 
+			#{$spacing}: #{$value} !important; 
+		}
+
+		@each $bp, $prefix in($grid-mq) {
+			@include mq(map-get($mq, $bp)) {
+				.#{$prefix}\:#{$sp}x#{$name} { 
+					#{$spacing}-left: #{$value} !important;
+					#{$spacing}-right: #{$value} !important; 
+				}
+
+				.#{$prefix}\:#{$sp}y#{$name} { 
+					#{$spacing}-top: #{$value} !important;
+					#{$spacing}-bottom: #{$value} !important; 
+				}
+
+				.#{$prefix}\:#{$sp}#{$name} { 
+					#{$spacing}: #{$value} !important; 
+				}
+			}
+		}
+
+	}
+}
+
+/** --------------------------------------------
+ * 
+ * auto value for only one axis, or axis X, Y (or both) for margin
+ * 
+ -------------------------------------------- */
+
+@each $direction, $dir in($direction-spacings) {
+	.m#{$dir}-a { margin#{$direction}: auto !important; }
+	
+	@each $bp, $prefix in($grid-mq) {
+		@include mq(map-get($mq, $bp)) {
+			.#{$prefix}\:m#{$dir}-a {
+				margin#{$direction}: auto !important;
+			}
+		}
+	}
+}
+
+.mx-a {
+	margin-right: auto !important;
+	margin-left: auto !important;
+}
+
+.my-a {
+	margin-top: auto !important;
+	margin-bottom: auto !important;
+}
+
+.m-a {
+	margin: auto !important;
+}
+
+@each $bp, $prefix in($grid-mq) {
+	@include mq(map-get($mq, $bp)) {
+		.#{$prefix}\:mx-a {
+			margin-right: auto !important;
+			margin-left: auto !important;
+		}
+
+		.#{$prefix}\:my-a {
+			margin-top: auto !important;
+			margin-bottom: auto !important;
+		}
+
+		.#{$prefix}\:m-a {
+			margin: auto !important;
+		}
+	}
+}

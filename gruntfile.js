@@ -56,13 +56,12 @@ module.exports = function (grunt) {
 				src: [
 					`${cssBuildPath}**/*.css`,
 					`${jsBuildPath}**/*.js`,
-					`*.html`,
-					'../../views/**/*.html',
+					`*.html`
 				],
 			},
 			options: {
 				watchTask: true,
-				proxy: 'http://localhost/alexis-degryse.com/',
+				proxy: 'http://alexis-degryse.local/',
 			},
 		},
 		/**
@@ -78,9 +77,9 @@ module.exports = function (grunt) {
 			dist: {
 				files: [ {
 					expand: true,
-					src: [ 'index.pug' ],
+					src: [ '**/index.pug' ],
 					cwd: `${templatesPath}/`,
-					dest: `./`,
+					dest: pagesBuildPath,
 					ext: '.html',
 				} ],
 			},
@@ -97,9 +96,9 @@ module.exports = function (grunt) {
 			dist: {
 				files: [ {
 					expand: true,
-					src: [ 'index.html' ],
-					cwd: `./`,
-					dest: `./`,
+					src: [ '**/index.html' ],
+					cwd: pagesBuildPath,
+					dest: pagesBuildPath,
 					ext: '.html',
 				} ],
 			}
@@ -122,7 +121,7 @@ module.exports = function (grunt) {
 		    		'The “navigation” role is unnecessary for element “nav”.'
 		    	]
 		  },
-    	all: [ 'index.html' ]
+    	all: [ '**/*.html' ]
     },
 		/**
 	   * [Sass compiler]

@@ -1,0 +1,112 @@
+/** --------------------------------------------
+ * 
+ * Enable/disable imports
+ * 
+ -------------------------------------------- */
+
+/**
+ * Form
+ */
+$enable-form-choices: false;
+$enable-form-fieldset: false;
+$enable-form-textual-fields: false;
+$enable-form-file: false;
+$enable-form-prepend-append: false;
+$enable-form-input-action: false;
+$enable-form-input-with-icon: false;
+
+/**
+ * HTML Elements
+ */
+$enable-blockquote: true;
+$enable-descriptions: false;
+$enable-headings: true;
+$enable-hr: false;
+$enable-lists: true;
+$enable-table: false;
+
+/**
+ * Objects
+ */
+$enable-skip-links: true;
+$enable-preserve-ratio: true;
+
+/**
+ * Components
+ */
+$enable-badge: false;
+$enable-breadcrumb: false;
+$enable-button: true;
+$enable-loader: false;
+$enable-pagination: false;
+$enable-panel: false;
+
+/**
+ * Patterns
+ */
+$enable-accordion: false;
+$enable-dropdown: false;
+$enable-modal: true;
+$enable-offcanvas: true;
+$enable-slider: false;
+$enable-tabs: false;
+$enable-tooltip: false; // default direction is top
+$enable-tooltip-top-mq: false;
+$enable-tooltip-bottom: false;
+$enable-tooltip-bottom-mq: false;
+$enable-tooltip-left: false;
+$enable-tooltip-left-mq: false;
+$enable-tooltip-right: false;
+$enable-tooltip-right-mq: false;
+
+
+/**
+ * Utilities
+ */
+$enable-colors: true;
+$enable-backgrounds: true;
+$enable-borders: true;
+$enable-flexbox: true;
+$enable-position: true;
+$enable-radius: true;
+$enable-shadow: true;
+
+/** --------------------------------------------
+ * 
+ * Grid
+ * 
+ -------------------------------------------- */
+
+/**
+ * Generic
+ */
+
+$nb-cols: 12;
+
+$spacing: 1rem;
+
+/**
+ * Breakpoints
+ */
+
+$tiny-screen: 20rem !default;
+$small-screen: 36rem !default;
+$medium-screen: 48rem !default;
+$medium-plus-screen: 62rem !default;
+$large-screen: 75rem !default;
+$large-plus-screen: 90rem !default;
+   
+$grid-mq: (
+	'small'  : 'sm',
+	'medium' : 'md',
+	'large'  : 'lg'
+);
+
+$mq: (
+	'tiny'        : $tiny-screen,
+	'small'       : $small-screen,
+	'medium'      : $medium-screen,
+	'medium-plus' : $medium-plus-screen,
+	'large'       : $large-screen,
+	'large-plus'  : $large-plus-screen
+);

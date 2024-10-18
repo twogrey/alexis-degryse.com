@@ -1,0 +1,39 @@
+@if $enable-accordion {  
+	.accordion {
+		--p: var(--sp);
+
+		&__toggle {
+			--px: var(--p);
+			--py: var(--p);
+			justify-content: space-between;
+			width: 100%;
+			border-radius: 0;
+			text-align: left;
+
+			&[aria-expanded='true'] {
+				--i: 1;
+				color: var(--color-primary);
+			}
+		}
+
+		&__header {
+			margin: 0;
+
+			&:not(:last-of-type) {
+				border-bottom: 1px solid var(--color-lightgrey);
+			}
+		}
+
+		&__content {
+			padding: var(--p);
+
+			&[aria-hidden='true'] {
+				display: none;
+			}
+		}
+
+		&__icon {
+			transform: rotate(calc(180deg * var(--i, 0)));
+		}
+	}
+}

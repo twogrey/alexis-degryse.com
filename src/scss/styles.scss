@@ -28,8 +28,7 @@
  */
 
 @import '02-vendors/normalize',
-	'02-vendors/grid',
-	'02-vendors/browser-update';
+	'02-vendors/grid';
 
 /** -----------------------------------------------------------
  *
@@ -72,7 +71,6 @@
  */
 
 @import '06-patterns/offcanvas',
-	'06-patterns/slider',
 	'06-patterns/accordion',
 	'06-patterns/tabs',
 	'06-patterns/modal',

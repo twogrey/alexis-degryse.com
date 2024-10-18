@@ -1,0 +1,28 @@
+@if $enable-table {
+	.table-responsive {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		text-align: left;
+
+		caption {
+			margin-bottom: var(--sp);
+			font-size: 1.5rem;
+			font-weight: $semibold;
+		}
+
+		td,
+		th {
+			padding: var(--sp-1-2);
+		}
+
+		tr {
+			border-bottom: rem(1px) solid var(--color-lightgrey);
+		}
+	}
+
+}

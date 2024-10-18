@@ -2,8 +2,11 @@ doctype html
 
 include partials/mixin.pug 
 
-html(lang="en", class="touch")
+html(lang="fr")
 	head
+		title 
+			block title-page
+				| Alexis Degryse - Conception web et accessibilité numérique
 		include partials/head.pug 
  
 	block vars
@@ -16,7 +19,7 @@ html(lang="en", class="touch")
 			
 		block before-main
 
-		main#content(role="main")
+		main#contenu(role="main")
 			block main
 			
 		block after-main
@@ -24,12 +27,11 @@ html(lang="en", class="touch")
 		include partials/footer.pug 
 
 		div(hidden)
-			#new-window This link opens a new tab.
-			#french-content In French.
+			#new-window Ce lien ouvre un nouvel onglet.
+			#french-content En français.
+			#english-content En anglais.
 
 		//- Scripts
 		block scripts-footer 
 			script(src="dest/js/scripts.min.js")
-			script(src="dest/js/components/offcanvas.min.js")
-			script(src="dest/js/components/modals.min.js")
 			script(async, defer, src="https://scripts.withcabin.com/hello.js")

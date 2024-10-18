@@ -1,0 +1,23 @@
+@if $enable-pagination {
+	.pagination {
+		--s: var(--sp-1-2);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: calc(var(--s) * -1) 0;
+
+		&__item {
+			margin: var(--s);
+
+			&--ellipsis {
+				margin-right: 0;
+				margin-left: 0;
+			}
+		}
+
+		[aria-disabled='true'] {
+			pointer-events: none;
+		}
+	}
+
+}

@@ -1,0 +1,50 @@
+@if $enable-form-file {
+	[type='file'] {
+		padding: $input-padding-y $input-padding-x;
+		overflow: hidden;
+		line-height: 1.5;
+
+		// stylelint-disable-next-line selector-pseudo-element-no-unknown
+		&::file-selector-button {
+			padding: $input-padding-y $input-padding-x;
+			border-width: 0;
+			border-style: solid;
+			border-color: inherit;
+			margin: (-$input-padding-y) (-$input-padding-x);
+			border-radius: 0;
+			background-color: var(--color-lightgrey);
+			pointer-events: none;
+			transition: background-color 0.2s;
+			margin-inline-end: $input-padding-x;
+			border-inline-end-width: $input-border-width;
+		}
+
+		// stylelint-disable-next-line selector-pseudo-element-no-unknown
+		&:hover:not(:disabled)::file-selector-button {
+			background-color: #dde0e3;
+		}
+
+		&::-webkit-file-upload-button {
+			padding: $input-padding-y $input-padding-x;
+			border-width: 0;
+			border-style: solid;
+			border-color: inherit;
+			margin: (-$input-padding-y) (-$input-padding-x);
+			border-radius: 0;
+			background-color: var(--color-lightgrey);
+			pointer-events: none;
+			transition: background-color 0.2s;
+			margin-inline-end: $input-padding-x;
+			border-inline-end-width: $input-border-width;
+		}
+
+		&:hover:not(:disabled)::-webkit-file-upload-button {
+			background-color: #dde0e3;
+		}
+
+		&:not(:disabled) {
+			cursor: pointer;
+		}
+	}
+
+}

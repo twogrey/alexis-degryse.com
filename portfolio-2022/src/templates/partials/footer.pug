@@ -1,0 +1,62 @@
+div(class="skewed skewed--top")
+	footer(role="contentinfo", class="bg-black text-center", id="footer", aria-labelledby="footer-title")
+		.container
+			.row.justify-center(class="py-3 md:pt-4 lg:pt-5")
+				div(class="col-12 mb-0.5 lg:mb-1 lg:mt-2")
+					h2(class="h2-gradient", id="footer-title")
+						span Find me on
+						span.sr-only  the following networks
+				.col-auto.mb-0
+					ul(class="row list-unstyled mb-0", role="list")
+						li(class="col-auto mt mb-0")
+							a(href="https://codepen.io/twogrey", target="_blank", class="fs-fluid px-0.5", rel="noopener noreferrer", aria-label="Codepen", aria-describedby="new-window", style="--min:2; --max:4")
+								svg(class="icon", aria-hidden="true")
+									use(xlink:href="dest/img/sprite.svg#icon-codepen")
+						li(class="col-auto mt mb-0")
+							a(href="https://twitter.com/twogrey", target="_blank", class="fs-fluid px-0.5", rel="noopener noreferrer", aria-label="Twitter", aria-describedby="new-window", style="--min:2; --max:4")
+								svg(class="icon", aria-hidden="true")
+									use(xlink:href="dest/img/sprite.svg#icon-twitter")
+						li(class="col-auto mt mb-0")
+							a(href="https://h4.io/@twogrey", target="_blank", class="fs-fluid px-0.5", rel="noopener noreferrer", aria-label="Mastodon", aria-describedby="new-window", style="--min:2; --max:4")
+								svg(class="icon", aria-hidden="true")
+									use(xlink:href="dest/img/sprite.svg#icon-mastodon")
+						li(class="col-auto mt mb-0")
+							a(href="https://www.linkedin.com/in/alexis-degryse/", target="_blank", class="fs-fluid px-0.5", rel="noopener noreferrer", aria-label="Linkedin", aria-describedby="new-window", style="--min:2; --max:4")
+								svg(class="icon", aria-hidden="true")
+									use(xlink:href="dest/img/sprite.svg#icon-linkedin")
+			h2.sr-only Useful links
+			.row.fs-4.justify-center
+				.col-auto
+					| My email address : 
+					a(href="mailto:alexis.degryse@gmail.com") alexis.degryse@gmail.com
+				.col-auto(class="px-0 text-primary-light", aria-hidden="true") •
+				.col-auto
+					button(type="button", data-modal-id="modal-legal", class="btn-as-link js-modal", title="Open legal notices in a modal") Legal notices
+				.col-auto(class="px-0 text-primary-light", aria-hidden="true") •
+				.col-auto
+					| Source code on 
+					a(href="https://github.com/twogrey/alexis-degryse.com", rel="noopener noreferrer") GitHub
+
+dialog(class="modal text-black", aria-labelledby="modal-legal-title", id="modal-legal")
+	div(class="modal__dialog js-modal-stop modal__dialog--medium" role="document")
+		div(class="modal__content")
+			div(class="modal__header")
+				h1(class="modal__title text-reset", id="modal-legal-title") Legal notices
+				button(class="modal__close btn js-modal-close btn--primary", type="button", aria-label="Close")
+					svg(class="icon", aria-hidden="true")
+						use(xlink:href="dest/img/sprite.svg#icon-x")
+			div(class="modal__body")
+				h2.text-reset.h4-like Editor
+				p The site alexis-degryse.com is the property of and is edited by Alexis DEGRYSE.
+				h2.text-reset.h4-like Host
+				p This website is hosted with <a href="https://pages.github.com" rel="noopener noreferrer" target="_blank"  aria-describedby="new-window">GitHub Pages</a> <svg class="icon" aria-hidden="true"><use xlink:href="dest/img/sprite.svg#icon-new-tab"></use></svg>.
+				h2.text-reset.h4-like Domain name
+				p The domain name is provided by Hostinger.
+				ul
+					li Address : 61 Lordou Vironos str., 6023 Larnaca, Cyprus
+					li Email : <a href="mailto:support@hostinger.com">support@hostinger.com</a>
+					li Website : <a href="https://www.hostinger.fr" rel="noopener noreferrer" target="_blank"  aria-describedby="new-window">hostinger.fr</a> <svg class="icon" aria-hidden="true"><use xlink:href="dest/img/sprite.svg#icon-new-tab"></use></svg>
+				h2.text-reset.h4-like Personal data
+				p No personal data is collected.
+				h2.text-reset.h4-like Accessibility
+				p If you have any difficulty in consulting this site, please contact me by email at <a href="mailto:alexis.degryse@gmail.com">alexis.degryse@gmail.com</a>.

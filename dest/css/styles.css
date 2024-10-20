@@ -48,11 +48,6 @@
  *  /!\ Use it only for pages/ scss files
  * 
  -------------------------------------------- */
-/** --------------------------------------------
-* 
-* 
-* 
--------------------------------------------- */
 /*
 	Improved screen reader only CSS class
 	@author Gaël Poupard
@@ -1469,115 +1464,10 @@ html:not(.touch) .btn {
  * PATTERNS : combination of components not scalable
  *
  */
-.offcanvas-is-open {
-  overflow: hidden;
-}
-.not-touch .offcanvas-is-open {
-  padding-right: var(--scrollbar-width);
-}
-
-.offcanvas {
-  --w: 17.1875rem;
-  --i: -1;
-  --wrap-p: var(--sp);
-  --title-mr: var(--sp);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: var(--z-offcanvas);
+:where(.js-disclosure:not([aria-expanded=true]) + *) {
   display: none;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.offcanvas.is-active {
-  --wrap-anim: reveal-on-offcanvas 0.3s forwards;
-  display: block;
-  animation: fade-in 0.3s;
-}
-.offcanvas.is-hiding {
-  --wrap-anim: reveal-off-offcanvas 0.3s;
-  animation: fade-out 0.3s;
-}
-.offcanvas--right {
-  --i: 1;
-  --ml: auto;
-}
-@media screen and (min-width: 48rem) {
-  .offcanvas--mq {
-    --w: auto;
-    --ml: 0;
-    --wrap-anim: none !important;
-    --close-display: none;
-    --wrap-p: 0;
-    --title-mr: 0;
-    position: static;
-    display: block;
-    height: auto;
-    background-color: transparent;
-    animation-duration: 0.001s !important;
-  }
-}
-.offcanvas__wrap {
-  width: var(--w);
-  height: 100%;
-  padding: var(--wrap-p);
-  margin-left: var(--ml);
-  overflow-y: auto;
-  background-color: #fff;
-  animation: var(--wrap-anim);
-}
-.offcanvas__header {
-  display: flex;
-  align-self: flex-start;
-  margin-bottom: var(--sp);
-}
-.offcanvas__title {
-  display: block;
-  margin: var(--sp) 0;
-  font-family: "Atkinson Hyperlegible", Arial, sans-serif;
-  font-size: clamp(var(--min) * 1rem, var(--min) * 100 / var(--mq-sm-unitless) * 0.5vw, var(--max));
-  font-weight: 600;
-  line-height: 1.1;
-  word-break: break-word;
-  --min: 1.25;
-  --max: 1.5rem;
-  align-self: center;
-  margin-right: var(--title-mr);
-  margin-bottom: 0;
-}
-.offcanvas__title:first-child {
-  margin-top: 0;
-}
-.offcanvas__title:only-child, .offcanvas__title:last-child {
-  margin-bottom: 0;
-}
-.offcanvas__close {
-  display: var(--close-display);
-  margin-left: auto;
-}
-.offcanvas__body a:focus-visible {
-  outline-color: currentColor;
-  outline-style: dotted;
-  outline-width: 0.125rem;
 }
 
-@keyframes reveal-on-offcanvas {
-  from {
-    transform: translateX(calc(100% * var(--i)));
-  }
-  to {
-    transform: none;
-  }
-}
-@keyframes reveal-off-offcanvas {
-  from {
-    transform: none;
-  }
-  to {
-    transform: translateX(calc(100% * var(--i)));
-  }
-}
 .modal-is-open {
   overflow: hidden;
 }
@@ -5842,88 +5732,17 @@ html:not(.touch) .btn {
  * EXTRA 
  *
  */
-.site-logo circle,
-.site-logo path:first-of-type {
+.header .logo circle,
+.header .logo path:first-of-type {
   fill: var(--color-primary);
 }
-.site-logo path:last-of-type {
+.header .logo path:last-of-type {
   fill: var(--text-color);
 }
 
-.header {
-  --line-h: 0.25rem;
-  position: sticky;
-  top: 0;
-  z-index: var(--z-header);
-  background-color: rgba(17, 17, 17, 0.5);
-  transition: box-shadow 0.2s, background-color 0.2s;
-}
 @media screen and (min-width: 48rem) {
-  .header {
-    padding: var(--line-h) 0;
-  }
-  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    .header {
-      backdrop-filter: blur(5px);
-    }
-  }
-}
-.header::before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: var(--line-h);
-  background-image: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-  transition: transform 0.2s;
-}
-.header--opaque {
-  background-color: var(--color-black);
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.125);
-}
-.header--opaque::before {
-  transform: translateY(calc(var(--header-height) * -1));
-}
-
-.js-start-opaque-header {
-  position: absolute;
-  top: calc(var(--header-height) + 1px);
-  left: 0;
-  width: 1px;
-  height: 1px;
-}
-
-@media screen and (min-width: 48rem) {
-  .nav {
-    overflow: visible;
-    background-color: transparent;
-  }
-}
-@media screen and (min-width: 48rem) {
-  .nav__list {
+  .menu {
     display: flex;
-  }
-}
-.nav__item:not(:first-of-type) {
-  border-top: 1px solid var(--color-lightgrey);
-}
-@media screen and (min-width: 48rem) {
-  .nav__item:not(:first-of-type) {
-    border-top: 0;
-    border-left: 1px solid rgba(255, 255, 255, 0.25);
-  }
-}
-.nav__link {
-  display: block;
-  padding: var(--sp) 0;
-  color: var(--color-primary);
-}
-@media screen and (min-width: 48rem) {
-  .nav__link {
-    padding: var(--sp-1-2) var(--sp);
-    font-size: 0.875rem;
-    color: #fff;
   }
 }
 

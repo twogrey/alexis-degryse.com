@@ -56,7 +56,7 @@ module.exports = function (grunt) {
 				src: [
 					`${cssBuildPath}**/*.css`,
 					`${jsBuildPath}**/*.js`,
-					`*.html`
+					`${pagesBuildPath}**/*.html`
 				],
 			},
 			options: {
@@ -78,7 +78,7 @@ module.exports = function (grunt) {
 				files: [ {
 					expand: true,
 					src: [ '**/index.pug' ],
-					cwd: `${templatesPath}/`,
+					cwd: templatesPath,
 					dest: pagesBuildPath,
 					ext: '.html',
 				} ],
@@ -114,14 +114,14 @@ module.exports = function (grunt) {
 		    	[
 		    		'The “dialog” element is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
 		    		'The “date” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
-		    		'Consider using the “h1” element as a top-level heading only (all “h1” elements are treated as top-level headings by many screen readers and other tools).',
 		    		'The “banner” role is unnecessary for element “header”.',
 		    		'The “contentinfo” role is unnecessary for element “footer”.',
 		    		'The “main” role is unnecessary for element “main”.',
-		    		'The “navigation” role is unnecessary for element “nav”.'
+		    		'The “navigation” role is unnecessary for element “nav”.',
+		    		'The “list” role is unnecessary for element “ul”.'
 		    	]
 		  },
-    	all: [ '**/*.html' ]
+    	all: [ `${pagesBuildPath}**/*.html` ]
     },
 		/**
 	   * [Sass compiler]

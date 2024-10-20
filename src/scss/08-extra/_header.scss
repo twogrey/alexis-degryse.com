@@ -1,91 +1,18 @@
-.site-logo {
-	circle,
-	path:first-of-type {
-		fill: var(--color-primary);
-	}
-
-	path:last-of-type {
-		fill: var(--text-color);
-	}
-}
-
 .header {
-	--line-h: #{rem(4px)};
-	position: sticky;
-	top: 0;
-	z-index: var(--z-header);
-	background-color: rgba(#111, 0.5);
-	transition: box-shadow 0.2s, background-color 0.2s;
-
-	@include medium {
-		padding: var(--line-h) 0;
-		
-		@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-			backdrop-filter: blur(5px);
+	.logo {
+		circle,
+		path:first-of-type {
+			fill: var(--color-primary);
 		}
-	}
 
-	&::before {
-		content: '';
-		position: absolute;
-		top: 100%;
-		left: 0;
-		width: 100%;
-		height: var(--line-h);
-		background-image: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-		transition: transform 0.2s;
-	}
-
-	&--opaque {
-		background-color: var(--color-black);
-		box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.125);
-
-		&::before {
-			transform: translateY(calc(var(--header-height) * -1));
+		path:last-of-type {
+			fill: var(--text-color);
 		}
 	}
 }
 
-.js-start-opaque-header {
-	position: absolute;
-	top: calc(var(--header-height) + 1px);
-	left: 0;
-	width: 1px;
-	height: 1px;
-}
-
-.nav {
+.menu {
 	@include medium {
-		overflow: visible;
-		background-color: transparent;
-	}
-
-	&__list {
-		@include medium {
-			display: flex;
-		}
-	}
-
-	&__item {
-		&:not(:first-of-type) {
-			border-top: 1px solid var(--color-lightgrey);
-		
-			@include medium {
-				border-top: 0;
-				border-left: 1px solid rgba(#fff, 0.25);
-			}
-		}
-	}
-
-	&__link {
-		display: block;
-		padding: var(--sp) 0;
-		color: var(--color-primary);
-		
-		@include medium {
-			padding: var(--sp-1-2) var(--sp);
-			font-size: rem(14px);
-			color: #fff;
-		}
+		display: flex;
 	}
 }

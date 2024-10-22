@@ -4,4 +4,31 @@ block append styles
 	link(href="dest/css/pages/index.min.css", rel="stylesheet")
 
 block main
-	p accueil
+	section
+		h2 Intégrateur web soucieux de l’assurance qualité web,
+		p Je vous accompagne dans la création de votre site web et votre démarche de prise en compte de l’accessibilité numérique.
+		img(src="dest/img/svg/illustration-homepage.svg", width="1913", height="1408", alt="")
+		a(href="#prestations") Mes prestations
+		a(href="/contact") Me contacter
+
+	section
+		h2 Mes prestations
+		.row
+			.col-4
+				article
+					img(src="dest/img/svg/prestation-site.svg", alt="")
+					h3(style="font-variant: petite-caps") Création de sites web
+					p Vous avez des maquettes graphiques (ou un thème de CMS) prêtes à être intégrées pour démarrer le développement de votre nouveau site ? Je réalise vos pages web de manière respectueuse des standards de qualité web et conforme aux normes d’accessibilité.
+					a(href="#") Créer mon site
+			.col-4
+				article
+					img(src="dest/img/svg/prestation-accessibilite.svg", alt="")
+					h3 Accessibilité numérique
+					p Vous souhaitez mettre en place une démarche d’amélioration de l’accessibilité sur votre projet ? Je peux sensibiliser vos équipes, auditer les livrables graphiques ou des développements existants, ou tout simplement vous accompagner et vous conseiller tout au long de la vie de votre projet.
+					a(href="#") Se faire accompagner
+			.col-4
+				article
+					img(src="dest/img/svg/prestation-qualite-web.svg", alt="")
+					h3 Audit qualité web
+					p Vous avez déjà un site web ? Je peux vous rédiger un compte-rendu des manquements relatifs à l’assurance qualité web et vous proposer des pistes de corrections et d’améliorations en termes d’accessibilité, de SEO, d’éco-conception, d’ergonomie, de respect des données personnelles, d’éditorial, et bien d’autres.
+					a(href="#") Auditer mon site

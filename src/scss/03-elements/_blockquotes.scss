@@ -1,18 +1,17 @@
-@if $enable-blockquote {
-	blockquote {
-		margin: 0 calc(#{$text-margin-bottom} * 2) $text-margin-bottom;
-		quotes: '\0022' '\0022';
+blockquote {
+	--m-b: 1em;
+	margin: 0 calc(var(--m-b) * var(--phi)) var(--m-b);
+	quotes: '\0022' '\0022';
 
-		&:last-child {
-			margin-bottom: 0;
-		}
+	&:last-child {
+		margin-bottom: 0;
+	}
 
-		&::before {
-			content: open-quote;
-		}
+	&::before {
+		content: open-quote;
+	}
 
-		&::after {
-			content: close-quote;
-		}
+	&::after {
+		content: close-quote;
 	}
 }

@@ -5,11 +5,14 @@ block append styles
 
 block main
 	section
-		h2 Intégrateur web soucieux de l’assurance qualité web,
-		p Je vous accompagne dans la création de votre site web et votre démarche de prise en compte de l’accessibilité numérique.
-		img(src="dest/img/svg/illustration-homepage.svg", width="1913", height="1408", alt="")
-		a(href="#prestations") Mes prestations
-		a(href="/contact") Me contacter
+		.row
+			.col-5
+				h2 Intégrateur web soucieux de l’assurance qualité web,
+				p Je vous accompagne dans la création de votre site web et votre démarche de prise en compte de l’accessibilité numérique.
+				a(href="#prestations") Mes prestations
+				a(href="/contact") Me contacter
+			.col-7
+				img(src="dest/img/svg/illustration-homepage.svg", width="1913", height="1408", alt="")
 
 	section
 		h2 Mes prestations
@@ -17,7 +20,7 @@ block main
 			.col-4
 				article
 					img(src="dest/img/svg/prestation-site.svg", alt="")
-					h3(style="font-variant: petite-caps") Création de sites web
+					h3 Création de sites web
 					p Vous avez des maquettes graphiques (ou un thème de CMS) prêtes à être intégrées pour démarrer le développement de votre nouveau site ? Je réalise vos pages web de manière respectueuse des standards de qualité web et conforme aux normes d’accessibilité.
 					a(href="#") Créer mon site
 			.col-4

@@ -1,34 +1,18 @@
-$green: #78be20;
+$black: #222;
 
-$black: #333;
-
-$grey: #ced4da;
+$grey: #d6dadc;
 $lightgrey: mix(white, $grey, 50%);
 $darkgrey: mix(black, $grey, 50%);
 
-$color-primary-rgb: rgb(36, 110, 159);
-$color-primary-r-g-b: 36, 110, 159;
 $color-primary: #246e9f;
 $color-primary-lightest: mix(white, $color-primary, 66%);
 $color-primary-light: mix(white, $color-primary, 33%);
 $color-primary-dark: mix(black, $color-primary, 33%);
 
-$color-secondary-rgb: rgb(35, 173, 105);
-$color-secondary-r-g-b: 35, 173, 105;
-$color-secondary: #1fad69;
+$color-secondary: #d7c5b2;
 $color-secondary-lightest: mix(white, $color-secondary, 66%);
 $color-secondary-light: mix(white, $color-secondary, 33%);
 $color-secondary-dark: mix(black, $color-secondary, 33%);
-
-$color-error: #dc372a;
-$color-error-lightest: mix(white, $color-error, 66%);
-$color-error-light: mix(white, $color-error, 33%);
-$color-error-dark: mix(black, $color-error, 33%);
-
-$color-success: #1e874a;
-$color-success-lightest: mix(white, $color-success, 66%);
-$color-success-light: mix(white, $color-success, 33%);
-$color-success-dark: mix(black, $color-success, 33%);
 
 $neutral-colors: (
 	'black'     : $black,

@@ -2,4 +2,94 @@ $assets-base-path: '../../';
 
 @import '../abstracts';
 
+/** -----------------------------------------------------------
+ *
+ * Inverted corner radius (medium res only)
+ *
+ */
 
+@include medium {
+	:root {
+		--index-r: #{rem(10px)};
+		--index-b-w: var(--sp);
+		--index-b: var(--index-b-w) solid var(--color-secondary);
+	}
+
+	.header {
+		.logo {
+			display: block;
+			border-radius: 0 0 var(--index-r) var(--index-r);
+			background-color: var(--color-secondary);
+		}
+	}
+
+	.header,
+	.logo,
+	section:first-of-type {
+		position: relative;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			width: var(--index-r);
+			aspect-ratio: 1;
+			background-color: var(--color-secondary);
+			mask: radial-gradient(var(--index-r) at var(--dir), #0000 100%, #000);
+		}
+	}
+
+	.header {
+		&::before,
+		&::after { top: 0; }
+
+		&::before { 
+			--dir: bottom right;
+			left: 0; 
+		}
+
+		&::after { 
+			--dir: bottom left;
+			right: 0; 
+		}
+	}
+
+	.logo {
+		&::before,
+		&::after { top: 0; }
+
+		&::before { 
+			--dir: bottom left;
+			right: 100%; 
+		}
+
+		&::after { 
+			--dir: bottom right;
+			left: 100%; 
+		}
+	}
+
+	section {
+		&:first-of-type {
+			border: var(--index-b);
+			border-top: 0;
+
+			&::before,
+			&::after { bottom: 0; }
+
+			&::before { 
+				--dir: top right;
+				left: 0; 
+			}
+
+			&::after { 
+				--dir: top left;
+				right: 0; 
+			}
+
+			.row {
+				min-height: calc(100vh - var(--header-h) - var(--index-b-w));
+			}
+		}
+	}
+}

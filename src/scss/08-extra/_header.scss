@@ -1,4 +1,21 @@
+:root {
+	--header-h: #{rem(100px)};
+}
+
 .header {
+	@include medium {
+		padding: var(--index-b-w) var(--index-b-w) 0;
+	}
+
+	.index-page & {
+		@include medium {
+			height: var(--header-h);
+			padding: 0;
+			border: var(--index-b);
+			border-bottom: 0;
+		}
+	}
+
 	.logo {
 		circle,
 		path:first-of-type {

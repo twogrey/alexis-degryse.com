@@ -4501,7 +4501,7 @@ html:not(.touch) .btn {
   --color-black: #222;
   --color-darkgrey: #6b6d6e;
   --color-grey: #d6dadc;
-  --color-lightgrey: rgb(234.5, 236.5, 237.5);
+  --color-lightgrey: #ebebeb;
 }
 
 .text-primary {
@@ -5057,6 +5057,63 @@ html:not(.touch) .btn {
     align-items: flex-end !important;
   }
 }
+.align-start-self {
+  align-self: flex-start !important;
+}
+
+@media screen and (min-width: 36rem) {
+  .sm\:align-start-self {
+    align-self: flex-start !important;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .md\:align-start-self {
+    align-self: flex-start !important;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .lg\:align-start-self {
+    align-self: flex-start !important;
+  }
+}
+.align-center-self {
+  align-self: center !important;
+}
+
+@media screen and (min-width: 36rem) {
+  .sm\:align-center-self {
+    align-self: center !important;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .md\:align-center-self {
+    align-self: center !important;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .lg\:align-center-self {
+    align-self: center !important;
+  }
+}
+.align-end-self {
+  align-self: flex-end !important;
+}
+
+@media screen and (min-width: 36rem) {
+  .sm\:align-end-self {
+    align-self: flex-end !important;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .md\:align-end-self {
+    align-self: flex-end !important;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .lg\:align-end-self {
+    align-self: flex-end !important;
+  }
+}
 .flex-wrap {
   flex-wrap: wrap !important;
 }
@@ -5306,6 +5363,23 @@ html:not(.touch) .btn {
  * EXTRA 
  *
  */
+:root {
+  --header-h: 6.25rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .header {
+    padding: var(--index-b-w) var(--index-b-w) 0;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .index-page .header {
+    height: var(--header-h);
+    padding: 0;
+    border: var(--index-b);
+    border-bottom: 0;
+  }
+}
 .header .logo circle,
 .header .logo path:first-of-type {
   fill: var(--color-primary);

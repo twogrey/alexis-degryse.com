@@ -72,5 +72,79 @@
 		@author Harry Roberts
 		@see https://csswizardry.com/2016/05/the-importance-of-important/
 */
+/** -----------------------------------------------------------
+ *
+ * Inverted corner radius (medium res only)
+ *
+ */
+@media screen and (min-width: 48rem) {
+  :root {
+    --index-r: 0.625rem;
+    --index-b-w: var(--sp);
+    --index-b: var(--index-b-w) solid var(--color-secondary);
+  }
+  .header .logo {
+    display: block;
+    border-radius: 0 0 var(--index-r) var(--index-r);
+    background-color: var(--color-secondary);
+  }
+  .header,
+  .logo,
+  section:first-of-type {
+    position: relative;
+  }
+  .header::before, .header::after,
+  .logo::before,
+  .logo::after,
+  section:first-of-type::before,
+  section:first-of-type::after {
+    content: "";
+    position: absolute;
+    width: var(--index-r);
+    aspect-ratio: 1;
+    background-color: var(--color-secondary);
+    mask: radial-gradient(var(--index-r) at var(--dir), rgba(0, 0, 0, 0) 100%, #000);
+  }
+  .header::before, .header::after {
+    top: 0;
+  }
+  .header::before {
+    --dir: bottom right;
+    left: 0;
+  }
+  .header::after {
+    --dir: bottom left;
+    right: 0;
+  }
+  .logo::before, .logo::after {
+    top: 0;
+  }
+  .logo::before {
+    --dir: bottom left;
+    right: 100%;
+  }
+  .logo::after {
+    --dir: bottom right;
+    left: 100%;
+  }
+  section:first-of-type {
+    border: var(--index-b);
+    border-top: 0;
+  }
+  section:first-of-type::before, section:first-of-type::after {
+    bottom: 0;
+  }
+  section:first-of-type::before {
+    --dir: top right;
+    left: 0;
+  }
+  section:first-of-type::after {
+    --dir: top left;
+    right: 0;
+  }
+  section:first-of-type .row {
+    min-height: calc(100vh - var(--header-h) - var(--index-b-w));
+  }
+}
 
 /*# sourceMappingURL=index.css.map */

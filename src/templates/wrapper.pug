@@ -13,19 +13,18 @@ html(lang="fr")
 
 	body(class=bodyClass)
 
-		.container
-			include partials/skip-links.pug 
+		include partials/skip-links.pug 
 
-			include partials/header.pug 
-				
-			block before-main
+		include partials/header.pug 
+			
+		block before-main
 
-			main#contenu(role="main")
-				block main
-				
-			block after-main
+		main#contenu(role="main")
+			block main
+			
+		block after-main
 
-			include partials/footer.pug 
+		include partials/footer.pug 
 
 		div(hidden)
 			#new-window Ce lien ouvre un nouvel onglet.

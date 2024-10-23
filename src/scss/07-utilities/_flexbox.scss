@@ -69,6 +69,20 @@
 		}
 	}
 
+	@each $align-name, $align-value in($align-values) {
+		.#{$align-name}-self {
+			align-self: #{$align-value} !important;
+		}
+
+		@each $name, $prefix in($grid-mq) {
+			@include mq(map-get($mq, $name)) {
+				.#{$prefix}\:#{$align-name}-self {
+					align-self: #{$align-value} !important;
+				}
+			}
+		}
+	}
+
 	@each $wrap-name, $wrap-value in($wrap-values) {
 		.#{$wrap-name} {
 			flex-wrap: #{$wrap-value} !important;

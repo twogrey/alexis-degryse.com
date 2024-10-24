@@ -47,8 +47,8 @@
 
 .row {
 	display: flex;
-	flex-wrap: wrap;
 	row-gap: var(--gutter);
+	flex-wrap: wrap;
 	margin-right: calc(var(--gutter) / -2);
 	margin-left: calc(var(--gutter) / -2);
 }

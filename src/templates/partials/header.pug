@@ -9,14 +9,16 @@ header(role="banner", class="header")
 						path(d="M303 743.4c-93.74 0-170-76.26-170-170s76.26-170 170-170S472.78 479.45 472.99 573v155.94c17.59-14.74 40.27-23.63 65.02-23.63s47.39 8.87 64.98 23.59V573c-.05-40.33-7.99-79.49-23.6-116.39-15.11-35.73-36.73-67.81-64.27-95.34-27.53-27.53-59.61-49.15-95.34-64.27-37.03-15.66-76.32-23.6-116.79-23.6s-79.77 7.94-116.79 23.6c-35.73 15.11-67.81 36.74-95.34 64.27-27.53 27.53-49.15 59.61-64.27 95.34-15.66 37.03-23.6 76.32-23.6 116.79s7.94 79.77 23.6 116.79C41.7 725.92 63.33 758 90.86 785.53c27.53 27.53 59.61 49.15 95.34 64.27 37.03 15.66 76.32 23.6 116.79 23.6s79.77-7.94 116.79-23.6c5.15-2.18 10.21-4.51 15.21-6.95V680.4c-31.19 38.41-78.78 63-132 63Z")
 					div
 						span Alexis Degryse&nbsp;
-						span Intégrateur web<br class="md:d-none"><span class="d-none md:d-inline" aria-hidden="true">&nbsp;·&nbsp;</span>Accessibilité numérique 
-			div(class="col-12 md:col-auto ml-a pos-static") 
+						span Intégrateur web<br><span aria-hidden="true">&nbsp;·&nbsp;</span>Accessibilité numérique 
+			div(class="col-12 md:col-auto ml-a md:mx-a lg:col lg:pl-4 pos-static") 
 				nav(role="navigation", class="menu", aria-label="Principale")
 					button(type="button", aria-controls="menu", aria-expanded="false", class="md:d-none js-disclosure")
-						svg(class="icon", aria-hidden="true")
-							use(xlink:href="dest/img/sprite.svg#icon-menu")
-						span Menu
-					ul(role="list", id="menu", class="pt", style="height: calc-size(auto, size)")
+						svg(class="icon", aria-hidden="true", viewBox="0 0 13 7")
+							rect
+							rect
+							rect
+						| Menu
+					ul(role="list", id="menu", style="height: calc-size(auto, size)")  
 						li
 							a(href="/a-propos") À propos
 						li
@@ -24,7 +26,7 @@ header(role="banner", class="header")
 								| Prestations
 								svg(class="icon chevron ml-a", aria-hidden="true")
 									use(xlink:href="dest/img/sprite.svg#icon-chevron-down")
-							ul(id="prestations-nav", role="list", style="height: calc-size(auto, size)")
+							ul(id="prestations-nav", role="list", style="height: calc-size(auto, size + var(--item-p))")
 								li
 									a(href="#") Création de sites web
 								li

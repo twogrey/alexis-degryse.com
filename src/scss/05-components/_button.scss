@@ -8,6 +8,7 @@
 	position: relative;
 	z-index: 0;
 	display: inline-flex;
+	gap: var(--px);
 	align-items: center;
 	justify-content: center;
 	padding: var(--py) var(--px);
@@ -20,7 +21,6 @@
 	color: var(--c);
 	cursor: pointer;
 	user-select: none;
-	gap: var(--px);
 	-webkit-tap-highlight-color: transparent;
 	//transition-timing-function: ease;
 	//transition-duration: 0.2s;

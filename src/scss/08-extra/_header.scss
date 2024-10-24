@@ -24,35 +24,36 @@
 	--min: #{rem(20px, true)};
 	--max: #{rem(28px, true)};
 	display: flex;
+	gap: var(--sp);
 	align-items: center;
-	gap: var(--sp-2);
 
-	@include medium {
-		padding: calc(var(--sp-2) - var(--index-b-w)) var(--sp-2) var(--sp-2);
-	}
+	@include small { gap: var(--sp-2); }
+
+	@include medium { padding: calc(var(--sp-2) - var(--index-b-w)) var(--sp-2) var(--sp-2); }
 
 	svg {
 		width: auto;
+		overflow: visible;
 		font-size: 400%;
 		aspect-ratio: 603/873.4;
 
-		@include medium {
-			font-size: 270%;
-		}
+		@include medium { font-size: 360%; }
+
+		@include medium-plus { font-size: 270% !important; }
 	}
 
 	circle,
-	path:first-of-type {
-		fill: var(--color-primary);
-	}
+	path:first-of-type { fill: var(--color-primary); }
 
-	path:last-of-type {
-		fill: var(--text-color);
-	}
+	path:last-of-type { fill: var(--text-color); }
 
 	div {
 		> span {
 			display: block;
+
+			@include medium-plus {
+				white-space: nowrap; // fix Safari
+			}
 
 			&:first-of-type {
 				font-family: $heading-font-family;
@@ -64,6 +65,20 @@
 				font-size: 75%;
 				color: var(--text-color);
 			}
+
+			span {
+				display: none;
+
+				@include medium-plus {
+					display: inline;
+				}
+			}
+		}
+	}
+
+	br {
+		@include medium-plus {
+			display: none;
 		}
 	}
 }
@@ -72,50 +87,128 @@
 	position: absolute;
 	top: var(--gutter);
 	right: var(--gutter);
+	display: flex;
+	gap: var(--sp-1-4);
+	flex-direction: column;
+	align-items: center;
+	padding: 0;
 	border: 0;
-	appearance: none;
+	font-size: rem(12px);
+	font-weight: bold;
+	text-transform: uppercase;
 	background-color: transparent;
 	cursor: pointer;
+	appearance: none;
+
+	svg { font-size: 200%; }
+
+	rect {
+		width: 100%;
+		height: rem(1px);
+		transform-origin: center;
+		transition: y 0.4s 0.4s, opacity 0s 0.4s, rotate 0.4s;
+		x: 0;
+		rx: rem(0.5px);
+
+		&:nth-child(1) { y: 0; }
+		&:nth-child(2) { y: rem(3px); }
+		&:nth-child(3) { y: rem(6px); }
+	}
+
+	&[aria-expanded='true'] {
+		rect {
+			transition: y 0.4s, opacity 0s 0.4s, rotate 0.4s 0.4s;
+
+			&:nth-child(1) { 
+				y: rem(3px);
+				rotate: 45deg; 
+			}
+
+			&:nth-child(2) { opacity: 0; }
+
+			&:nth-child(3) { 
+				y: rem(3px);
+				rotate: -45deg; 
+			}
+		}
+	}
 }
 
 .menu {
 	--r: 0.5rem;
 	border-bottom: 1px solid var(--color-grey);
 
+	@include medium { border-bottom: 0; }
+
 	&:has(> button:not([aria-expanded='true'])) {
 		padding-bottom: var(--sp);
+
+		@include medium {
+			padding-bottom: 0;
+		}
 	}
 
 	ul {
+		overflow: hidden;
+
 		@supports (height: calc-size(auto, size)) {
-			overflow: hidden;
 			animation: menu reverse 0.4s;
 		}
 	}
 
 	> ul {
-		--item-p: var(--sp-1-2);
+		--item-p: 0.5em;
+		padding-top: var(--sp);
 		margin: 0;
-		font-size: rem(20px);
 
 		@include medium {
 			display: flex;
+			gap: var(--sp-1-4);
+			padding-top: 0;
+			border-bottom: 1px solid var(--color-lightgrey);
+			overflow: visible;
+			animation: none;
+			padding-inline: var(--sp-1-3);
+		}
+
+		@include medium-plus { 
+			gap: var(--sp-1-2) !important;
+			padding-inline: var(--sp) !important; 
+		}
+
+		@include large {
+			justify-content: flex-end;
+			padding-inline: 0 !important; 
 		}
 
 		> li { 
+			position: relative;
+
 			&:not(:last-child) {
 				border-bottom: 1px solid var(--color-grey);
+
+				@include medium { border-bottom: 0; }
 			}
 		}
 
 		a,
 		button {
 			display: flex;
+			gap: var(--sp);
 			align-items: center;
 			width: 100%;
-			padding: var(--item-p);
+			padding: var(--item-p) 0;
 			font-family: $heading-font-family;
-			gap: var(--sp);
+			color: var(--text-color);
+
+			@include medium { 
+				gap: var(--sp-1-2);
+				padding-inline: var(--sp-1-2);
+			}
+
+			@include medium-plus { 
+				padding-inline: var(--sp) !important;
+			}
 		}
 
 		svg {
@@ -124,9 +217,33 @@
 		}
 
 		ul {
-			font-size: 75%;
+			font-size: 90%;
+
+			@include medium {
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				z-index: 1;
+				padding-inline: var(--sp);
+				white-space: nowrap;
+				background-color: var(--color-lightgrey);
+				translate: -50% 0;
+			}
+
+			li {
+				@include medium {
+					&:first-child { margin-top: calc(var(--item-p) - var(--sp-1-4)); }
+					&:nth-child(2) { border-block: 1px solid var(--color-grey); }
+					&:last-child { margin-bottom: var(--sp-1-4); }
+				}
+			}
 
 			a {
+				@include medium { 
+					justify-content: center;
+					padding: var(--sp-1-2) var(--sp);
+				}
+
 				&::before {
 					content: '';
 					flex: 0 0 auto;
@@ -134,6 +251,8 @@
 					border-radius: 50%;
 					background-color: var(--color-lightgrey);
 					aspect-ratio: 1;
+
+					@include medium { display: none; }
 				}
 			}
 		}

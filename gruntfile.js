@@ -198,7 +198,7 @@ module.exports = function (grunt) {
 	           * [Optimize CSS size]
 	           */
 						cssnano({
-							safe: true,
+							safe: true
 						}),
 						/**
 		         * [Extract all @media rules and emit them as separate files]

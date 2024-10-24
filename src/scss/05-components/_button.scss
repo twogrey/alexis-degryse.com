@@ -74,10 +74,11 @@
 	}
 
 	svg {
-		padding: var(--py);
+		padding: rem(8px);
+		border-radius: 50%;
+		overflow: visible;
 		font-size: 2em;
 		background-color: #fff;
 		color: var(--icon-c, var(--bg));
-		clip-path: circle(50%);
 	}	
 }

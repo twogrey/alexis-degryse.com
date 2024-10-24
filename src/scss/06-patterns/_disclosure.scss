@@ -1,3 +1,14 @@
 :where(.js-disclosure:not([aria-expanded='true']) + *) {
 	display: none;
 }
+
+.js-disclosure:has(.chevron) { // sass-lint:disable
+	&[aria-expanded='true'] {
+		--i: 1;
+	}
+
+	svg {
+		transform: rotate(calc(180deg * var(--i, 0)));
+		transition: transform 0.2s;
+	}
+}

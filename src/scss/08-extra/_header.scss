@@ -13,6 +13,10 @@
 		border: var(--index-b);
 		border-bottom: 0;
 	}
+
+	.row {
+		row-gap: 0;
+	}
 }
 
 .logo {
@@ -21,7 +25,7 @@
 	--max: #{rem(28px, true)};
 	display: flex;
 	align-items: center;
-	gap: var(--sp);
+	gap: var(--sp-2);
 
 	@include medium {
 		padding: calc(var(--sp-2) - var(--index-b-w)) var(--sp-2) var(--sp-2);
@@ -64,8 +68,80 @@
 	}
 }
 
+[aria-controls='menu'] {
+	position: absolute;
+	top: var(--gutter);
+	right: var(--gutter);
+	border: 0;
+	appearance: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
 .menu {
-	@include medium {
-		display: flex;
+	--r: 0.5rem;
+	border-bottom: 1px solid var(--color-grey);
+
+	&:has(> button:not([aria-expanded='true'])) {
+		padding-bottom: var(--sp);
+	}
+
+	ul {
+		@supports (height: calc-size(auto, size)) {
+			overflow: hidden;
+			animation: menu reverse 0.4s;
+		}
+	}
+
+	> ul {
+		--item-p: var(--sp-1-2);
+		margin: 0;
+		font-size: rem(20px);
+
+		@include medium {
+			display: flex;
+		}
+
+		> li { 
+			&:not(:last-child) {
+				border-bottom: 1px solid var(--color-grey);
+			}
+		}
+
+		a,
+		button {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			padding: var(--item-p);
+			font-family: $heading-font-family;
+			gap: var(--sp);
+		}
+
+		svg {
+			flex: 0 0 auto;
+			font-size: 75%;
+		}
+
+		ul {
+			font-size: 75%;
+
+			a {
+				&::before {
+					content: '';
+					flex: 0 0 auto;
+					width: 0.5em;
+					border-radius: 50%;
+					background-color: var(--color-lightgrey);
+					aspect-ratio: 1;
+				}
+			}
+		}
+	}
+}
+
+@keyframes menu {
+	to {
+		height: 0;
 	}
 }

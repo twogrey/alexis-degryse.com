@@ -1262,11 +1262,12 @@ img {
   padding-left: var(--py);
 }
 .btn svg {
-  padding: var(--py);
+  padding: 0.5rem;
+  border-radius: 50%;
+  overflow: visible;
   font-size: 2em;
   background-color: #fff;
   color: var(--icon-c, var(--bg));
-  clip-path: circle(50%);
 }
 
 /** -----------------------------------------------------------
@@ -1276,6 +1277,14 @@ img {
  */
 :where(.js-disclosure:not([aria-expanded=true]) + *) {
   display: none;
+}
+
+.js-disclosure:has(.chevron)[aria-expanded=true] {
+  --i: 1;
+}
+.js-disclosure:has(.chevron) svg {
+  transform: rotate(calc(180deg * var(--i, 0)));
+  transition: transform 0.2s;
 }
 
 .modal-is-open {
@@ -5272,6 +5281,9 @@ img {
     border-bottom: 0;
   }
 }
+.header .row {
+  row-gap: 0;
+}
 
 .logo {
   font-size: clamp(var(--min) * 1rem, var(--min) * 1rem + (var(--max) - var(--min)) * (100vw - var(--mq-sm-unitless) * 1rem) / (var(--mq-lg-unitless) - var(--mq-sm-unitless)), var(--max) * 1rem);
@@ -5279,7 +5291,7 @@ img {
   --max: 1.75;
   display: flex;
   align-items: center;
-  gap: var(--sp);
+  gap: var(--sp-2);
 }
 @media screen and (min-width: 48rem) {
   .logo {
@@ -5316,12 +5328,72 @@ img {
   color: var(--text-color);
 }
 
+[aria-controls=menu] {
+  position: absolute;
+  top: var(--gutter);
+  right: var(--gutter);
+  border: 0;
+  appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.menu {
+  --r: 0.5rem;
+  border-bottom: 1px solid var(--color-grey);
+}
+.menu:has(> button:not([aria-expanded=true])) {
+  padding-bottom: var(--sp);
+}
+@supports (height: calc-size(auto, size)) {
+  .menu ul {
+    overflow: hidden;
+    animation: menu reverse 0.4s;
+  }
+}
+.menu > ul {
+  --item-p: var(--sp-1-2);
+  margin: 0;
+  font-size: 1.25rem;
+}
 @media screen and (min-width: 48rem) {
-  .menu {
+  .menu > ul {
     display: flex;
   }
 }
+.menu > ul > li:not(:last-child) {
+  border-bottom: 1px solid var(--color-grey);
+}
+.menu > ul a,
+.menu > ul button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--item-p);
+  font-family: "Merriweather", Arial, sans-serif;
+  gap: var(--sp);
+}
+.menu > ul svg {
+  flex: 0 0 auto;
+  font-size: 75%;
+}
+.menu > ul ul {
+  font-size: 75%;
+}
+.menu > ul ul a::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.5em;
+  border-radius: 50%;
+  background-color: var(--color-lightgrey);
+  aspect-ratio: 1;
+}
 
+@keyframes menu {
+  to {
+    height: 0;
+  }
+}
 /**
  * 
  */

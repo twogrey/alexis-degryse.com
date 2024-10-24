@@ -44,6 +44,11 @@
  *  /!\ Use it only for pages/ scss files
  * 
  -------------------------------------------- */
+/** --------------------------------------------
+ * 
+ *  Fluid typo
+ * 
+ -------------------------------------------- */
 /*
 	Improved screen reader only CSS class
 	@author Gaël Poupard
@@ -78,15 +83,9 @@
  *
  */
 @media screen and (min-width: 48rem) {
-  :root {
-    --index-r: 0.625rem;
-    --index-b-w: var(--sp);
-    --index-b: var(--index-b-w) solid var(--color-secondary);
-  }
-  .header .logo {
-    display: block;
+  .logo {
     border-radius: 0 0 var(--index-r) var(--index-r);
-    background-color: var(--color-secondary);
+    background-color: var(--index-b-c);
   }
   .header,
   .logo,
@@ -102,8 +101,11 @@
     position: absolute;
     width: var(--index-r);
     aspect-ratio: 1;
-    background-color: var(--color-secondary);
+    background-color: var(--index-b-c);
     mask: radial-gradient(var(--index-r) at var(--dir), rgba(0, 0, 0, 0) 100%, #000);
+  }
+  .header {
+    border-color: var(--index-b-c);
   }
   .header::before, .header::after {
     top: 0;
@@ -129,6 +131,7 @@
   }
   section:first-of-type {
     border: var(--index-b);
+    border-color: var(--index-b-c);
     border-top: 0;
   }
   section:first-of-type::before, section:first-of-type::after {
@@ -142,9 +145,9 @@
     --dir: top left;
     right: 0;
   }
-  section:first-of-type .row {
-    min-height: calc(100vh - var(--header-h) - var(--index-b-w));
-  }
+}
+section:nth-of-type(2) {
+  background-color: var(--index-b-c);
 }
 
 /*# sourceMappingURL=index.css.map */

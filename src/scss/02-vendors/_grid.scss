@@ -34,7 +34,7 @@
 
 .container {
 	width: 100%;
-	max-width: $large-screen;
+	max-width: 80rem;
 	padding-right: var(--gutter);
 	padding-left: var(--gutter);
 	margin-right: auto;
@@ -48,6 +48,7 @@
 .row {
 	display: flex;
 	flex-wrap: wrap;
+	row-gap: var(--gutter);
 	margin-right: calc(var(--gutter) / -2);
 	margin-left: calc(var(--gutter) / -2);
 }
@@ -75,7 +76,6 @@
 	width: 100%;
 	padding-right: calc(var(--gutter) / 2);
 	padding-left: calc(var(--gutter) / 2);
-	margin-bottom: var(--gutter);
 }
 
 .col {

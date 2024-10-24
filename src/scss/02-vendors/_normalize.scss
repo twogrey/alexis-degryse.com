@@ -41,10 +41,6 @@ body {
 	overflow-wrap: break-word;
 }
 
-:target {
-	scroll-margin-block: 5ex;
-}
-
 hr { 
 	box-sizing: content-box;
 	height: 0;
@@ -69,7 +65,7 @@ h4,
 button,
 input,
 label {
-	line-height: 1.15;
+	line-height: 1.2;
 }
 
 h1,

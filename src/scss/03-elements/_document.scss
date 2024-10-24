@@ -1,5 +1,5 @@
-@include font-face('Atkinson-Hyperlegible', 'Atkinson-Hyperlegible', $regular, normal, swap); 
-@include font-face('Atkinson-Hyperlegible', 'Atkinson-Hyperlegible', $bold, normal, swap); 
+@include font-face('Merriweather', 'Merriweather-Regular', $regular, normal, swap); 
+@include font-face('Merriweather', 'Merriweather-Bold', $bold, normal, swap); 
 
 :root {
 	--phi: 1.618;
@@ -7,7 +7,7 @@
 
 body {
 	--text-color: #{$black};
-	font-family: $typo-font-family;
+	font-family: system-ui, sans-serif;
 	color: var(--text-color);
 }
 

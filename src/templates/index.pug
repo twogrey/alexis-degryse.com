@@ -9,17 +9,26 @@ block vars
 
 block main
 	section
-		.container
+		div(class="container pt-3 md:pt-3 lg:pt-4")
 			.row.align-center.justify-center
-				div(class="col-12 lg:col-5 lg:mb-0")
-					h2.h1 <span class="text-secondary">●</span> Intégrateur web soucieux de l’assurance qualité web
-					p.h3.fw-regular Je vous accompagne dans la création de votre site web et votre démarche de prise en compte de l’accessibilité numérique.
-					a(href="#prestations") Mes prestations
-					a(href="/contact") Me contacter
-				div(class="col-12 md:col-9 lg:col-7 md:mb-0 align-end-self")
+				div(class="col-12 lg:col-5 lg:mb-4")
+					h2 Intégrateur web soucieux de l’assurance qualité web <span class="text-secondary" aria-hidden="true">●</span>
+					p.h3.fw-regular.text-system Je vous accompagne dans la création de votre site web et votre démarche de prise en compte de l’accessibilité numérique.
+					.row
+						.col-auto
+							a(href="#prestations", class="btn btn--primary") 
+								svg(aria-hidden="true")
+									use(xlink:href="dest/img/sprite.svg#icon-sparkles")
+								| Mes prestations
+						.col-auto
+							a(href="/contact", class="btn btn--grey") 
+								svg(aria-hidden="true")
+									use(xlink:href="dest/img/sprite.svg#icon-envelop")
+								| Me contacter
+				div(class="col-12 md:col-9 lg:col-7 align-end-self")
 					img(src="dest/img/svg/illustration-homepage.svg", width="1913", height="1408", alt="")
 
-	section
+	section#prestations
 		.container
 			h2 Mes prestations
 			.row

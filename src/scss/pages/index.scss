@@ -9,18 +9,9 @@ $assets-base-path: '../../';
  */
 
 @include medium {
-	:root {
-		--index-r: #{rem(10px)};
-		--index-b-w: var(--sp);
-		--index-b: var(--index-b-w) solid var(--color-secondary);
-	}
-
-	.header {
-		.logo {
-			display: block;
-			border-radius: 0 0 var(--index-r) var(--index-r);
-			background-color: var(--color-secondary);
-		}
+	.logo {
+		border-radius: 0 0 var(--index-r) var(--index-r);
+		background-color: var(--index-b-c);
 	}
 
 	.header,
@@ -34,12 +25,14 @@ $assets-base-path: '../../';
 			position: absolute;
 			width: var(--index-r);
 			aspect-ratio: 1;
-			background-color: var(--color-secondary);
+			background-color: var(--index-b-c);
 			mask: radial-gradient(var(--index-r) at var(--dir), #0000 100%, #000);
 		}
 	}
 
 	.header {
+		border-color: var(--index-b-c);
+
 		&::before,
 		&::after { top: 0; }
 
@@ -72,6 +65,7 @@ $assets-base-path: '../../';
 	section {
 		&:first-of-type {
 			border: var(--index-b);
+			border-color: var(--index-b-c);
 			border-top: 0;
 
 			&::before,
@@ -86,10 +80,12 @@ $assets-base-path: '../../';
 				--dir: top left;
 				right: 0; 
 			}
-
-			.row {
-				min-height: calc(100vh - var(--header-h) - var(--index-b-w));
-			}
 		}
+	}
+}
+
+section {
+	&:nth-of-type(2) {
+		background-color: var(--index-b-c);
 	}
 }

@@ -11,7 +11,8 @@
 $regular: 400;
 $bold: 700;
 
-$typo-font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+$typo-font-family: system-ui, sans-serif;
+$heading-font-family: 'Merriweather', Arial, sans-serif;
 
 $link-color: var(--color-primary);
 $link-color-active: var(--color-primary-dark);

@@ -9,3 +9,13 @@
 		@content;
 	}
 } 
+
+/** --------------------------------------------
+ * 
+ *  Fluid typo
+ * 
+ -------------------------------------------- */
+
+@mixin fluid-fs($min, $max) {
+	font-size: clamp(($min * 1rem), (($min * 1rem) + ($max - $min) * ((100vw - var(--mq-sm-unitless) * 1rem) / (var(--mq-lg-unitless) - var(--mq-sm-unitless)))), ($max * 1rem));
+}

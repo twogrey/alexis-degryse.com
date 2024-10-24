@@ -1,29 +1,65 @@
 :root {
-	--header-h: #{rem(100px)};
+	--index-b-c: var(--color-secondary-light);
+	
+	@include medium {
+		--index-r: #{rem(10px)};
+		--index-b-w: var(--sp);
+		--index-b: var(--index-b-w) solid transparent;
+	}
 }
 
 .header {
 	@include medium {
-		padding: var(--index-b-w) var(--index-b-w) 0;
+		border: var(--index-b);
+		border-bottom: 0;
+	}
+}
+
+.logo {
+	@include fluid-fs(var(--min), var(--max));
+	--min: #{rem(20px, true)};
+	--max: #{rem(28px, true)};
+	display: flex;
+	align-items: center;
+	gap: var(--sp);
+
+	@include medium {
+		padding: calc(var(--sp-2) - var(--index-b-w)) var(--sp-2) var(--sp-2);
 	}
 
-	.index-page & {
+	svg {
+		width: auto;
+		font-size: 400%;
+		aspect-ratio: 603/873.4;
+
 		@include medium {
-			height: var(--header-h);
-			padding: 0;
-			border: var(--index-b);
-			border-bottom: 0;
+			font-size: 270%;
 		}
 	}
 
-	.logo {
-		circle,
-		path:first-of-type {
-			fill: var(--color-primary);
-		}
+	circle,
+	path:first-of-type {
+		fill: var(--color-primary);
+	}
 
-		path:last-of-type {
-			fill: var(--text-color);
+	path:last-of-type {
+		fill: var(--text-color);
+	}
+
+	div {
+		> span {
+			display: block;
+
+			&:first-of-type {
+				font-family: $heading-font-family;
+				font-weight: $bold;
+				color: var(--color-primary);
+			}
+
+			&:last-of-type {
+				font-size: 75%;
+				color: var(--text-color);
+			}
 		}
 	}
 }

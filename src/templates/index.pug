@@ -34,7 +34,7 @@ block main
 			.row.justify-center
 				div(class="col-12 md:col-6 lg:col-4")
 					article(class="d-flex flex-column align-center bg-white p-2 radius text-center h-100")
-						img(src="dest/img/svg/prestation-site.svg", width="240", height="200", alt="")
+						img(src="dest/img/svg/prestation-site.svg", width="240", height="200", loading="lazy", alt="")
 						h3.text-primary-dark Création de sites web
 						.text-left.mb-2
 							p Vous avez des maquettes graphiques (ou un thème de CMS) prêtes à être intégrées pour démarrer le développement de votre nouveau site ? 
@@ -45,7 +45,7 @@ block main
 							| Créer mon site
 				div(class="col-12 md:col-6 lg:col-4")
 					article(class="d-flex flex-column align-center bg-white p-2 radius text-center h-100")
-						img(src="dest/img/svg/prestation-accessibilite.svg", width="221", height="200", alt="")
+						img(src="dest/img/svg/prestation-accessibilite.svg", width="221", height="200", loading="lazy", alt="")
 						h3.text-primary-dark Accessibilité numérique
 						.text-left.mb-2
 							p Vous souhaitez mettre en place une démarche d’amélioration de l’accessibilité sur votre projet ? 
@@ -56,7 +56,7 @@ block main
 							| Se faire accompagner
 				div(class="col-12 md:col-6 lg:col-4")
 					article(class="d-flex flex-column align-center bg-white p-2 radius text-center h-100")
-						img(src="dest/img/svg/prestation-qualite-web.svg", width="145", height="200", alt="")
+						img(src="dest/img/svg/prestation-qualite-web.svg", width="145", height="200", loading="lazy", alt="")
 						h3.text-primary-dark Audit qualité web
 						.text-left.mb-2
 							p Vous avez déjà un site web ? Je peux vous rédiger un compte-rendu des manquements relatifs à l’<strong>assurance qualité web</strong>
@@ -65,3 +65,22 @@ block main
 							svg(aria-hidden="true")
 								use(xlink:href="dest/img/sprite.svg#icon-chevron-right")
 							| Auditer mon site
+
+	section
+		div(class="container py-3")
+			.row.justify-center
+				div(class="col-12 sm:col-8")
+					h2(class="text-center md:text-left") Qui suis-je ?
+					p Je m’appelle <strong>Alexis</strong>, 35 ans, marié, jeune papa, gaga des animaux, baigné dans la culture populaire japonaise des années 90, rêvant d’un numérique responsable, j’ai la chance d’exercer le métier d’<strong>intégrateur web</strong> depuis une quinzaine d'années.
+					p Passionné depuis toujours par ce que le web est en mesure d’apporter au monde, je suis dingue de <strong>HTML</strong> et <strong>CSS</strong> depuis toujours.<br>Ces langages, faciles à utiliser mais difficiles à maitriser, sont mes outils au quotidien et constitue le fil principal de ma veille. J’adore discuter de sémantique, d’animations, de SEO, d’accessibilité, d’éco-conception, de responsive et d'ergonomie.
+					a(href="/a-propos", class="btn btn--primary")
+						svg(aria-hidden="true")
+							use(xlink:href="dest/img/sprite.svg#icon-user")
+						| En apprendre plus
+				div(class="col sm:order-first align-center-self pt sm:pt-0")
+					.photo
+						img(src="dest/img/photo-about-1.webp", alt="", loading="lazy")
+
+
+
+

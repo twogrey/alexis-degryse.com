@@ -2,6 +2,12 @@ $assets-base-path: '../../';
 
 @import '../abstracts';
 
+html {
+	@include medium {
+		background-color: var(--index-b-c);
+	}
+}
+
 /** -----------------------------------------------------------
  *
  * Inverted corner radius (medium res only)

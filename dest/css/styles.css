@@ -103,14 +103,13 @@ html {
   box-sizing: border-box;
 }
 
-html:focus-within {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
   *,
   *::before,
   *::after {
@@ -960,6 +959,7 @@ th {
 body {
   --text-color: #222;
   font-family: system-ui, sans-serif;
+  background-color: #fff;
   color: var(--text-color);
 }
 
@@ -5211,7 +5211,7 @@ img {
   }
 }
 :root {
-  --radius: 0.25rem;
+  --radius: 0.625rem;
 }
 
 .radius {

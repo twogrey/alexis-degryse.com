@@ -17,14 +17,12 @@ html {
 }
 
 html:focus-within {
-	scroll-behavior: smooth;
+	@media (prefers-reduced-motion: no-preference) {
+		scroll-behavior: smooth;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
-	html:focus-within {
-		scroll-behavior: auto;
-	}
-
 	*,
 	*::before,
 	*::after {

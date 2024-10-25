@@ -77,6 +77,12 @@
 		@author Harry Roberts
 		@see https://csswizardry.com/2016/05/the-importance-of-important/
 */
+@media screen and (min-width: 48rem) {
+  html {
+    background-color: var(--index-b-c);
+  }
+}
+
 /** -----------------------------------------------------------
  *
  * Inverted corner radius (medium res only)

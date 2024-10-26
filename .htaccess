@@ -1,7 +1,6 @@
 RewriteEngine On
 RewriteRule ^$ dest/pages/index.html
 RewriteRule ^a-propos$ dest/pages/a-propos/index.html
-RewriteRule ^prestations$ dest/pages/prestations/index.html
 RewriteRule ^contact$ dest/pages/contact/index.html
 RewriteRule ^credits$ dest/pages/credits/index.html
 RewriteRule ^politique-de-confidentialite$ dest/pages/politique-de-confidentialite/index.html

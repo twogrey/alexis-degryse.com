@@ -1,38 +1,47 @@
-//- div(class="skewed skewed--top")
-//- 	footer(role="contentinfo", class="bg-black text-center", id="pied-de-page", aria-labelledby="footer-title")
-//- 		.container
-//- 			.row.justify-center(class="py-3 md:pt-4 lg:pt-5")
-//- 				div(class="col-12 mb-0.5 lg:mb-1 lg:mt-2")
-//- 					h2(class="h2-gradient", id="footer-title")
-//- 						span Find me on
-//- 						span.sr-only  the following networks
-//- 				.col-auto.mb-0
-//- 					ul(class="row list-unstyled mb-0", role="list")
-//- 						li(class="col-auto mt mb-0")
-//- 							a(href="https://codepen.io/twogrey", target="_blank", class="fs-fluid px-0.5", rel="noopener noreferrer", aria-label="Codepen", aria-describedby="new-window", style="--min:2; --max:4")
-//- 								svg(class="icon", aria-hidden="true")
-//- 									use(xlink:href="dest/img/sprite.svg#icon-codepen")
-//- 						li(class="col-auto mt mb-0")
-//- 							a(href="https://twitter.com/twogrey", target="_blank", class="fs-fluid px-0.5", rel="noopener noreferrer", aria-label="Twitter", aria-describedby="new-window", style="--min:2; --max:4")
-//- 								svg(class="icon", aria-hidden="true")
-//- 									use(xlink:href="dest/img/sprite.svg#icon-twitter")
-//- 						li(class="col-auto mt mb-0")
-//- 							a(href="https://h4.io/@twogrey", target="_blank", class="fs-fluid px-0.5", rel="noopener noreferrer", aria-label="Mastodon", aria-describedby="new-window", style="--min:2; --max:4")
-//- 								svg(class="icon", aria-hidden="true")
-//- 									use(xlink:href="dest/img/sprite.svg#icon-mastodon")
-//- 						li(class="col-auto mt mb-0")
-//- 							a(href="https://www.linkedin.com/in/alexis-degryse/", target="_blank", class="fs-fluid px-0.5", rel="noopener noreferrer", aria-label="Linkedin", aria-describedby="new-window", style="--min:2; --max:4")
-//- 								svg(class="icon", aria-hidden="true")
-//- 									use(xlink:href="dest/img/sprite.svg#icon-linkedin")
-//- 			h2.sr-only Useful links
-//- 			.row.fs-4.justify-center
-//- 				.col-auto
-//- 					| My email address : 
-//- 					a(href="mailto:alexis.degryse@gmail.com") alexis.degryse@gmail.com
-//- 				.col-auto(class="px-0 text-primary-light", aria-hidden="true") •
-//- 				.col-auto
-//- 					button(type="button", data-modal-id="modal-legal", class="btn-as-link js-modal", title="Open legal notices in a modal") Legal notices
-//- 				.col-auto(class="px-0 text-primary-light", aria-hidden="true") •
-//- 				.col-auto
-//- 					| Source code on 
-//- 					a(href="https://github.com/twogrey/alexis-degryse.com", rel="noopener noreferrer") GitHub
+footer(role="contentinfo", id="pied-de-page", class="footer")
+	svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 240" preserveAspectRatio="none" class="d-none md:d-block")
+		path(d="M2103.79,197.44C1837.02,153.6,1662.56,66.67,1490.78,30.56c-164.51-34.69-336.12-32.67-501.01,0.78-115.68,23.47-227.33,62.14-343.78,83.72A1288.44,1288.44,0,0,1,0,54.7V256H2560V204.44C2413.87,253.87,2240.65,237.43,2103.79,197.44Z")
+	.bg-primary-dark.text-white
+		div(class="container py-3")
+			.row
+				div(class="col-12 md:col-4 lg:col-6")
+					.row
+						div(class="col-auto d-none lg:d-block")
+							svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 603 873.4" aria-hidden="true" class="footer-logo")
+								circle(cx="538" cy="808.4" r="65")
+								path(d="M548.33 336.92c22.16 22.16 40.48 47.26 54.67 74.84V132L473 2v280c27.77 14.22 53.04 32.64 75.33 54.93Z")
+								path(d="M303 743.4c-93.74 0-170-76.26-170-170s76.26-170 170-170S472.78 479.45 472.99 573v155.94c17.59-14.74 40.27-23.63 65.02-23.63s47.39 8.87 64.98 23.59V573c-.05-40.33-7.99-79.49-23.6-116.39-15.11-35.73-36.73-67.81-64.27-95.34-27.53-27.53-59.61-49.15-95.34-64.27-37.03-15.66-76.32-23.6-116.79-23.6s-79.77 7.94-116.79 23.6c-35.73 15.11-67.81 36.74-95.34 64.27-27.53 27.53-49.15 59.61-64.27 95.34-15.66 37.03-23.6 76.32-23.6 116.79s7.94 79.77 23.6 116.79C41.7 725.92 63.33 758 90.86 785.53c27.53 27.53 59.61 49.15 95.34 64.27 37.03 15.66 76.32 23.6 116.79 23.6s79.77-7.94 116.79-23.6c5.15-2.18 10.21-4.51 15.21-6.95V680.4c-31.19 38.41-78.78 63-132 63Z")
+						.col
+							p.h3.fw-bold Alexis Degryse
+							p 
+								| Entrepreneur individuel<br>
+								| Intégrateur web freelance basé à Lille<br>
+								| Consultant en accessibilité numérique<br>
+								| SIREN 931 007 991 - APE 6201Z<br>
+								| <a href="mailto:alexis.degryse@gmail.com">alexis.degryse@gmail.com</a>
+				div(class="col-12 md:col-4 lg:col-3 py-2 md:py-0")
+					h2.h3 Mes réseaux
+					ul(class="list-unstyled row" role="list")
+						li(class="col-auto")
+							a(href="https://twitter.com/twogrey" class="h1 text-white" rel="noopener noreferrer" aria-describedby="new-window" aria-label="Twitter")
+								svg(aria-hidden="true")
+									use(xlink:href="dest/img/sprite.svg#icon-twitter")
+						li(class="col-auto")
+							a(href="https://www.linkedin.com/in/alexis-degryse/" class="h1 text-white" rel="noopener noreferrer" aria-describedby="new-window" aria-label="LinkedIn")
+								svg(aria-hidden="true")
+									use(xlink:href="dest/img/sprite.svg#icon-linkedin")
+						li(class="col-auto")
+							a(href="https://codepen.io/twogrey" class="h1 text-white" rel="noopener noreferrer" aria-describedby="new-window english-content" aria-label="Codepen")
+								svg(aria-hidden="true")
+									use(xlink:href="dest/img/sprite.svg#icon-codepen")
+				div(class="col-12 md:col-4 lg:col-3")
+					h2.h3 Liens pratiques
+					ul
+						li
+							a(href="/contact", class="d-inline-block p-0.25") Contact
+						li
+							a(href="/mentions-legales", class="d-inline-block p-0.25") Mentions légales
+						li
+							a(href="/politique-de-confidentialite", class="d-inline-block p-0.25") Politique de confidentialité
+						li
+							a(href="/credits", class="d-inline-block p-0.25") Crédits

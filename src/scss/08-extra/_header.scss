@@ -196,6 +196,7 @@
 			width: 100%;
 			padding: var(--item-p) 0;
 			font-family: $heading-font-family;
+			text-decoration: none;
 			color: var(--text-color);
 
 			@include medium { 

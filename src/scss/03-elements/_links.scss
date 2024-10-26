@@ -6,12 +6,8 @@ a,
 	transition-duration: 0.2s;
 	transition-property: color, border-color;
 
-	p & {
+	:is(p, ul, ol, blockquote) & {
 		text-decoration: underline;
-
-		&:hover {
-			text-decoration: underline;
-		}
 
 		&:focus-visible {
 			outline-color: currentColor;

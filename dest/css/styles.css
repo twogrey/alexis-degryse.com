@@ -967,16 +967,12 @@ a,
   transition-duration: 0.2s;
   transition-property: color, border-color;
 }
-p a,
-p .btn-as-link {
+:is(p, ul, ol, blockquote) a,
+:is(p, ul, ol, blockquote) .btn-as-link {
   text-decoration: underline;
 }
-p a:hover,
-p .btn-as-link:hover {
-  text-decoration: underline;
-}
-p a:focus-visible,
-p .btn-as-link:focus-visible {
+:is(p, ul, ol, blockquote) a:focus-visible,
+:is(p, ul, ol, blockquote) .btn-as-link:focus-visible {
   outline-color: currentColor;
   outline-style: dotted;
   outline-width: 0.125rem;
@@ -5459,6 +5455,7 @@ img {
   width: 100%;
   padding: var(--item-p) 0;
   font-family: "Merriweather", Arial, sans-serif;
+  text-decoration: none;
   color: var(--text-color);
 }
 @media screen and (min-width: 48rem) {
@@ -5563,6 +5560,9 @@ img {
 .footer-logo {
   height: auto;
   font-size: 3.5rem;
+}
+.footer a {
+  color: inherit;
 }
 
 /*# sourceMappingURL=styles.css.map */

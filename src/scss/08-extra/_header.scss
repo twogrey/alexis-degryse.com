@@ -1,5 +1,6 @@
 :root {
 	--index-b-c: var(--color-secondary-light);
+	--md-logo-p: var(--sp-2);
 	
 	@include medium {
 		--index-r: #{rem(10px)};
@@ -27,19 +28,19 @@
 	gap: var(--sp);
 	align-items: center;
 
-	@include small { gap: var(--sp-2); }
+	@include medium { 
+		gap: var(--sp-2);
+		padding: calc(var(--md-logo-p) - var(--index-b-w)) var(--md-logo-p) var(--md-logo-p); 
+	}
 
-	@include medium { padding: calc(var(--sp-2) - var(--index-b-w)) var(--sp-2) var(--sp-2); }
-
-	svg {
+	img {
 		width: auto;
-		overflow: visible;
-		font-size: 400%;
-		aspect-ratio: 603/873.4;
+		height: 4em;
+		aspect-ratio: 52/76;
 
-		@include medium { font-size: 360%; }
+		@include medium { height: 3.6em; }
 
-		@include medium-plus { font-size: 270% !important; }
+		@include medium-plus { height: 2.7em !important; }
 	}
 
 	circle,
@@ -225,7 +226,7 @@
 				border-radius: 0 0 var(--index-r) var(--index-r);
 				white-space: nowrap;
 				background-color: var(--color-lightgrey);
-				box-shadow: 0 rem(10px) rem(10px) rem(-5px) rgba(0, 0, 0, 0.2);
+				box-shadow: 0 rem(10px) rem(10px) rem(-5px) rgba(0, 0, 0, 0.1);
 				padding-inline: var(--sp);
 				translate: -50% 0;
 

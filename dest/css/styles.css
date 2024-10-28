@@ -147,15 +147,6 @@ label {
   line-height: 1.2;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-wrap: balance;
-}
-
 p,
 ul,
 ol {
@@ -323,6 +314,11 @@ th {
 }
 .container--fluid {
   max-width: none;
+}
+@media screen and (min-width: 48rem) {
+  body:not(.index-page) main .container {
+    padding-inline: calc(var(--gutter) + var(--index-b-w) + var(--md-logo-p));
+  }
 }
 
 .row {
@@ -953,10 +949,22 @@ th {
 }
 
 body {
-  --text-color: #222;
+  --text-color: var(--color-black);
   font-family: system-ui, sans-serif;
   background-color: #fff;
   color: var(--text-color);
+}
+
+body:not(.index-page) main {
+  padding-block: var(--sp-3);
+}
+body:not(.index-page) main h1 {
+  width: fit-content;
+  padding-bottom: 0.75em;
+  padding-inline: 1rem;
+  margin-inline: auto;
+  text-align: center;
+  background: url("../img/svg/wavy-line.svg") no-repeat bottom center/10rem auto;
 }
 
 a,
@@ -1000,6 +1008,7 @@ h4,
   margin-block: 1.25em 1em;
   font-weight: 700;
   line-height: 1.2;
+  text-wrap: balance;
 }
 h1:first-child,
 h2:first-child,
@@ -1490,11 +1499,11 @@ img {
 }
 
 .fs-1 {
-  font-size: 1.375rem !important;
+  font-size: 1.25rem !important;
 }
 
 .fs-2 {
-  font-size: 1.1875rem !important;
+  font-size: 1.125rem !important;
 }
 
 .fs-3 {
@@ -1502,11 +1511,11 @@ img {
 }
 
 .fs-4 {
-  font-size: 0.8125rem !important;
+  font-size: 0.875rem !important;
 }
 
 .fs-5 {
-  font-size: 0.6875rem !important;
+  font-size: 0.75rem !important;
 }
 
 .fs-fluid {
@@ -4379,7 +4388,7 @@ img {
   --color-secondary-lightest: rgb(241.4, 235.28, 228.82);
   --color-secondary-light: rgb(228.2, 216.14, 203.41);
   --color-secondary-dark: rgb(144.05, 131.99, 119.26);
-  --color-black: #222;
+  --color-black: #333;
   --color-darkgrey: #6b6d6e;
   --color-grey: #d6dadc;
   --color-lightgrey: #ebebeb;
@@ -5246,6 +5255,7 @@ img {
  */
 :root {
   --index-b-c: var(--color-secondary-light);
+  --md-logo-p: var(--sp-2);
 }
 @media screen and (min-width: 48rem) {
   :root {
@@ -5273,30 +5283,25 @@ img {
   gap: var(--sp);
   align-items: center;
 }
-@media screen and (min-width: 36rem) {
+@media screen and (min-width: 48rem) {
   .logo {
     gap: var(--sp-2);
+    padding: calc(var(--md-logo-p) - var(--index-b-w)) var(--md-logo-p) var(--md-logo-p);
   }
 }
-@media screen and (min-width: 48rem) {
-  .logo {
-    padding: calc(var(--sp-2) - var(--index-b-w)) var(--sp-2) var(--sp-2);
-  }
-}
-.logo svg {
+.logo img {
   width: auto;
-  overflow: visible;
-  font-size: 400%;
-  aspect-ratio: 603/873.4;
+  height: 4em;
+  aspect-ratio: 52/76;
 }
 @media screen and (min-width: 48rem) {
-  .logo svg {
-    font-size: 360%;
+  .logo img {
+    height: 3.6em;
   }
 }
 @media screen and (min-width: 62rem) {
-  .logo svg {
-    font-size: 270% !important;
+  .logo img {
+    height: 2.7em !important;
   }
 }
 .logo circle,
@@ -5487,7 +5492,7 @@ img {
     border-radius: 0 0 var(--index-r) var(--index-r);
     white-space: nowrap;
     background-color: var(--color-lightgrey);
-    box-shadow: 0 0.625rem 0.625rem -0.3125rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.625rem 0.625rem -0.3125rem rgba(0, 0, 0, 0.1);
     padding-inline: var(--sp);
     translate: -50% 0;
   }
@@ -5538,6 +5543,11 @@ img {
   position: relative;
 }
 @media screen and (min-width: 48rem) {
+  .footer .container {
+    padding-inline: calc(var(--gutter) + var(--index-b-w) + var(--md-logo-p));
+  }
+}
+@media screen and (min-width: 48rem) {
   .footer > svg {
     position: absolute;
     top: -1px;
@@ -5558,8 +5568,10 @@ img {
   }
 }
 .footer-logo {
-  height: auto;
-  font-size: 3.5rem;
+  width: auto;
+  height: 4em;
+  aspect-ratio: 52/76;
+  filter: brightness(0) invert(1);
 }
 .footer a {
   color: inherit;

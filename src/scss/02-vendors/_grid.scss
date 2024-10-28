@@ -43,6 +43,12 @@
 	&--fluid {
 		max-width: none;
 	}
+
+	body:not(.index-page) main & {
+		@include medium {
+			padding-inline: calc(var(--gutter) + var(--index-b-w) + var(--md-logo-p));
+		}
+	}
 }
 
 .row {

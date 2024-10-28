@@ -86,8 +86,7 @@
 body {
   --bg-pattern: rgb(253, 253, 253);
   background-color: #fff;
-  background-image: linear-gradient(var(--bg-pattern) 4px, transparent 0), linear-gradient(90deg, var(--bg-pattern) 4px, transparent 0), linear-gradient(var(--bg-pattern) 2px, transparent 0), linear-gradient(90deg, var(--bg-pattern) 2px, rgba(0, 0, 0, 0) 0);
-  background-position: -4px -4px, -4px -4px, -2px -2px, -2px -2px;
+  background-image: linear-gradient(var(--bg-pattern) 6px, transparent 0), linear-gradient(90deg, var(--bg-pattern) 6px, transparent 0), linear-gradient(var(--bg-pattern) 2px, transparent 0), linear-gradient(90deg, var(--bg-pattern) 2px, rgba(0, 0, 0, 0) 0);
   background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
 }
 

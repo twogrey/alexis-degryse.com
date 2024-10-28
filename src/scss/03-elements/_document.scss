@@ -6,9 +6,23 @@
 }
 
 body {
-	--text-color: #{$black};
+	--text-color: var(--color-black);
 	font-family: system-ui, sans-serif;
 	background-color: #fff;
 	color: var(--text-color);
 }
 
+main {
+	body:not(.index-page) & {
+		padding-block: var(--sp-3);
+
+		h1 {
+			width: fit-content;
+			padding-bottom: 0.75em;
+			padding-inline: 1rem;
+			margin-inline: auto;
+			text-align: center;
+			background: svg('wavy-line.svg') no-repeat bottom center / 10rem auto;
+		}
+	}
+}

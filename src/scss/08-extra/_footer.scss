@@ -2,6 +2,12 @@
 	--sep-h: 2.5rem;
 	position: relative;
 
+	.container {
+		@include medium {
+			padding-inline: calc(var(--gutter) + var(--index-b-w) + var(--md-logo-p));
+		}
+	}
+
 	> svg {
 		@include medium {
 			position: absolute;
@@ -23,8 +29,10 @@
 	}
 
 	&-logo {
-		height: auto;
-		font-size: 3.5rem;
+		width: auto;
+		height: 4em;
+		aspect-ratio: 52/76;
+		filter: brightness(0) invert(1);
 	}
 
 	a {

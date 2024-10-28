@@ -1,7 +1,30 @@
 extends ../wrapper.pug
 
+block append styles
+	link(href="dest/css/pages/about.min.css", rel="stylesheet")
+
 block prepend title-page
 	| À propos - 
 
 block main
-	p hey
+	.presentation
+		.container
+			h1.h2.text-primary-dark À propos
+			.row.justify-center
+				div(class="col sm:col-10 lg:col-8 fs-2") 
+					- const birthDate = new Date(1989, 10, 28)
+					- const today = new Date()
+					- let age = today.getFullYear() - birthDate.getFullYear()
+					- if (today < new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate())) {
+						- age--
+					- }
+					h3 Introduction
+					p Je m’appelle <strong>Alexis</strong>, #{age} ans, marié, jeune papa, gaga des animaux, baigné dans la culture populaire japonaise des années 90, rêvant d’un numérique responsable, j’ai la chance d’exercer le métier d’<strong>intégrateur web</strong> depuis une quinzaine d'années.
+					h3 Profil professionnel
+					p Passionné depuis toujours par ce que le web est en mesure d’apporter au monde, je suis féru de <strong>HTML</strong> et <strong>CSS</strong> depuis mes débuts.<br>Ces langages, faciles à utiliser mais difficiles à maitriser, sont mes outils au quotidien et constituent le fil principal de ma veille. J’adore discuter de sémantique, d’animations, de SEO, d’accessibilité, d’éco-conception, de responsive et d'ergonomie.
+					p Je m'assure de placer les <b>enjeux</b> et <b>impacts</b> pour les utilisateurs et utilisatrices au centre de toute décision graphique et fonctionnelle en m'efforçant de fournir des interfaces conformes aux standards, pensées pour le SEO, accessibles aux personnes handicapées, éco-conçues, robustes dans le temps, dépourvues de tout biais cognitif, et enfin, ergonomiques.
+					p Je veille à maintenir mes compétences à jour afin de toujours proposer les solutions les plus adaptées et de donner les meilleurs conseils sur les implications et la faisabilité des besoins et idées liées à l'<strong>UX</strong>.
+					h3 Accessibilité numérique
+					p En 2017 suite à mon premier pas dans le monde de la <strong>qualité web</strong> grâce à <a href="https://www.opquast.com/rendre-le-web-meilleur/">Opquast</a>, je me spécialise en <strong>accessibilité numérique</strong>.
+					p Je ressens une profonde frustration en constatant tous les jours que des erreurs de conception empêchent d’autres personnes de profiter du web aussi (relativement) facilement que moi. Cette pensée m’anime chaque seconde de mes journées de travail et de mes pérégrinations d’internaute.
+

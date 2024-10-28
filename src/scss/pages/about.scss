@@ -1,0 +1,32 @@
+$assets-base-path: '../../';
+
+@import '../abstracts';
+
+.presentation {
+	@include large {
+		position: relative;
+		overflow: hidden;
+		
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 50%;
+			border-radius: 50%;
+			overflow-x: clip;
+			overflow-y: visible;
+			background: var(--color-primary-lightest);
+			opacity: 0.2;
+			aspect-ratio: 1/1.5;
+			translate: -75% -50%;
+		}
+
+		&::after {
+			right: 0;
+			left: auto;
+			translate: 75% -50%;
+		}
+	}
+}

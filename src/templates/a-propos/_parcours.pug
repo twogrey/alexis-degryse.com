@@ -1,0 +1,17 @@
+mixin item(year, text)
+	li
+		span(style="font-variant-numeric: tabular-nums")=year
+		=text
+		if url
+			| &nbsp;-&nbsp;
+			a(href=url) Consulter la certification
+
+ol(role="list")
+	+item("2024", " - Astek - Intégrateur web et référent accessibilité web") 
+	+item("2017", " - Ineat Group - Intégrateur web et référent accessibilité web") 
+	+item("2015", " - Hobbynote - Intégrateur web") 
+	+item("2011", " - Ineat Conseil - Intégrateur web") 
+	+item("2010", " - Plaine Images - Chargé de communication en ligne (CDD)") 
+	+item("2009", " - EuraTechnologies DigiPort - Chargé de communication en ligne (Alternance)") 
+	+item("2009", " - Efficom - Licence : Concepteur Intégrateur web") 
+	+item("2007", " - Université de Lille - DUT : SID (Statistique et Informatique Décisionnelle")

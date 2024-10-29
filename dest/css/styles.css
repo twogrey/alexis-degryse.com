@@ -180,8 +180,7 @@ samp {
 img,
 picture,
 video,
-canvas,
-svg {
+canvas {
   display: block;
   max-width: 100%;
 }
@@ -191,7 +190,9 @@ img {
 }
 
 svg {
+  flex: 0 0 auto;
   width: 1em;
+  max-width: 100%;
   height: 1em;
   vertical-align: -0.15em;
   fill: currentColor;

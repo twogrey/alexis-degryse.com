@@ -1,0 +1,13 @@
+mixin item(year, text, url)
+	li
+		span(style="font-variant-numeric: tabular-nums")=year
+		=text
+		if url
+			| &nbsp;-&nbsp;
+			a(href=url) Consulter la certification
+
+ol(role="list")
+	+item("2022", " - Access42 - Auditer l'accessibilité numérique avec le RGAA", "https://certificate.bcdiploma.com/check/9329046CD54F5D79A35C2AAC63B752CA2CBB1166426AD12E5C4FF99DD2C7E27DZkcwTXd0cUl2K3gxdUllNHFNSkpIZFM2aEt5cnZkbjlUcWZoL3VYTDZ1c0tRZk1J") 
+	+item("2021", " - Opquast : Maîtrise de la qualité en projet web - 930/1000 (Expert)", "https://directory.opquast.com/fr/certificat/TU4AYG/") 
+	+item("2021", " - Access42 - Développer des sites web accessibles", "https://certificate.bcdiploma.com/check/921E87207432C080C751E426575A0C8DB9F9D647EEDE4F5D95B1090AD3C8DD04RWwzNXA3Y2RYbWtYUTl0N2UvRkZqblRraXplbkcxZVZCVXZpd05URHYrVEVFZUFl") 
+	+item("2017", " - Opquast : Maîtrise de la qualité en projet web - 880/1000 (Avancé)") 

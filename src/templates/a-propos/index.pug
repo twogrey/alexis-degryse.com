@@ -27,13 +27,29 @@ block main
 					h3 Accessibilité numérique
 					p En 2017 suite à mon premier pas dans le monde de la <strong>qualité web</strong> grâce à <a href="https://www.opquast.com/rendre-le-web-meilleur/">Opquast</a>, je me spécialise en <strong>accessibilité numérique</strong>.
 					p Je ressens une profonde frustration en constatant tous les jours que des erreurs de conception empêchent d’autres personnes de profiter du web aussi (relativement) facilement que moi. Cette pensée m’anime chaque seconde de mes journées de travail et de mes pérégrinations d’internaute.
-
-
-				.col-12.text-center.py
-					div(class="d-inline-block py-0.25 px-3 bg-primary-lightest rounded")
 	.container.list
-		.row
-			div(class="col-12")
-				h2.h3 Interventions, publications et projets
-				ol(role="list")
-					include _projects.pug
+		mixin title(text, icon)
+			h2.h3.d-flex.align-center 
+				svg(aria-hidden="true", class="mr fs-larger text-secondary")
+					use(xlink:href="dest/img/sprite.svg#icon-"+icon)
+				=text
+		.text-center.py.my-2
+			div(class="d-inline-block py-0.25 px-3 bg-primary-lightest rounded")
+		.row(style="--gutter: var(--sp-3)")
+			div(class="col-12 lg:col-8")
+				+title("Interventions, publications et projets", "rocket")
+				include _projects.pug
+			div(class="col-12 lg:col-4")
+				.row
+					div(class="col-12 md:col-6 lg:col-12")
+						+title("Formations", "formation")
+						include _formations.pug
+					div(class="col-12 md:col-6 lg:col-12")
+						+title("Certifications", "certificate")
+						include _certifications.pug
+			div(class="col-12 lg:col-8")
+				+title("Parcours", "tie")
+				include _parcours.pug
+			div(class="col-12 lg:col-4")
+				+title("Clients", "briefcase")
+				include _clients.pug

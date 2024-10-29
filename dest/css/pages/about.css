@@ -80,7 +80,8 @@
 @media screen and (min-width: 75rem) {
   .presentation {
     position: relative;
-    overflow: hidden;
+    overflow-x: clip;
+    overflow-y: visible;
   }
   .presentation::before, .presentation::after {
     content: "";
@@ -89,8 +90,6 @@
     left: 0;
     width: 50%;
     border-radius: 50%;
-    overflow-x: clip;
-    overflow-y: visible;
     background: var(--color-primary-lightest);
     opacity: 0.2;
     aspect-ratio: 1/1.5;
@@ -101,6 +100,18 @@
     left: auto;
     translate: 75% -50%;
   }
+}
+
+.list ol,
+.list ul {
+  list-style: none;
+}
+.list li {
+  padding: var(--sp-1-2) var(--sp);
+  border-radius: var(--radius);
+}
+.list li:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 /*# sourceMappingURL=about.css.map */

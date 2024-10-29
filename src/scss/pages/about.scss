@@ -5,7 +5,8 @@ $assets-base-path: '../../';
 .presentation {
 	@include large {
 		position: relative;
-		overflow: hidden;
+		overflow-x: clip;
+		overflow-y: visible;
 		
 		&::before,
 		&::after {
@@ -15,8 +16,6 @@ $assets-base-path: '../../';
 			left: 0;
 			width: 50%;
 			border-radius: 50%;
-			overflow-x: clip;
-			overflow-y: visible;
 			background: var(--color-primary-lightest);
 			opacity: 0.2;
 			aspect-ratio: 1/1.5;
@@ -27,6 +26,22 @@ $assets-base-path: '../../';
 			right: 0;
 			left: auto;
 			translate: 75% -50%;
+		}
+	}
+}
+
+.list {
+	ol,
+	ul {
+		list-style: none;
+	}
+	
+	li {
+		padding: var(--sp-1-2) var(--sp);
+		border-radius: var(--radius);
+
+		&:nth-child(odd) {
+			background-color: rgba(black, 0.05);
 		}
 	}
 }

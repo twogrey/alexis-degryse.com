@@ -1,0 +1,42 @@
+extends ../wrapper.pug
+
+block append styles
+	link(href="dest/css/pages/contact.min.css", rel="stylesheet")
+
+block append scripts-footer 
+	script(src="dest/js/pages/contact.min.js")
+
+block prepend title-page
+	| Me contacter - 
+
+block main
+	.container
+		h1.h2.text-primary-dark Contact
+		p.h4.fw-regular.lh-base.text-center Je serais ravi de collaborer avec vous si votre projet et mes valeurs convergent !<br>Faites-moi part de votre besoin
+			svg(aria-hidden="true", class="text-primary ml-0.25 fs-larger va-m") 
+				use(xlink:href="dest/img/sprite.svg#icon-paper-plane") 
+		.row.justify-center.mt-3
+			div(class="col-12 md:col-10 lg:col-8")
+				div(class="bg-lightgrey p md:p-2 radius")
+					form(action="https://formspree.io/f/mpwzpzdd" method="POST")
+						.form-group
+							label(for="name") Nom et prénom (facultatif)
+							input(type="text", id="name", name="name", autocomplete="name")
+						.form-group
+							label(for="email") Votre adresse e-mail
+								span Format : nom@domaine.fr
+							input(type="email", id="email", name="email", required, autocomplete="email")
+						.form-group
+							label(for="message") Votre message
+							textarea(name="message", id="message", required)
+						p Les données saisies ne seront conservées que dans l'unique but de vous répondre et d'échanger.
+						input(type="text", name="_gotcha", class="d-none")
+						button(type="submit", class="btn btn--primary") 
+							svg(aria-hidden="true") 
+								use(xlink:href="dest/img/sprite.svg#icon-paper-plane") 
+							| Envoyer votre message
+					p(role="alert")
+						svg(aria-hidden="true")
+							use(xlink:href="dest/img/sprite.svg#icon-check")
+							use(xlink:href="dest/img/sprite.svg#icon-x")
+

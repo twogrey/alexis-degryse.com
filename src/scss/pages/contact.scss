@@ -1,0 +1,79 @@
+$assets-base-path: '../../';
+
+@import '../abstracts';
+
+.form-group {
+	margin-bottom: 1.5rem;
+}
+
+label {
+	display: block;
+	margin-bottom: 0.75rem;
+	font-weight: $bold;
+	line-height: 1.25;
+
+	span {
+		display: block;
+		margin-top: 0.5em;
+		font-size: 85%;
+		font-weight: $regular;
+	}
+}
+
+[type='email'],
+[type='text'],
+textarea {
+	width: 100%;
+	min-width: 0;
+	max-width: 100%;
+	height: 2.75rem;
+	padding: 0 var(--sp-1-2);
+	border-inline: 0;
+	border-top: 3px solid transparent;
+	border-bottom: 3px solid var(--color-primary);
+	margin: 0;
+	border-radius: 0;
+	background-color: #fff;
+	transition-duration: 0.2s;
+	transition-property: border-color, color, box-shadow;
+	appearance: none;
+}
+
+textarea {
+	display: block;
+	height: auto;
+	padding-block: var(--sp-1-3);
+	line-height: 1.5;
+	resize: vertical;
+}
+
+[role='alert'] {
+	padding: var(--sp);
+	overflow: hidden;
+	background-color: var(--bg);
+	color: var(--c);
+
+	svg { margin-right: var(--sp-1-2); }
+
+	&:not([class]) { 
+		height: 0;
+		padding: 0;
+		border: 0;
+	}
+
+	&.success {
+		--c: #157446;
+		--bg: #b3e3cc;
+
+		use:last-of-type { display: none; }
+	}
+
+	&.error {
+		--c: #a32929;
+		--bg: #fbbdbd;
+
+		use:first-of-type { display: none; }
+	}
+}
+
+

@@ -957,7 +957,7 @@ body {
 }
 
 body:not(.index-page) main {
-  padding-block: var(--sp-3);
+  padding-block: var(--sp-3) var(--sp-4);
 }
 body:not(.index-page) main h1 {
   width: fit-content;
@@ -1609,6 +1609,10 @@ img {
 
 .lh-base {
   line-height: var(--phi) !important;
+}
+
+.va-m {
+  vertical-align: middle;
 }
 
 /** --------------------------------------------

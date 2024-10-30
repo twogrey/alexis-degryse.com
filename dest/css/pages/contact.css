@@ -77,6 +77,20 @@
 		@author Harry Roberts
 		@see https://csswizardry.com/2016/05/the-importance-of-important/
 */
+.flying {
+  position: relative;
+}
+.flying::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -0.3125rem;
+  z-index: 1;
+  width: 3.25rem;
+  background: url("../../img/svg/paper-flying.svg") no-repeat;
+  aspect-ratio: 66/119;
+}
+
 .form-group {
   margin-bottom: 1.5rem;
 }

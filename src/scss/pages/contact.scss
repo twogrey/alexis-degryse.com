@@ -2,6 +2,21 @@ $assets-base-path: '../../';
 
 @import '../abstracts';
 
+.flying {
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: rem(-5px);
+		z-index: 1;
+		width: 3.25rem;
+		background: svg('paper-flying.svg') no-repeat;
+		aspect-ratio: 66/119;
+	}
+}
+
 .form-group {
 	margin-bottom: 1.5rem;
 }

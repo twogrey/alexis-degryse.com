@@ -107,7 +107,7 @@
   list-style: none;
 }
 .list li {
-  padding: var(--sp-1-2) var(--sp);
+  padding: var(--sp);
   border-radius: var(--radius);
 }
 .list li:nth-child(odd) {

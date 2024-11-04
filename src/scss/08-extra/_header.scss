@@ -223,9 +223,11 @@
 				top: 100%;
 				left: 50%;
 				z-index: 1;
+				border: 0.125rem solid var(--color-lightgrey);
+				border-top: 0;
 				border-radius: 0 0 var(--index-r) var(--index-r);
 				white-space: nowrap;
-				background-color: var(--color-lightgrey);
+				background-color: #fff;
 				box-shadow: 0 rem(10px) rem(10px) rem(-5px) rgba(0, 0, 0, 0.1);
 				padding-inline: var(--sp);
 				translate: -50% 0;
@@ -238,7 +240,7 @@
 			li {
 				@include medium {
 					&:first-child { margin-top: calc(var(--item-p) - var(--sp-1-4)); }
-					&:nth-child(2) { border-block: 1px solid var(--color-grey); }
+					&:nth-child(2) { border-block: 1px solid var(--color-lightgrey); }
 					&:last-child { margin-bottom: var(--sp-1-4); }
 				}
 			}

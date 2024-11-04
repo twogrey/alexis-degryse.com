@@ -37,7 +37,7 @@ $assets-base-path: '../../';
 	}
 	
 	li {
-		padding: var(--sp-1-2) var(--sp);
+		padding: var(--sp);
 		border-radius: var(--radius);
 
 		&:nth-child(odd) {

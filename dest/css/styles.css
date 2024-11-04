@@ -5494,9 +5494,11 @@ img {
     top: 100%;
     left: 50%;
     z-index: 1;
+    border: 0.125rem solid var(--color-lightgrey);
+    border-top: 0;
     border-radius: 0 0 var(--index-r) var(--index-r);
     white-space: nowrap;
-    background-color: var(--color-lightgrey);
+    background-color: #fff;
     box-shadow: 0 0.625rem 0.625rem -0.3125rem rgba(0, 0, 0, 0.1);
     padding-inline: var(--sp);
     translate: -50% 0;
@@ -5512,7 +5514,7 @@ img {
     margin-top: calc(var(--item-p) - var(--sp-1-4));
   }
   .menu > ul ul li:nth-child(2) {
-    border-block: 1px solid var(--color-grey);
+    border-block: 1px solid var(--color-lightgrey);
   }
   .menu > ul ul li:last-child {
     margin-bottom: var(--sp-1-4);

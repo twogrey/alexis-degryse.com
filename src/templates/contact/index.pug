@@ -18,7 +18,7 @@ block main
 			span(class="d-none md:d-inline flying") 
 		.row.justify-center.mt-3
 			div(class="col-12 md:col-10 lg:col-8")
-				div(class="bg-lightgrey p md:p-2 lg:p-3 radius") 
+				div(class="p md:p-2 lg:p-3 radius bg-secondary-lightest") 
 					form(action="https://formspree.io/f/mpwzpzdd" method="POST")
 						.form-group
 							label(for="name") Nom et prénom (facultatif)
@@ -36,10 +36,11 @@ block main
 							svg(aria-hidden="true") 
 								use(xlink:href="dest/img/sprite.svg#icon-paper-plane") 
 							| Envoyer votre message
-					p(role="alert")
+					p.feedback
 						svg(aria-hidden="true")
 							use(xlink:href="dest/img/sprite.svg#icon-check")
 							use(xlink:href="dest/img/sprite.svg#icon-x")
+						span(role="alert", aria-live="assertive")
 		p.text-center.h1.mb
 			svg(aria-hidden="true", class="text-secondary-light") 
 				use(xlink:href="dest/img/sprite.svg#icon-envelop") 

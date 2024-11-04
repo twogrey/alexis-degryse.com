@@ -17,6 +17,24 @@ $assets-base-path: '../../';
 	}
 }
 
+div:has(> form) {
+	--b-w: #{rem(4px)};
+	border: var(--b-w) solid var(--color-secondary-lightest);
+
+	@include medium {
+		border-color: var(--color-secondary);
+		box-shadow: 
+			calc(var(--b-w) * 4) 0 0 calc(var(--b-w) * -2) white, 
+			calc(var(--b-w) * 6) 0 0 calc(var(--b-w) * -3) var(--color-secondary-light), 
+			calc(var(--b-w) * 9) 0 0 calc(var(--b-w) * -4) white, 
+			calc(var(--b-w) * 11) 0 0 calc(var(--b-w) * -5) var(--color-secondary-lightest),
+			calc(var(--b-w) * -4) 0 0 calc(var(--b-w) * -2) white, 
+			calc(var(--b-w) * -6) 0 0 calc(var(--b-w) * -3) var(--color-secondary-light), 
+			calc(var(--b-w) * -9) 0 0 calc(var(--b-w) * -4) white, 
+			calc(var(--b-w) * -11) 0 0 calc(var(--b-w) * -5) var(--color-secondary-lightest);
+	}		
+}
+
 .form-group {
 	margin-bottom: 1.5rem;
 }
@@ -62,7 +80,7 @@ textarea {
 	resize: vertical;
 }
 
-[role='alert'] {
+.feedback {
 	padding: var(--sp);
 	overflow: hidden;
 	background-color: var(--bg);
@@ -70,10 +88,8 @@ textarea {
 
 	svg { margin-right: var(--sp-1-2); }
 
-	&:not([class]) { 
-		height: 0;
-		padding: 0;
-		border: 0;
+	&:has(span:empty) { 
+		display: none;
 	}
 
 	&.success {

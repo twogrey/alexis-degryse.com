@@ -1,10 +1,13 @@
 "use strict";
 
 var form = document.querySelector("form");
-var failFeeback = "Mince, il semblerait qu'il y ait eu un problème avec mon service d'envoi de message. Je vous invite à réessayer mais si le souci persiste, n'hésitez pas à me contacter directement par mail à alexis.degryse@gmail.com.";
-var feedback = document.querySelector("[role=alert]");
+var failFeeback = "Mince, il semblerait qu'il y ait eu un problème avec mon service d'envoi de message. Je vous invite à réessayer mais si le souci persiste, n'hésitez pas à me contacter directement par mail à <a href='mailto:alexis.degryse@gmail.com'>alexis.degryse@gmail.com</a>.";
+var feedback = document.querySelector(".feedback");
+var feedbackText = feedback.querySelector("span");
 function handleSubmit(event) {
-  feedback.innerHTML = '';
+  feedbackText.textContent = '';
+  feedback.classList.remove('success', 'error');
+  form.setAttribute('inert', '');
   event.preventDefault();
   var data = new FormData(event.target);
   fetch(event.target.action, {
@@ -15,13 +18,18 @@ function handleSubmit(event) {
     }
   }).then(function (response) {
     if (response.ok) {
-      feedback.innerHTML = "Votre message a bien été envoyé. Je vous remercie et tâcherai d'y répondre au plus vite.";
+      feedbackText.textContent = "Votre message a bien été envoyé. Je vous remercie et tâcherai d'y répondre au plus vite.";
+      feedback.classList.add('success');
       form.reset();
     } else {
-      feedback.innerHTML = failFeeback;
+      feedbackText.textContent = failFeeback;
+      feedback.classList.add('error');
     }
+    form.removeAttribute('inert');
   })["catch"](function (error) {
-    feedback.innerHTML = failFeeback;
+    feedbackText.textContent = failFeeback;
+    feedback.classList.add('error');
+    form.removeAttribute('inert');
   });
 }
 form.addEventListener("submit", handleSubmit);

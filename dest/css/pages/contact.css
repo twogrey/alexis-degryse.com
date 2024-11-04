@@ -91,6 +91,17 @@
   aspect-ratio: 66/119;
 }
 
+div:has(> form) {
+  --b-w: 0.25rem;
+  border: var(--b-w) solid var(--color-secondary-lightest);
+}
+@media screen and (min-width: 48rem) {
+  div:has(> form) {
+    border-color: var(--color-secondary);
+    box-shadow: calc(var(--b-w) * 4) 0 0 calc(var(--b-w) * -2) white, calc(var(--b-w) * 6) 0 0 calc(var(--b-w) * -3) var(--color-secondary-light), calc(var(--b-w) * 9) 0 0 calc(var(--b-w) * -4) white, calc(var(--b-w) * 11) 0 0 calc(var(--b-w) * -5) var(--color-secondary-lightest), calc(var(--b-w) * -4) 0 0 calc(var(--b-w) * -2) white, calc(var(--b-w) * -6) 0 0 calc(var(--b-w) * -3) var(--color-secondary-light), calc(var(--b-w) * -9) 0 0 calc(var(--b-w) * -4) white, calc(var(--b-w) * -11) 0 0 calc(var(--b-w) * -5) var(--color-secondary-lightest);
+  }
+}
+
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -135,32 +146,30 @@ textarea {
   resize: vertical;
 }
 
-[role=alert] {
+.feedback {
   padding: var(--sp);
   overflow: hidden;
   background-color: var(--bg);
   color: var(--c);
 }
-[role=alert] svg {
+.feedback svg {
   margin-right: var(--sp-1-2);
 }
-[role=alert]:not([class]) {
-  height: 0;
-  padding: 0;
-  border: 0;
+.feedback:has(span:empty) {
+  display: none;
 }
-[role=alert].success {
+.feedback.success {
   --c: #157446;
   --bg: #b3e3cc;
 }
-[role=alert].success use:last-of-type {
+.feedback.success use:last-of-type {
   display: none;
 }
-[role=alert].error {
+.feedback.error {
   --c: #a32929;
   --bg: #fbbdbd;
 }
-[role=alert].error use:first-of-type {
+.feedback.error use:first-of-type {
   display: none;
 }
 

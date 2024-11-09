@@ -1,0 +1,38 @@
+extends ../../wrapper.pug
+
+block append styles
+	link(href="dest/css/pages/prestations.min.css", rel="stylesheet")
+
+block prepend title-page
+	| Création de sites web - 
+
+block main
+	.container
+		h1.h2.text-primary-dark Création de sites web
+		div(class="h4 fw-regular text-system lh-base md:text-center")
+			p Vous avez des maquettes graphiques (ou un thème de CMS) prêtes à être intégrées pour démarrer le développement de votre nouveau site ? 
+			p <b>Je réalise vos pages web</b> de manière respectueuse des standards de <strong>qualité web</strong>.
+			//-div(class="col-auto text-center py-2")
+				//-img(src="/dest/img/svg/prestation-site.svg", width="300", height="251", alt="")
+		.row
+			div(class="col-12 md:col-6")
+				svg(aria-hidden="true", class="fs-larger") 
+					use(xlink:href="/dest/img/sprite.svg#icon-envelop") 
+				p Ce que je fournis à <b>vos utilisateurs</b>, un site :
+				ul
+					li Avec une empreinte environnementale minimisée,
+					li Utilisable par les personnes handicapées,
+					li Au référencement soigné,
+					li Dépourvu de tout biais cognitif,
+					li Soucieux des données personnelles,
+					li Respectueux des standards de qualité web.
+			div(class="col-12 md:col-6")
+				svg(aria-hidden="true", class="fs-larger") 
+					use(xlink:href="/dest/img/sprite.svg#icon-envelop") 
+				p Ce que je fournis à <b>vous</b> :
+				ul
+					li Devis personnalisé selon vos besoins et vos moyens
+					li Complète autonomie quant à l’administration de votre site et de ses contenus
+					li Suivi statistique de la fréquentation de vos visiteurs
+					li Un accompagnement sur-mesure
+					li De la disponibilité et de la réactivité pendant et après la mise en ligne de votre site

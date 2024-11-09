@@ -1,5 +1,6 @@
 RewriteEngine On
 RewriteRule ^$ dest/pages/index.html
+RewriteRule ^prestations/creation-sites-web$ dest/pages/prestations/creation-sites-web/index.html
 RewriteRule ^a-propos$ dest/pages/a-propos/index.html
 RewriteRule ^contact$ dest/pages/contact/index.html
 RewriteRule ^credits$ dest/pages/credits/index.html

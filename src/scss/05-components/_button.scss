@@ -41,6 +41,12 @@
 		--icon-c: var(--color-grey);
 	}
 
+	&--white {
+		--bg: #fff;
+		--c: var(--text-color);
+		--icon-bg: var(--text-color);
+	}
+
 	/**
 	 * Colors
 	 */
@@ -78,7 +84,7 @@
 		border-radius: 50%;
 		overflow: visible;
 		font-size: 2em;
-		background-color: #fff;
+		background-color: var(--icon-bg, #fff);
 		color: var(--icon-c, var(--bg));
 	}	
 }

@@ -1,7 +1,7 @@
 extends ../wrapper.pug
 
 block append styles
-	link(href="dest/css/pages/contact.min.css", rel="stylesheet")
+	link(href="/dest/css/pages/contact.min.css", rel="stylesheet")
 
 block append scripts-footer 
 	script(src="/dest/js/pages/contact.min.js")
@@ -14,7 +14,7 @@ block main
 		h1.h2.text-primary-dark Contact
 		p.h4.fw-regular.lh-base.text-center Je serais ravi de collaborer avec vous si votre projet et mes valeurs convergent !<br>Faites-moi part de votre besoin.
 			svg(aria-hidden="true", class="text-primary ml-0.25 fs-larger va-m md:d-none") 
-				use(xlink:href="dest/img/sprite.svg#icon-paper-plane") 
+				use(xlink:href="/dest/img/sprite.svg#icon-paper-plane") 
 			span(class="d-none md:d-inline flying") 
 		.row.justify-center.mt-3
 			div(class="col-12 md:col-10 lg:col-8")
@@ -34,15 +34,15 @@ block main
 						input(type="text", name="_gotcha", class="d-none")
 						button(type="submit", class="btn btn--primary") 
 							svg(aria-hidden="true") 
-								use(xlink:href="dest/img/sprite.svg#icon-paper-plane") 
+								use(xlink:href="/dest/img/sprite.svg#icon-paper-plane") 
 							| Envoyer votre message
 					p.feedback
 						svg(aria-hidden="true")
-							use(xlink:href="dest/img/sprite.svg#icon-check")
-							use(xlink:href="dest/img/sprite.svg#icon-x")
+							use(xlink:href="/dest/img/sprite.svg#icon-check")
+							use(xlink:href="/dest/img/sprite.svg#icon-x")
 						span(role="alert", aria-live="assertive")
 		p.text-center.h1.mb
 			svg(aria-hidden="true", class="text-secondary-light") 
-				use(xlink:href="dest/img/sprite.svg#icon-envelop") 
-		p.fs-1.text-center
+				use(xlink:href="/dest/img/sprite.svg#icon-envelop") 
+		p.h3.text-system.fw-regular.lh-base.text-center
 			| Vous pouvez aussi tout simplement me joindre par mail à l'adresse <a href="mailto:alexis.degryse@gmail.com">alexis.degryse@gmail.com</a>.

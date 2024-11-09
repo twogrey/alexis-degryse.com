@@ -1,7 +1,7 @@
 extends wrapper.pug
 
 block append styles
-	link(href="dest/css/pages/index.min.css", rel="stylesheet")
+	link(href="/dest/css/pages/index.min.css", rel="stylesheet")
 
 
 block vars
@@ -18,12 +18,12 @@ block main
 						.col-auto
 							a(href="#prestations", class="btn btn--primary") 
 								svg(aria-hidden="true")
-									use(xlink:href="dest/img/sprite.svg#icon-sparkles")
+									use(xlink:href="/dest/img/sprite.svg#icon-sparkles")
 								| Mes prestations
 						.col-auto
 							a(href="/contact", class="btn btn--grey") 
 								svg(aria-hidden="true")
-									use(xlink:href="dest/img/sprite.svg#icon-envelop")
+									use(xlink:href="/dest/img/sprite.svg#icon-envelop")
 								| Me contacter
 				div(class="col-12 md:col-9 lg:col-7 align-end-self")
 					img(src="/dest/img/svg/illustration-homepage.svg", width="706", height="519", alt="")
@@ -41,7 +41,7 @@ block main
 							p <b>Je réalise vos pages web</b> de manière respectueuse des standards de <strong>qualité web</strong>.
 						a(href="#", class="btn btn--primary mt-a")
 							svg(aria-hidden="true", class="p-0.5")
-								use(xlink:href="dest/img/sprite.svg#icon-chevron-right")
+								use(xlink:href="/dest/img/sprite.svg#icon-chevron-right")
 							| Créer mon site
 				div(class="col-12 md:col-6 lg:col-4")
 					article(class="d-flex flex-column align-center bg-white p-2 radius text-center h-100")
@@ -52,7 +52,7 @@ block main
 							p Je peux <strong>sensibiliser</strong> vos équipes, <strong>auditer</strong> les livrables graphiques ou des développements existants, ou tout simplement vous <strong>accompagner</strong> et vous conseiller tout au long de la vie de votre projet.
 						a(href="#", class="btn btn--primary mt-a") 
 							svg(aria-hidden="true", class="p-0.5")
-								use(xlink:href="dest/img/sprite.svg#icon-chevron-right")
+								use(xlink:href="/dest/img/sprite.svg#icon-chevron-right")
 							| Se faire accompagner
 				div(class="col-12 md:col-6 lg:col-4")
 					article(class="d-flex flex-column align-center bg-white p-2 radius text-center h-100")
@@ -63,7 +63,7 @@ block main
 							p Et ainsi vous proposer des pistes de <strong>corrections</strong> et d’<strong>améliorations</strong> en termes d’accessibilité, de SEO, d’éco-conception, d’ergonomie, de respect des données personnelles, d’éditorial, et bien d’autres.
 						a(href="#", class="btn btn--primary mt-a")
 							svg(aria-hidden="true", class="p-0.5")
-								use(xlink:href="dest/img/sprite.svg#icon-chevron-right")
+								use(xlink:href="/dest/img/sprite.svg#icon-chevron-right")
 							| Auditer mon site
 
 	section.bg-white
@@ -75,7 +75,7 @@ block main
 					p Passionné depuis toujours par ce que le web est en mesure d’apporter au monde, je suis féru de <strong>HTML</strong> et <strong>CSS</strong> depuis mes débuts.<br>Ces langages, faciles à utiliser mais difficiles à maitriser, sont mes outils au quotidien et constituent le fil principal de ma veille. J’adore discuter de sémantique, d’animations, de SEO, d’accessibilité, d’éco-conception, de responsive et d'ergonomie.
 					a(href="/a-propos", class="btn btn--grey")
 						svg(aria-hidden="true")
-							use(xlink:href="dest/img/sprite.svg#icon-user")
+							use(xlink:href="/dest/img/sprite.svg#icon-user")
 						| En apprendre plus
 				div(class="col lg:col-auto sm:order-first align-center-self pt sm:pt-0")
 					.photo

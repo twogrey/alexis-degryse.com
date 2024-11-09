@@ -1,7 +1,7 @@
 extends ../wrapper.pug
 
 block append styles
-	link(href="dest/css/pages/about.min.css", rel="stylesheet")
+	link(href="/dest/css/pages/about.min.css", rel="stylesheet")
 
 block prepend title-page
 	| À propos - 
@@ -31,7 +31,7 @@ block main
 		mixin title(text, icon)
 			h2.h3.d-flex.align-center 
 				svg(aria-hidden="true", class="mr fs-larger text-secondary")
-					use(xlink:href="dest/img/sprite.svg#icon-"+icon)
+					use(xlink:href="/dest/img/sprite.svg#icon-"+icon)
 				=text
 		.text-center.py.my-2
 			div(class="d-inline-block py-0.25 px-3 bg-primary-lightest rounded")

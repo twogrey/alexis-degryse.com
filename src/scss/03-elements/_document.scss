@@ -14,7 +14,26 @@ body {
 
 main {
 	body:not(.index-page) & {
-		padding-block: var(--sp-3) var(--sp-4);
+		position: relative;
+		padding-top: var(--sp-3);
+		padding-bottom: var(--sp-4);
+		margin-bottom: var(--sp-4);
+
+		@include medium { margin-bottom: 0; }
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			width: rem(74px);
+			height: rem(5px);
+			border-radius: rem(100px);
+			background-color: var(--color-grey);
+			translate: -50% 50%;
+
+			@include medium { display: none; }
+		}
 
 		h1 {
 			width: fit-content;

@@ -32,39 +32,19 @@ block main
 		div(class="container pb-3 lg:pb-4")
 			h2(class="py-3 mb-0 text-center") Mes prestations
 			.row.justify-center
-				div(class="col-12 md:col-6 lg:col-4")
-					article(class="d-flex flex-column align-center bg-white p-2 radius text-center h-100")
-						img(src="/dest/img/svg/prestation-site.svg", width="240", height="200", loading="lazy", alt="")
-						h3.text-primary-dark Création de sites web
-						.text-left.mb-2
-							p Vous avez des maquettes graphiques (ou un thème de CMS) prêtes à être intégrées pour démarrer le développement de votre nouveau site ? 
-							p <b>Je réalise vos pages web</b> de manière respectueuse des standards de <strong>qualité web</strong>.
-						a(href="#", class="btn btn--primary mt-a")
-							svg(aria-hidden="true", class="p-0.5")
-								use(xlink:href="/dest/img/sprite.svg#icon-chevron-right")
-							| Créer mon site
-				div(class="col-12 md:col-6 lg:col-4")
-					article(class="d-flex flex-column align-center bg-white p-2 radius text-center h-100")
-						img(src="/dest/img/svg/prestation-accessibilite.svg", width="221", height="200", loading="lazy", alt="")
-						h3.text-primary-dark Accessibilité numérique
-						.text-left.mb-2
-							p Vous souhaitez mettre en place une démarche d’amélioration de l’accessibilité sur votre projet ? 
-							p Je peux <strong>sensibiliser</strong> vos équipes, <strong>auditer</strong> les livrables graphiques ou des développements existants, ou tout simplement vous <strong>accompagner</strong> et vous conseiller tout au long de la vie de votre projet.
-						a(href="#", class="btn btn--primary mt-a") 
-							svg(aria-hidden="true", class="p-0.5")
-								use(xlink:href="/dest/img/sprite.svg#icon-chevron-right")
-							| Se faire accompagner
-				div(class="col-12 md:col-6 lg:col-4")
-					article(class="d-flex flex-column align-center bg-white p-2 radius text-center h-100")
-						img(src="/dest/img/svg/prestation-qualite-web.svg", width="145", height="200", loading="lazy", alt="")
-						h3.text-primary-dark Audit qualité web
-						.text-left.mb-2
-							p Vous avez déjà un site web ? Je peux vous rédiger un compte-rendu des manquements relatifs à l’<strong>assurance qualité web</strong>.
-							p Et ainsi vous proposer des pistes de <strong>corrections</strong> et d’<strong>améliorations</strong> en termes d’accessibilité, de SEO, d’éco-conception, d’ergonomie, de respect des données personnelles, d’éditorial, et bien d’autres.
-						a(href="#", class="btn btn--primary mt-a")
-							svg(aria-hidden="true", class="p-0.5")
-								use(xlink:href="/dest/img/sprite.svg#icon-chevron-right")
-							| Auditer mon site
+				mixin presta(img, imgW, imgH, title, content, url, urlText)
+					div(class="col-12 md:col-6 lg:col-4")
+						article(class="d-flex flex-column align-center bg-white p-2 radius text-center h-100")
+							img(src="/dest/img/svg/"+img+".svg", width=imgW, height=imgH, loading="lazy", alt="")
+							h3.text-primary-dark=title
+							.text-left.mb-2 !{content}
+							a(href=url, class="btn btn--primary mt-a")
+								svg(aria-hidden="true", class="p-0.5")
+									use(xlink:href="/dest/img/sprite.svg#icon-chevron-right")
+								=urlText
+				+presta("prestation-site", "240", "200", "Création de sites web", "<p>Vous avez des maquettes graphiques (ou un thème de CMS) prêtes à être intégrées pour démarrer le développement de votre nouveau site ?</p><p><b>Je réalise vos pages web</b> de manière respectueuse des standards de <strong>qualité web</strong>.</p>", "/prestations/creation-sites-web", "Créer mon site")
+				+presta("prestation-accessibilite", "221", "200", "Accessibilité numérique", "<p>Vous souhaitez mettre en place une démarche d’amélioration de l’accessibilité sur votre projet ?</p><p>Je peux <strong>sensibiliser</strong> vos équipes, <strong>auditer</strong> les livrables graphiques ou des développements existants, ou tout simplement vous <strong>accompagner</strong> et vous conseiller tout au long de la vie de votre projet.</p>", "#", "Se faire accompagner")
+				+presta("prestation-qualite-web", "145", "200", "Audit qualité web", "<p>Vous avez déjà un site web ? Je peux vous rédiger un compte-rendu des manquements relatifs à l’<strong>assurance qualité web</strong>.</p><p>Et ainsi vous proposer des pistes de <strong>corrections</strong> et d’<strong>améliorations</strong> en termes d’accessibilité, de SEO, d’éco-conception, d’ergonomie, de respect des données personnelles, d’éditorial, et bien d’autres.</p>", "#", "Auditer mon site")
 
 	section.bg-white
 		div(class="container py-3 lg:py-4")

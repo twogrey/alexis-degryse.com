@@ -2,6 +2,16 @@ $assets-base-path: '../../';
 
 @import '../abstracts';
 
+main > .container:first-of-type {
+	@include large {
+		--bg-pattern: #fcfcfc;
+		background-color: #fff;
+		background-image: linear-gradient(white, transparent), linear-gradient(var(--bg-pattern) 6px, transparent 0),linear-gradient(90deg, var(--bg-pattern) 6px, transparent 0),linear-gradient(var(--bg-pattern) 2px, transparent 0),linear-gradient(90deg, var(--bg-pattern) 2px, transparent 0);
+		background-repeat: no-repeat,repeat, repeat, repeat, repeat;
+		background-size: auto, 100px 100px,100px 100px,20px 20px,20px 20px;
+	}
+}
+
 .create {
 	--icon-s: 4rem;
 	--b-c: var(--color-secondary-lightest);
@@ -18,7 +28,10 @@ $assets-base-path: '../../';
 				> article {
 					border-right: 0;
 					border-top-left-radius: 0.5rem;
-					background: linear-gradient(var(--color-grey), var(--color-grey)) no-repeat right calc(var(--browser-bar-h) + var(--p)) / 1px calc(100% - var(--p) * 2 - var(--b-w));
+					background-image: linear-gradient(var(--color-grey), var(--color-grey));
+					background-repeat: no-repeat;
+					background-position: right calc(var(--browser-bar-h) + var(--p));
+					background-size: 1px calc(100% - var(--p) * 2 - var(--b-w));
 
 					&::before {
 						--s: calc(var(--browser-bar-h) / 2);
@@ -56,6 +69,7 @@ $assets-base-path: '../../';
 			border: var(--b-w) solid var(--color-grey);
 			margin-top: 0;
 			border-radius: 0;
+			background-color: #fff;
 
 			&::before {
 				content: '';

@@ -1,5 +1,9 @@
 extends ../../wrapper.pug
 
+block vars
+	- var currentPage = prestation[0]
+	- var metaDesc = 'Maquettes prêtes à être intégrées pour lancer le développement de votre site ? Je réalise vos pages web de manière respectueuse des standards de qualité web.'
+
 block append styles
 	link(href="/dest/css/pages/prestations.min.css", rel="stylesheet")
 
@@ -10,15 +14,14 @@ block main
 	.container
 		h1.h2.text-primary-dark Création de sites web
 		p(class="h4 fw-regular text-system lh-base md:text-center") Vous avez des maquettes graphiques (ou un thème de CMS) prêtes à être intégrées pour démarrer le développement de votre nouveau site ?<br><b>Je réalise vos pages web</b> de manière respectueuse des standards de <strong>qualité web</strong>.
-			//-div(class="col-auto text-center py-2")
-				//-img(src="/dest/img/svg/prestation-site.svg", width="300", height="251", alt="")
+		h2.sr-only Mes engagements
 		.row.create
 			div(class="col-12 md:col-6 lg:col-5 md:d-flex") 
 				article
 					svg(aria-hidden="true") 
 						use(xlink:href="/dest/img/sprite.svg#icon-website") 
 					div
-						p(class="fs-2 lg:text-center") Ce que je fournis à <b>vos utilisateurs</b>, un site :
+						h3(class="fs-2 text-system lh-base fw-regular lg:text-center") Ce que je fournis à <span class="highlighted-term">vos&nbsp;utilisateurs</span>, un site :
 						ul
 							li Avec une empreinte environnementale minimisée,
 							li Utilisable par les personnes handicapées,
@@ -31,7 +34,7 @@ block main
 					svg(aria-hidden="true") 
 						use(xlink:href="/dest/img/sprite.svg#icon-user")
 					div 
-						p(class="fs-2 lg:text-center") Ce que je <b>vous</b> fournis :
+						h3(class="fs-2 text-system lh-base fw-regular lg:text-center") Ce que je <span class="highlighted-term">vous</span> fournis :
 						ul
 							li Devis personnalisé selon vos besoins et moyens,
 							li Complète autonomie quant à l’administration de votre site et de ses contenus,
@@ -55,5 +58,5 @@ block main
 					use(xlink:href="/dest/img/sprite.svg#icon-envelop")
 				| Discutons-en !
 	div(class="container text-center pt-3 md:pb-3 lg:py-4")
-		p.h2 Vous avez déjà un site ?
+		h2 Vous avez déjà un site ?
 		p.h3.text-system.fw-regular.lh-base Je peux vous rédiger un compte-rendu des manquements relatifs à l’<a href="/prestations/audit-qualite-web">assurance qualité web</a> ainsi qu’à l’<a href="/prestations/accessibilite">accessibilité numérique</a>.

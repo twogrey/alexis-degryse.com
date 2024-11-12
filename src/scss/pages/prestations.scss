@@ -12,6 +12,13 @@ main > .container:first-of-type {
 	}
 }
 
+.highlighted-term {
+	font-family: $heading-font-family;
+	font-weight: $bold;
+	background: linear-gradient(var(--color-secondary-lightest), var(--color-secondary-lightest)) bottom center / 100% 40% no-repeat;
+	padding-inline: var(--sp-1-4);
+}
+
 .create {
 	--icon-s: 4rem;
 	--b-c: var(--color-secondary-lightest);

@@ -17,7 +17,7 @@ header(role="banner", class="header")
 						| Menu
 					ul(role="list", id="menu", style="height: calc-size(auto, size)")  
 						li
-							a(href="/a-propos") À propos
+							a(href="/a-propos")&attributes({"aria-current=page": currentPage === 'a-propos'}) À propos
 						li
 							button(type="button", class="btn-as-link", aria-expanded="false", aria-controls="prestations-nav", class="js-disclosure") 
 								| Prestations
@@ -25,10 +25,10 @@ header(role="banner", class="header")
 									use(xlink:href="/dest/img/sprite.svg#icon-chevron-down")
 							ul(id="prestations-nav", role="list", style="height: calc-size(auto, size + var(--item-p))")
 								li
-									a(href="/prestations/creation-sites-web") Création de sites web
+									a(href="/prestations/"+prestation[0])&attributes({"aria-current=page": currentPage === prestation[0]}) Création de sites web
 								li
-									a(href="#") Accessibilité numérique
+									a(href="/prestations/"+prestation[1])&attributes({"aria-current=page": currentPage === prestation[1]}) Accessibilité numérique
 								li
-									a(href="#") Audit qualité web
+									a(href="/prestations/"+prestation[2])&attributes({"aria-current=page": currentPage === prestation[2]}) Audit qualité web
 						li
-							a(href="/contact") Contact
+							a(href="/contact")&attributes({"aria-current=page": currentPage === 'contact'}) Contact

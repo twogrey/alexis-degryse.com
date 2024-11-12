@@ -187,6 +187,25 @@
 
 				@include medium { border-bottom: 0; }
 			}
+
+			> a[aria-current],
+			> button:has(+ ul [aria-current]) {
+				@include medium {
+					position: relative;
+					font-weight: $regular;
+					text-decoration: none;
+
+					&::before {
+						content: '';
+						position: absolute;
+						top: 100%;
+						left: 0;
+						width: 100%;
+						height: 0.125rem;
+						background-color: var(--color-primary);
+					}
+				}
+			}
 		}
 
 		a,
@@ -208,6 +227,14 @@
 			@include medium-plus { 
 				padding-inline: var(--sp) !important;
 			}
+		}
+
+		[aria-current],
+		button:has(+ ul [aria-current]) {
+			font-weight: $bold;
+			text-decoration: var(--color-lightgrey) underline solid rem(3px);
+			color: var(--color-primary);
+			text-underline-offset: rem(4px);
 		}
 
 		svg {

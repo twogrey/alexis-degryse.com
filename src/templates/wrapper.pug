@@ -1,5 +1,9 @@
 doctype html
 
+- var prestation = ['creation-sites-web', 'accessibilite-numerique', 'audit-qualite-web'];
+ 
+block vars
+
 include partials/mixin.pug 
 
 html(lang="fr")
@@ -8,8 +12,6 @@ html(lang="fr")
 			block title-page
 				| Alexis Degryse - Conception web et accessibilité numérique
 		include partials/head.pug 
- 
-	block vars
 
 	body(class=bodyClass)
 

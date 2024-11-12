@@ -1119,6 +1119,10 @@ ol ol {
   margin-block: 0;
 }
 
+ul ::marker {
+  color: var(--color-grey);
+}
+
 .list-unstyled {
   list-style: none;
 }
@@ -5486,6 +5490,24 @@ img {
     border-bottom: 0;
   }
 }
+@media screen and (min-width: 48rem) {
+  .menu > ul > li > a[aria-current],
+  .menu > ul > li > button:has(+ ul [aria-current]) {
+    position: relative;
+    font-weight: 400;
+    text-decoration: none;
+  }
+  .menu > ul > li > a[aria-current]::before,
+  .menu > ul > li > button:has(+ ul [aria-current])::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0.125rem;
+    background-color: var(--color-primary);
+  }
+}
 .menu > ul a,
 .menu > ul button {
   display: flex;
@@ -5509,6 +5531,13 @@ img {
   .menu > ul button {
     padding-inline: var(--sp) !important;
   }
+}
+.menu > ul [aria-current],
+.menu > ul button:has(+ ul [aria-current]) {
+  font-weight: 700;
+  text-decoration: var(--color-lightgrey) underline solid 0.1875rem;
+  color: var(--color-primary);
+  text-underline-offset: 0.25rem;
 }
 .menu > ul svg {
   flex: 0 0 auto;

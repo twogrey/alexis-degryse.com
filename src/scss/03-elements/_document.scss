@@ -26,8 +26,7 @@ main {
 			position: absolute;
 			bottom: 0;
 			left: 50%;
-			width: rem(74px);
-			height: rem(5px);
+			padding: var(--sp-1-4) var(--sp-3);
 			border-radius: rem(100px);
 			background-color: var(--color-grey);
 			translate: -50% 50%;

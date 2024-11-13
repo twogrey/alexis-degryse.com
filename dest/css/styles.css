@@ -972,8 +972,7 @@ body:not(.index-page) main::after {
   position: absolute;
   bottom: 0;
   left: 50%;
-  width: 4.625rem;
-  height: 0.3125rem;
+  padding: var(--sp-1-4) var(--sp-3);
   border-radius: 6.25rem;
   background-color: var(--color-grey);
   translate: -50% 50%;

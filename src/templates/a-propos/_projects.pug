@@ -5,7 +5,7 @@ mixin item(tag, text, link, linkText, date, linkLang, textLang)
 			span.tag=date
 		span
 			span(lang=textLang)=text 
-			<br>
+			<br> 
 			if link
 				a(href=link, lang=linkLang)=linkText
 			else if linkText

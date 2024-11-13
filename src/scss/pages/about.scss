@@ -35,7 +35,7 @@ $assets-base-path: '../../';
 	ul {
 		list-style: none;
 
-		@include small {
+		@include large {
 			display: grid;
 			column-gap: var(--sp-2);
 			grid-template-columns: auto 1fr;
@@ -47,33 +47,30 @@ $assets-base-path: '../../';
 		padding-block: var(--sp-2);
 		border-bottom: rem(2px) dotted var(--color-lightgrey);
 
-		@include small {
+		@include large {
 			display: grid;
 			row-gap: var(--sp-1-2);
 			grid-template-columns: subgrid;
-			align-items: baseline;
-			//padding-block: var(--sp);
+			align-items: center;
+			padding-block: var(--sp);
 		}
 
 		&:first-of-type {
 			padding-top: var(--sp-1-2);
-			@include small { padding-top: 0; }
+			@include large { padding-top: 0; }
 		}
 
 		> :first-child {
 			display: flex;
 			gap: var(--sp-1-2);
-			align-items: flex-end;
+			flex-wrap: wrap;
+			align-items: flex-start;
 			margin-bottom: var(--sp-1-2);
 
-			@include small {
+			@include large {
 				flex-direction: column;
 				margin-bottom: 0;
 			}
-		}
-
-		> :last-child {
-			align-self: center;
 		}
 	}
 
@@ -84,6 +81,7 @@ $assets-base-path: '../../';
 		font-family: $heading-font-family;
 		font-size: 80%;
 		font-weight: $bold;
+		text-align: center;
 		letter-spacing: 0.05ch;
 		background-color: var(--color-secondary-lightest);
 

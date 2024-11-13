@@ -106,7 +106,7 @@
 .list ul {
   list-style: none;
 }
-@media screen and (min-width: 36rem) {
+@media screen and (min-width: 75rem) {
   .list ol,
   .list ul {
     display: grid;
@@ -119,18 +119,19 @@
   padding-block: var(--sp-2);
   border-bottom: 0.125rem dotted var(--color-lightgrey);
 }
-@media screen and (min-width: 36rem) {
+@media screen and (min-width: 75rem) {
   .list li {
     display: grid;
     row-gap: var(--sp-1-2);
     grid-template-columns: subgrid;
-    align-items: baseline;
+    align-items: center;
+    padding-block: var(--sp);
   }
 }
 .list li:first-of-type {
   padding-top: var(--sp-1-2);
 }
-@media screen and (min-width: 36rem) {
+@media screen and (min-width: 75rem) {
   .list li:first-of-type {
     padding-top: 0;
   }
@@ -138,17 +139,15 @@
 .list li > :first-child {
   display: flex;
   gap: var(--sp-1-2);
-  align-items: flex-end;
+  flex-wrap: wrap;
+  align-items: flex-start;
   margin-bottom: var(--sp-1-2);
 }
-@media screen and (min-width: 36rem) {
+@media screen and (min-width: 75rem) {
   .list li > :first-child {
     flex-direction: column;
     margin-bottom: 0;
   }
-}
-.list li > :last-child {
-  align-self: center;
 }
 .list .tag {
   justify-self: end;
@@ -157,6 +156,7 @@
   font-family: "Merriweather", Arial, sans-serif;
   font-size: 80%;
   font-weight: 700;
+  text-align: center;
   letter-spacing: 0.05ch;
   background-color: var(--color-secondary-lightest);
 }

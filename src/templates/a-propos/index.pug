@@ -39,21 +39,21 @@ block main
 				=text
 		.text-center.py.my-2
 			div(class="d-inline-block py-0.25 px-3 bg-primary-lightest rounded")
-		.row
-			div(class="col-12 lg:col-8")
+		.row(style="row-gap: var(--sp-3)")
+			div(class="col-12 lg:col-6")
 				+title("Interventions, publications et projets", "rocket")
 				include _projects.pug
-			div(class="col-12 lg:col-4")
-				.row
+			div(class="col-12 lg:offset-1 lg:col-5")
+				.row(style="row-gap: var(--sp-3)")
 					div(class="col-12 md:col-6 lg:col-12")
 						+title("Formations", "formation")
 						include _formations.pug
 					div(class="col-12 md:col-6 lg:col-12")
 						+title("Certifications", "certificate")
 						include _certifications.pug
-			div(class="col-12 lg:col-8")
+			div(class="col-12 lg:col-6")
 				+title("Parcours", "tie")
 				include _parcours.pug
-			div(class="col-12 lg:col-4")
+			div(class="col-12 lg:offset-1 lg:col-5")
 				+title("Clients", "briefcase")
 				include _clients.pug

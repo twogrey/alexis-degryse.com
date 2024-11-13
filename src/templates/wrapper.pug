@@ -4,20 +4,18 @@ doctype html
  
 block vars
 
-include partials/mixin.pug 
-
 html(lang="fr")
 	head
 		title 
 			block title-page
 				| Alexis Degryse - Conception web et accessibilité numérique
-		include partials/head.pug 
+		include partials/_head.pug 
 
 	body(class=bodyClass)
 
-		include partials/skip-links.pug 
+		include partials/_skip-links.pug 
 
-		include partials/header.pug 
+		include partials/_header.pug 
 			
 		block before-main
 
@@ -26,7 +24,7 @@ html(lang="fr")
 			
 		block after-main
 
-		include partials/footer.pug 
+		include partials/_footer.pug 
 
 		div(hidden)
 			#new-window Ce lien ouvre un nouvel onglet.

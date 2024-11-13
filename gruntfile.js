@@ -77,7 +77,7 @@ module.exports = function (grunt) {
 			dist: {
 				files: [ {
 					expand: true,
-					src: [ '**/index.pug' ],
+					src: [ '**/*.pug', '!wrapper.pug', '!**/_*.pug' ],
 					cwd: templatesPath,
 					dest: pagesBuildPath,
 					ext: '.html',
@@ -96,7 +96,7 @@ module.exports = function (grunt) {
 			dist: {
 				files: [ {
 					expand: true,
-					src: [ '**/index.html' ],
+					src: [ '**/*.html' ],
 					cwd: pagesBuildPath,
 					dest: pagesBuildPath,
 					ext: '.html',

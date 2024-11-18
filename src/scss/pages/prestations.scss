@@ -2,12 +2,13 @@ $assets-base-path: '../../';
 
 @import '../abstracts';
 
-main > .container:first-of-type {
+main {
 	@include large {
-		--bg-pattern: #fcfcfc;
+		--bg-pattern: #f7f7f7;
 		background-color: #fff;
 		background-image: linear-gradient(white, transparent), linear-gradient(var(--bg-pattern) 6px, transparent 0),linear-gradient(90deg, var(--bg-pattern) 6px, transparent 0),linear-gradient(var(--bg-pattern) 2px, transparent 0),linear-gradient(90deg, var(--bg-pattern) 2px, transparent 0);
 		background-repeat: no-repeat,repeat, repeat, repeat, repeat;
+		background-clip: content-box;
 		background-size: auto, 100px 100px,100px 100px,20px 20px,20px 20px;
 	}
 }

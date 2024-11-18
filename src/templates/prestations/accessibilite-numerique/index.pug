@@ -1,0 +1,41 @@
+extends ../../wrapper.pug
+
+block vars
+	- var currentPage = prestation[1]
+	- var metaDesc = 'Vous souhaitez mettre en place une démarche d’amélioration de l’accessibilité sur votre projet ? Sensibilisation, audit, accompagnement.'
+
+block append styles
+	link(href="/dest/css/pages/prestations.min.css", rel="stylesheet")
+
+block prepend title-page
+	| Accessibilité numérique - 
+
+block main
+	.container
+		h1.h2.text-primary-dark Accessibilité numérique
+		p(class="h4 fw-regular text-system lh-base md:text-center") Vous souhaitez mettre en place une démarche d’amélioration de l’<strong>accessibilité</strong> sur votre projet ?<br>Je peux <strong>sensibiliser</strong> vos équipes, <strong>auditer</strong> des livrables graphiques ou développements existants, ou tout simplement vous <strong>accompagner</strong> et vous conseiller tout au long de la vie de votre projet.
+		.row.justify-center
+			div(class="col-12 md:col-10 lg:col-8")
+				div(class="border border-2 border-secondary-light radius bg-secondary-lightest p py-2 md:p-3 my-2 md:my-3 text-center")
+					h2.h4 Vous ne savez pas en quoi consiste l’accessibilité numérique ? 
+					button(type="button" class="btn btn--white btn--sm mt-0.5 js-disclosure" aria-expanded="false" aria-controls="what-is-a11y") 
+						svg(aria-hidden="true")
+							use(xlink:href="/dest/img/sprite.svg#icon-chevron-down")
+						| Je vous explique 
+					div(id="what-is-a11y", class="text-left pt-2 md:pt-3")
+						h3.h4 Contexte
+						p Le numérique c’est trop chouette ! Il facilite la recherche d’emploi, l’accès à l’information, les déplacements, l’apprentissage, etc. Bref, il apporte de l’autonomie et permet de participer plus facilement à la vie sociale et citoyenne.
+						p <b>Vraiment ?</b> 
+						p <b>Oui ! Mais seulement si</b> ce numérique est pensé dans sa conception pour tout le monde. 
+						p Or, un trop grand nombre de produits et services numériques conçus, aujourd’hui et depuis des années, sans prendre en compte les personnes handicapées excluent cette large partie de la population du paysage numérique, restreignant leur participation à la société, instaurant ainsi un environnement discriminant sur tous les plans (social, citoyen, culturel, etc.)
+						h3.h4 Quelques chiffres
+						p En France, on estime à 18% la part de la population française présentant une forme ou une autre de handicap, soit environ <b>12 millions de français et françaises</b> (autrement dit 1 personne sur 6 !).
+						p En 2023, 95,9% des pages d'accueil des 1.000.000 sites les plus visités présentent au moins une erreur d'accessibilité détectable automatiquement (Source : <a href="https://webaim.org/projects/million/" lang="en" aria-describedby="english-content">The WebAIM Million</a>).
+						h3.h4 Constat
+						p Au lieu de favoriser l’inclusion, <b>le numérique devient finalement un vecteur d’exclusion</b> pour la plus grande minorité au monde : les personnes handicapées.
+						p L’<strong>accessibilité numérique</strong> signifie alors que les <strong>personnes handicapées</strong> peuvent <b>utiliser</b> le <strong>web</strong>, c’est-à-dire qu’elles peuvent percevoir, comprendre, naviguer, interagir avec le web et y contribuer.
+						p L’accessibilité sert aussi aux personnes âgées. Avec l’âge peuvent survenir une baisse progressive de l’acuité visuelle et auditive, une diminution de la dextérité, une altération de nos capacités cognitives, etc.
+						h3.h4 Historique
+						p Elle est un <strong>droit fondamental</strong> issu du principe d’égalité des droits et des chances en faveur des personnes handicapées, inscrit à l’<strong>ONU</strong> depuis <b>2006</b> (<a href="https://www.ohchr.org/fr/instruments-mechanisms/instruments/convention-rights-persons-disabilities">Convention relative aux droits des personnes handicapées</a>) et dans la <strong>loi française</strong> depuis <b>2005</b>. 
+						p Elle découle également du principe d’universalité voulu à la naissance du web par son inventeur il y a 30 ans (« <a href="https://www.w3c.fr/a-propos-du-w3c-france/la-mission-du-w3c/">un seul web partout et pour tous</a> »).
+						p En France, l’<a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000048050213">article 47 de la loi du 11 février 2005</a> pour « l’égalité des droits et des chances, la participation et la citoyenneté des personnes handicapées » et le <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038811937">décret d’application n°2019-768</a> du 24 juillet 2019 obligent les personnes morales de droit public et certaines entreprises privées à prendre en compte l’accessibilité dans leur stratégie numérique, notamment par la mise en conformité aux règles établies par le RGAA et la publication d’une déclaration d’accessibilité et d’un schéma pluriannuel de mise en accessibilité.

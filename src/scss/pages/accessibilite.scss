@@ -1,0 +1,15 @@
+$assets-base-path: '../../';
+
+@import '../abstracts';
+
+main {
+	@include large {
+		padding-bottom: 0;
+	}
+}
+
+.footer {
+	@include large {
+		--svg-fill: var(--color-primary);
+	}
+}

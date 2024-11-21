@@ -13,7 +13,7 @@ body {
 }
 
 main {
-	body:not(.index-page) & {
+	:where(body:not(.index-page)) & {
 		position: relative;
 		padding-top: var(--sp-3);
 		padding-bottom: var(--sp-4);

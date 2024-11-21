@@ -77,11 +77,16 @@
 		@author Harry Roberts
 		@see https://csswizardry.com/2016/05/the-importance-of-important/
 */
-.highlighted-term {
-  font-family: "Merriweather", Arial, sans-serif;
-  font-weight: 700;
-  background: linear-gradient(var(--color-secondary-lightest), var(--color-secondary-lightest)) bottom center/100% 40% no-repeat;
-  padding-inline: var(--sp-1-4);
+@media screen and (min-width: 75rem) {
+  main {
+    padding-bottom: 0;
+  }
 }
 
-/*# sourceMappingURL=prestations.css.map */
+@media screen and (min-width: 75rem) {
+  .footer {
+    --svg-fill: var(--color-primary);
+  }
+}
+
+/*# sourceMappingURL=accessibilite.css.map */

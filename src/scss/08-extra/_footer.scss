@@ -15,8 +15,8 @@
 			left: 0;
 			width: 100%;
 			height: var(--sep-h);
-			fill: #fff;
-			stroke: #fff;
+			fill: var(--svg-fill, #fff);
+			stroke-width: 0;
 			scale: -1 -1;
 		}
 	}

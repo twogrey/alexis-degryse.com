@@ -6,14 +6,15 @@ block vars
 
 block append styles
 	link(href="/dest/css/pages/prestations.min.css", rel="stylesheet")
+	link(href="/dest/css/pages/accessibilite.min.css", rel="stylesheet")
 
 block prepend title-page
 	| Accessibilité numérique - 
 
 block main
-	.container
+	div(class="container lg:pb-4")
 		h1 Accessibilité numérique
-		p(class="h4 fw-regular text-system lh-base md:text-center") Vous souhaitez mettre en place une démarche d’amélioration de l’<strong>accessibilité</strong> sur votre projet ?<br>Je peux <strong>sensibiliser</strong> vos équipes, <strong>auditer</strong> des livrables graphiques ou développements existants, ou tout simplement vous <strong>accompagner</strong> et vous conseiller tout au long de la vie de votre projet.
+		p(class="h4 fw-regular text-system lh-base md:text-center") Vous souhaitez mettre en place une démarche d’amélioration de l’<strong>accessibilité</strong> sur votre projet ?<br>Je peux <strong class="highlighted-term">sensibiliser</strong> vos équipes, <strong class="highlighted-term">auditer</strong> des livrables graphiques ou développements existants, ou tout simplement vous <strong class="highlighted-term">accompagner</strong> et vous conseiller tout au long de la vie de votre projet.
 		.row.justify-center
 			div(class="col-12 md:col-10 lg:col-8")
 				div(class="border border-2 border-secondary-light radius bg-secondary-lightest p py-2 md:p-3 my-2 md:my-3 text-center")
@@ -68,3 +69,36 @@ block main
 							li Focus sur le RGAA <span class="fs-4">— Méthodologie, conformité, réflexion et pondération</span>
 							li « <span lang="en">Solid start</span> » <span class="fs-4">— Par où commencer en tant que concepteur ?</span>
 							li Mythes et idées reçues <span class="fs-4">— Coût, design, responsabilités, cible</span>
+
+		div(class="row justify-center py-2")
+			div(class="col-8 md:col-4 lg:col-5")
+				img(src="/dest/img/svg/accessibilite-audit.svg" alt="" width="300" height="300" class="mx-a")
+			div(class="col-12 md:col-8 lg:col-6")
+				h2(class="h3 text-center md:text-left") Audit d’accessibilité numérique
+				h3(class="h4") Audit rapide
+				p Obtenez un diagnostic type « état des lieux » de votre site afin d’avoir une appréciation générale du niveau d’accessibilité.
+				h3(class="h4") Audit de livrables UI/UX
+				p Pour <span lang="en">wireframes</span>, maquettes, styles guide, <span lang="en">design system</span>.
+				ul 
+					li Analyse sur base de critères RGAA applicables
+					li Rapport des relevés d’erreurs ou de manquements
+					li Recommandations afin d’éviter de la dette d’accessibilité avant la phase de développement et d’intégration
+				h3(class="h4") Audit de conformité RGAA
+				ul 
+					li Analyse de votre site basée sur les 106 critères du RGAA
+					li Rapport d’audit contenant, pour chaque non-conformité :
+						ul 
+							li des explications des impacts sur les utilisateurs
+							li des recommandations et/ou corrections à réaliser
+					li Atelier de restitution pour les points les plus bloquants
+					li Rédaction de la déclaration d’accessibilité
+		div(class="row justify-center py-2")
+			div(class="col-8 md:col-4 lg:col-5")
+				img(src="/dest/img/svg/accessibilite-accompagnement.svg" alt="" width="300" height="300" class="mx-a")
+			div(class="col-12 md:col-8 lg:col-6")
+				h2(class="h3 text-center md:text-left") Conseils et accompagnement
+				ul 
+					li Conception accessible de composants
+					li Suivi de projets
+					li Aide à la conception ou corrections post-audit 
+	include ../../partials/_devis.pug  

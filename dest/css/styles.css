@@ -956,18 +956,18 @@ body {
   color: var(--text-color);
 }
 
-body:not(.index-page) main {
+:where(body:not(.index-page)) main {
   position: relative;
   padding-top: var(--sp-3);
   padding-bottom: var(--sp-4);
   margin-bottom: var(--sp-4);
 }
 @media screen and (min-width: 48rem) {
-  body:not(.index-page) main {
+  :where(body:not(.index-page)) main {
     margin-bottom: 0;
   }
 }
-body:not(.index-page) main::after {
+:where(body:not(.index-page)) main::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -978,11 +978,11 @@ body:not(.index-page) main::after {
   translate: -50% 50%;
 }
 @media screen and (min-width: 48rem) {
-  body:not(.index-page) main::after {
+  :where(body:not(.index-page)) main::after {
     display: none;
   }
 }
-body:not(.index-page) main h1 {
+:where(body:not(.index-page)) main h1 {
   width: fit-content;
   padding-bottom: 0.75em;
   text-align: center;
@@ -1030,7 +1030,7 @@ h4,
 .h4 {
   font-size: clamp(var(--min) * 1rem, var(--min) * 1rem + (var(--max) - var(--min)) * (100vw - var(--mq-sm-unitless) * 1rem) / (var(--mq-lg-unitless) - var(--mq-sm-unitless)), var(--max) * 1rem);
   font-family: "Merriweather", Arial, sans-serif;
-  margin-block: 1.25em 1em;
+  margin-block: 1.5em 1em;
   font-weight: 700;
   line-height: 1.25;
   text-wrap: balance;
@@ -5666,8 +5666,8 @@ img {
     left: 0;
     width: 100%;
     height: var(--sep-h);
-    fill: #fff;
-    stroke: #fff;
+    fill: var(--svg-fill, #fff);
+    stroke-width: 0;
     scale: -1 -1;
   }
 }

@@ -1,0 +1,3 @@
+mixin tooltip(id, term, text, en)
+	button(class="tooltip" role="presentation" aria-describedby=id+"-meaning")=term 
+		span(id=id+"-meaning" lang="en")&attributes({"lang='en'": en})=text

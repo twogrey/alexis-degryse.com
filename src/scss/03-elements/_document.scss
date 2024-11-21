@@ -37,10 +37,11 @@ main {
 		h1 {
 			width: fit-content;
 			padding-bottom: 0.75em;
-			padding-inline: 1rem;
-			margin-inline: auto;
 			text-align: center;
 			background: svg('wavy-line.svg') no-repeat bottom center / 10rem auto;
+			color: var(--color-primary-dark);
+			padding-inline: 1rem;
+			margin-inline: auto;
 		}
 	}
 }

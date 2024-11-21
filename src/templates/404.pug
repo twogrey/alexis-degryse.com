@@ -4,4 +4,10 @@ block title-page
 	| Page introuvable - Erreur 404 - 
 
 block main
-	p 404  
+	.container.text-center
+		h1 Oops ! Page introuvable
+		p.fs-larger La page demandée n'existe pas.
+		a(href="/" class="btn btn--primary")
+			svg(aria-hidden="true")
+				use(xlink:href="/dest/img/sprite.svg#icon-chevron-left")
+			| Retour à l'accueil

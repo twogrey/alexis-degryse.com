@@ -12,7 +12,7 @@ block prepend title-page
 
 block main
 	.container
-		h1.h2.text-primary-dark Accessibilité numérique
+		h1 Accessibilité numérique
 		p(class="h4 fw-regular text-system lh-base md:text-center") Vous souhaitez mettre en place une démarche d’amélioration de l’<strong>accessibilité</strong> sur votre projet ?<br>Je peux <strong>sensibiliser</strong> vos équipes, <strong>auditer</strong> des livrables graphiques ou développements existants, ou tout simplement vous <strong>accompagner</strong> et vous conseiller tout au long de la vie de votre projet.
 		.row.justify-center
 			div(class="col-12 md:col-10 lg:col-8")
@@ -39,3 +39,32 @@ block main
 						p Elle est un <strong>droit fondamental</strong> issu du principe d’égalité des droits et des chances en faveur des personnes handicapées, inscrit à l’<strong>ONU</strong> depuis <b>2006</b> (<a href="https://www.ohchr.org/fr/instruments-mechanisms/instruments/convention-rights-persons-disabilities">Convention relative aux droits des personnes handicapées</a>) et dans la <strong>loi française</strong> depuis <b>2005</b>. 
 						p Elle découle également du principe d’universalité voulu à la naissance du web par son inventeur il y a 30 ans (« <a href="https://www.w3c.fr/a-propos-du-w3c-france/la-mission-du-w3c/">un seul web partout et pour tous</a> »).
 						p En France, l’<a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000048050213">article 47 de la loi du 11 février 2005</a> pour « l’égalité des droits et des chances, la participation et la citoyenneté des personnes handicapées » et le <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038811937">décret d’application n°2019-768</a> du 24 juillet 2019 obligent les personnes morales de droit public et certaines entreprises privées à prendre en compte l’accessibilité dans leur stratégie numérique, notamment par la mise en conformité aux règles établies par le RGAA et la publication d’une déclaration d’accessibilité et d’un schéma pluriannuel de mise en accessibilité.
+		div(class="row justify-center py-2")
+			div(class="col-8 md:col-4 lg:col-5")
+				img(src="/dest/img/svg/accessibilite-sensibilisation.svg" alt="" width="300" height="300" class="mx-a")
+			div(class="col-12 md:col-8 lg:col-6")
+				h2(class="h3 text-center md:text-left") Sensibilisation aux fondamentaux de l'accessibilité numérique
+				p La vocation de cette sensibilisation est d’apporter les bases fondamentales au sujet de l’accessibilité numérique afin d’assimiler son historique, comprendre ses enjeux humains, connaître les besoins et les technologies d’assistance des personnes handicapées, appréhender le cadre légal, découvrir les normes et référentiels, acquérir un début de socle de bonnes pratiques impactantes non-coûteuses et ses bénéfices.
+				ul
+					li <b>Format</b> : distanciel
+					li <b>Durée</b> : 2 à 3 heures
+					li <b>Tarif</b> : 200€ HT par personne <span class="fs-smaller">(TVA non applicable, article 293 B du CGI)</span>
+					li <b>Profil</b> : tout profil ! Aucun prèrequis nécessaire (si ce n'est vouloir oeuvrer pour un web plus éthique)
+					li <b>Programme</b> :
+						ol 
+							li Découvrir l'accessibilité numérique <span class="fs-4">— Définitions, historique</span>
+							li État de la situation <span class="fs-4">— Les types de handicaps, besoins et outils, chiffres, études</span>
+							li Normes techniques 
+								<span class="fs-4">— 
+									+tooltip('w3c', 'W3C', 'World Wide Web Consortium', true)
+									| , 
+									+tooltip('wai', 'WAI', 'Web Accessibility Initiative', true)
+									| , 
+									+tooltip('wcag', 'WCAG', 'Web Content Accessibility Guidelines', true)
+									| , 
+									+tooltip('rgaa', 'RGAA', 'Référentiel général d\'amélioration de l\'accessibilité')
+								</span>
+							li La législation en France <span class="fs-4">— Obligations, entités concernées, sanctions, autorités de contrôle</span>
+							li Focus sur le RGAA <span class="fs-4">— Méthodologie, conformité, réflexion et pondération</span>
+							li « <span lang="en">Solid start</span> » <span class="fs-4">— Par où commencer en tant que concepteur ?</span>
+							li Mythes et idées reçues <span class="fs-4">— Coût, design, responsabilités, cible</span>

@@ -985,10 +985,11 @@ body:not(.index-page) main::after {
 body:not(.index-page) main h1 {
   width: fit-content;
   padding-bottom: 0.75em;
-  padding-inline: 1rem;
-  margin-inline: auto;
   text-align: center;
   background: url("../img/svg/wavy-line.svg") no-repeat bottom center/10rem auto;
+  color: var(--color-primary-dark);
+  padding-inline: 1rem;
+  margin-inline: auto;
 }
 
 a,
@@ -1122,6 +1123,10 @@ ul ::marker {
   color: var(--color-grey);
 }
 
+ol ::marker {
+  color: var(--color-primary);
+}
+
 .list-unstyled {
   list-style: none;
 }
@@ -1228,7 +1233,7 @@ img {
  * Base
  */
 .btn {
-  --px: 1.25em;
+  --px: 1.09em;
   --py: calc(var(--px) / 2);
   --r: 0.5em;
   --fs: 1rem;
@@ -1454,6 +1459,42 @@ img {
 .modal__close {
   margin-left: auto;
   pointer-events: auto;
+}
+
+.tooltip {
+  all: unset;
+  position: relative;
+  border-bottom: 1px dotted;
+}
+.tooltip span {
+  position: fixed;
+  right: var(--gutter);
+  bottom: var(--gutter);
+  left: var(--gutter);
+  z-index: 100;
+  display: none;
+  padding: var(--sp-1-2);
+  border: 1px solid #fff;
+  font-family: "Merriweather", Arial, sans-serif;
+  font-size: 0.875rem;
+  text-align: center;
+  background-color: var(--color-primary-dark);
+  color: #fff;
+}
+@media screen and (min-width: 48rem) {
+  .tooltip span {
+    position: absolute;
+    top: 100%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    width: max-content;
+    max-width: 20ch;
+    translate: -50% 0;
+  }
+}
+.tooltip:is(:hover, :focus-visible) span {
+  display: block;
 }
 
 /** -----------------------------------------------------------

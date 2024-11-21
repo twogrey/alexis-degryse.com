@@ -9,6 +9,9 @@ RewriteRule ^politique-de-confidentialite$ dest/pages/politique-de-confidentiali
 RewriteRule ^mentions-legales$ dest/pages/mentions-legales/index.html
 ErrorDocument 404 /dest/pages/404.html
 
+# Désactiver l'indexation des répertoires
+Options -Indexes
+
 <IfModule mod_expires.c>
 
     ExpiresActive on

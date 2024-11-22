@@ -1,2 +1,2 @@
-@media screen and (min-width:75rem){main{padding-bottom:0}.footer{--svg-fill:var(--color-primary)}}
+main img{background-image:linear-gradient(#f0f0f0 1px,transparent 0),linear-gradient(90deg,#f0f0f0 1px,#fff 0);background-position:50%;background-size:3rem 3rem}@media screen and (min-width:75rem){main{padding-bottom:0}.footer{--svg-fill:var(--color-primary)}}
 /*# sourceMappingURL=../sourcemaps/accessibilite.min.css.map */

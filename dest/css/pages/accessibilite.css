@@ -82,6 +82,11 @@
     padding-bottom: 0;
   }
 }
+main img {
+  background-image: linear-gradient(#f0f0f0 1px, transparent 1px), linear-gradient(to right, #f0f0f0 1px, #fff 1px);
+  background-position: center;
+  background-size: 3rem 3rem;
+}
 
 @media screen and (min-width: 75rem) {
   .footer {

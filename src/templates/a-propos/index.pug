@@ -22,7 +22,8 @@ block main
 					- if (today < new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate())) {
 						- age--
 					- }
-					h3 Introduction
+					h2.sr-only Mon profil
+					h3(class="mt-0") Introduction
 					p Je m’appelle <strong>Alexis</strong>, #{age} ans, marié, jeune papa, gaga des animaux, baigné dans la culture populaire japonaise des années 90, rêvant d’un numérique responsable, j’ai la chance d’exercer le métier d’<strong>intégrateur web</strong> depuis une quinzaine d'années.
 					h3 Profil professionnel
 					p Passionné depuis toujours par ce que le web est en mesure d’apporter au monde, je suis féru de <strong>HTML</strong> et <strong>CSS</strong> depuis mes débuts.<br>Ces langages, faciles à utiliser mais difficiles à maitriser, sont mes outils au quotidien et constituent le fil principal de ma veille. J’adore discuter de sémantique, d’animations, de SEO, d’accessibilité, d’éco-conception, de responsive et d'ergonomie.
@@ -56,4 +57,4 @@ block main
 				include _parcours.pug
 			div(class="col-12 lg:offset-1 lg:col-5")
 				+title("Clients", "briefcase")
-				include _clients.pug
+				include _clients.pug 

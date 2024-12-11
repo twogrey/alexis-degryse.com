@@ -103,6 +103,14 @@ body {
 section {
 	&:nth-of-type(2) {
 		background-color: var(--index-b-c);
+
+		@include large {
+			background-image: svg('wavy-line.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 110% auto;
+			background-blend-mode: luminosity;
+		}
 	}
 }
 

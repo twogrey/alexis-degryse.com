@@ -4590,6 +4590,10 @@ img {
   background-color: transparent !important;
 }
 
+.full-bleed {
+  border-image: conic-gradient(var(--c) 0 0) fill 0/0/0 100vmax;
+}
+
 .border {
   border: 0.0625rem solid var(--color-grey) !important;
 }

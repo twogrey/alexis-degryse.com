@@ -2,9 +2,11 @@ mixin item(tag, text, link, linkText, date, linkLang, textLang)
 	li
 		span
 			span.tag=tag
+			| 
 			span.tag=date
+			| 
 		span
-			span(lang=textLang)=text 
+			span(lang=textLang)=text
 			<br> 
 			if link
 				a(href=link, lang=linkLang)=linkText
@@ -12,6 +14,7 @@ mixin item(tag, text, link, linkText, date, linkLang, textLang)
 				=linkText
 
 ol(role="list")
+	+item("Projet", "Calendrier de l'avent : 12 dessins en CSS", 'https://codepen.io/collection/bGZkbd', "Mes réalisations", "Décembre 2024", "en")
 	+item("Conférence", "Accessibilité numérique à l'université d'Orléans", "https://www.youtube.com/watch?v=aOb1erIjWDg", "Soirée de l'ADIRC", "26 Septembre 2024") 
 	+item("Contribution", "Relecture d'e-book pour Geoffrey Crofte", 'https://shop.geoffreycrofte.com/b/yTHMK/af660bf26574434', "« Formulaires web : Les erreurs à éviter qui vous coûtent cher »", "Décembre 2023")
 	+item("Projet", "Générateur de lorem ipsum  sur le thème du jeu vidéo", 'https://twogrey.github.io/jeux-video-lorem-ipsum/', "Jeux vidéo Lorem ipsum", "Juin 2023")

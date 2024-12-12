@@ -6,7 +6,6 @@ RewriteRule ^prestations/audit-qualite-web$ dest/pages/prestations/audit-qualite
 RewriteRule ^a-propos$ dest/pages/a-propos/index.html
 RewriteRule ^contact$ dest/pages/contact/index.html
 RewriteRule ^credits$ dest/pages/credits/index.html
-RewriteRule ^politique-de-confidentialite$ dest/pages/politique-de-confidentialite/index.html
 RewriteRule ^mentions-legales$ dest/pages/mentions-legales/index.html
 ErrorDocument 404 /dest/pages/404.html
 

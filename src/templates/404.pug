@@ -1,12 +1,15 @@
 extends wrapper.pug
 
-block title-page
+block meta
+	meta(name="robots" content="noindex, follow")
+		
+block prepend title-page
 	| Page introuvable - Erreur 404 - 
 
 block main
 	.container.text-center
 		h1 Oops ! Page introuvable
-		p.fs-larger La page demandée n'existe pas.
+		p.fs-larger La page demandée n'existe pas ou n'est plus disponible.
 		a(href="/" class="btn btn--primary")
 			svg(aria-hidden="true")
 				use(xlink:href="/dest/img/sprite.svg#icon-chevron-left")

@@ -34,6 +34,7 @@
 	&--primary {
 		--bg: var(--color-primary);
 		--c: #fff;
+		outline-color: var(--bg);
 	}
 
 	&--grey {

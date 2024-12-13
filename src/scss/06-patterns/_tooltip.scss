@@ -3,6 +3,10 @@
 	position: relative;
 	border-bottom: 1px dotted;
 
+	&:focus-visible {
+		outline: auto;
+	}
+
 	span {
 		position: fixed;
 		right: var(--gutter);

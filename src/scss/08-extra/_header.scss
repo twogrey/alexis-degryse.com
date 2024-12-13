@@ -29,6 +29,7 @@
 	align-items: center;
 
 	@include medium { 
+		--o: -0.5rem;
 		gap: var(--sp-2);
 		padding: calc(var(--md-logo-p) - var(--index-b-w)) var(--md-logo-p) var(--md-logo-p); 
 	}
@@ -193,7 +194,10 @@
 				@include medium {
 					position: relative;
 					font-weight: $regular;
-					text-decoration: none;
+
+					&:not(:focus-visible) {
+						text-decoration: none;
+					}
 
 					&::before {
 						content: '';
@@ -210,31 +214,37 @@
 
 		a,
 		button {
+			--text-decoration-color: transparent;
 			display: flex;
 			gap: var(--sp);
 			align-items: center;
 			width: 100%;
 			padding: var(--item-p) 0;
 			font-family: $heading-font-family;
-			text-decoration: none;
+			text-decoration: var(--text-decoration-color) underline solid rem(3px);
+			text-underline-offset: rem(4px);
 			color: var(--text-color);
+			outline: none;
 
 			@include medium { 
 				gap: var(--sp-1-2);
-				padding-inline: var(--sp-1-2);
+				padding-inline: var(--sp-1-2) !important;
 			}
 
 			@include medium-plus { 
 				padding-inline: var(--sp) !important;
 			}
+
+			&:focus-visible {
+				--text-decoration-color: var(--color-darkgrey) !important;
+			}
 		}
 
 		[aria-current],
 		button:has(+ ul [aria-current]) {
+			--text-decoration-color: var(--color-lightgrey);
 			font-weight: $bold;
-			text-decoration: var(--color-lightgrey) underline solid rem(3px);
 			color: var(--color-primary);
-			text-underline-offset: rem(4px);
 		}
 
 		svg {
@@ -273,6 +283,8 @@
 			}
 
 			a {
+				--o: -0.25rem;
+
 				@include medium { 
 					justify-content: center;
 					padding: var(--sp-1-2) var(--sp);

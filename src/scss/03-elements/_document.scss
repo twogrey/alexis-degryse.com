@@ -48,7 +48,24 @@ main {
 	}
 }
 
+*:focus-visible {
+	--o: 0.25rem;
+	outline-color: currentColor;
+	outline-style: solid;
+	outline-offset: var(--o);
+	outline-width: 0.25rem;
+}
 
+@media (prefers-reduced-motion: no-preference) {
+	*:focus-visible {
+		animation: outline-bounce 0.15s;
+	}
+}
+
+@keyframes outline-bounce {
+	50% { outline-offset: calc(var(--o) * 2); }
+	100% { outline-offset: var(--o); }
+}
 
 
 

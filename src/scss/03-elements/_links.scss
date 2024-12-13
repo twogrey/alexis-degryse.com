@@ -4,16 +4,10 @@ a,
 	color: var(--color-primary);
 	transition-timing-function: ease;
 	transition-duration: 0.2s;
-	transition-property: color, border-color;
+	transition-property: color, border-color, background-color;
 
 	:is(p, ul, ol, blockquote) & {
 		text-decoration: underline;
-
-		&:focus-visible {
-			outline-color: currentColor;
-			outline-style: dotted;
-			outline-width: rem(2px);
-		}
 	}
 }
 

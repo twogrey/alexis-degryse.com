@@ -995,23 +995,38 @@ body {
   margin-inline: auto;
 }
 
+*:focus-visible {
+  --o: 0.25rem;
+  outline-color: currentColor;
+  outline-style: solid;
+  outline-offset: var(--o);
+  outline-width: 0.25rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  *:focus-visible {
+    animation: outline-bounce 0.15s;
+  }
+}
+@keyframes outline-bounce {
+  50% {
+    outline-offset: calc(var(--o) * 2);
+  }
+  100% {
+    outline-offset: var(--o);
+  }
+}
 a,
 .btn-as-link {
   text-decoration: none;
   color: var(--color-primary);
   transition-timing-function: ease;
   transition-duration: 0.2s;
-  transition-property: color, border-color;
+  transition-property: color, border-color, background-color;
 }
 :is(p, ul, ol, blockquote) a,
 :is(p, ul, ol, blockquote) .btn-as-link {
   text-decoration: underline;
-}
-:is(p, ul, ol, blockquote) a:focus-visible,
-:is(p, ul, ol, blockquote) .btn-as-link:focus-visible {
-  outline-color: currentColor;
-  outline-style: dotted;
-  outline-width: 0.125rem;
 }
 
 .btn-as-link {
@@ -1184,7 +1199,7 @@ img {
   z-index: 100;
   padding: var(--sp) var(--sp-2);
   border: 0.0625rem solid var(--color-primary);
-  margin-bottom: 0;
+  margin: 0;
   background-color: #fff;
   color: var(--color-black);
   transform: translateY(calc((100% + var(--sp-1-2)) * (var(--i) - 1)));
@@ -1278,6 +1293,7 @@ img {
 .btn--primary {
   --bg: var(--color-primary);
   --c: #fff;
+  outline-color: var(--bg);
 }
 .btn--grey {
   --bg: var(--color-lightgrey);
@@ -1468,6 +1484,9 @@ img {
   all: unset;
   position: relative;
   border-bottom: 1px dotted;
+}
+.tooltip:focus-visible {
+  outline: auto;
 }
 .tooltip span {
   position: fixed;
@@ -5377,6 +5396,7 @@ img {
 }
 @media screen and (min-width: 48rem) {
   .logo {
+    --o: -0.5rem;
     gap: var(--sp-2);
     padding: calc(var(--md-logo-p) - var(--index-b-w)) var(--md-logo-p) var(--md-logo-p);
   }
@@ -5549,6 +5569,9 @@ img {
   .menu > ul > li > button:has(+ ul [aria-current]) {
     position: relative;
     font-weight: 400;
+  }
+  .menu > ul > li > a[aria-current]:not(:focus-visible),
+  .menu > ul > li > button:has(+ ul [aria-current]):not(:focus-visible) {
     text-decoration: none;
   }
   .menu > ul > li > a[aria-current]::before,
@@ -5564,20 +5587,23 @@ img {
 }
 .menu > ul a,
 .menu > ul button {
+  --text-decoration-color: transparent;
   display: flex;
   gap: var(--sp);
   align-items: center;
   width: 100%;
   padding: var(--item-p) 0;
   font-family: "Merriweather", Arial, sans-serif;
-  text-decoration: none;
+  text-decoration: var(--text-decoration-color) underline solid 0.1875rem;
+  text-underline-offset: 0.25rem;
   color: var(--text-color);
+  outline: none;
 }
 @media screen and (min-width: 48rem) {
   .menu > ul a,
   .menu > ul button {
     gap: var(--sp-1-2);
-    padding-inline: var(--sp-1-2);
+    padding-inline: var(--sp-1-2) !important;
   }
 }
 @media screen and (min-width: 62rem) {
@@ -5586,12 +5612,15 @@ img {
     padding-inline: var(--sp) !important;
   }
 }
+.menu > ul a:focus-visible,
+.menu > ul button:focus-visible {
+  --text-decoration-color: var(--color-darkgrey) !important;
+}
 .menu > ul [aria-current],
 .menu > ul button:has(+ ul [aria-current]) {
+  --text-decoration-color: var(--color-lightgrey);
   font-weight: 700;
-  text-decoration: var(--color-lightgrey) underline solid 0.1875rem;
   color: var(--color-primary);
-  text-underline-offset: 0.25rem;
 }
 .menu > ul svg {
   flex: 0 0 auto;
@@ -5631,6 +5660,9 @@ img {
   .menu > ul ul li:last-child {
     margin-bottom: var(--sp-1-4);
   }
+}
+.menu > ul ul a {
+  --o: -0.25rem;
 }
 @media screen and (min-width: 48rem) {
   .menu > ul ul a {

@@ -120,6 +120,7 @@ body {
     aspect-ratio: 1;
     background-color: var(--index-b-c);
     mask: radial-gradient(var(--index-r) at var(--dir), rgba(0, 0, 0, 0) 100%, #000);
+    transition: background-color 0.2s;
   }
   .header {
     border-color: var(--index-b-c);
@@ -138,6 +139,16 @@ body {
   .logo::before, .logo::after {
     top: 0;
   }
+}
+@media screen and (min-width: 48rem) and (min-width: 48rem) {
+  .logo:hover {
+    background-color: var(--color-secondary);
+  }
+  .logo:hover::before, .logo:hover::after {
+    background-color: inherit;
+  }
+}
+@media screen and (min-width: 48rem) {
   .logo::before {
     --dir: bottom left;
     right: 100%;

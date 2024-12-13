@@ -31,7 +31,11 @@
 	@include medium { 
 		--o: -0.5rem;
 		gap: var(--sp-2);
-		padding: calc(var(--md-logo-p) - var(--index-b-w)) var(--md-logo-p) var(--md-logo-p); 
+		padding: calc(var(--md-logo-p) - var(--index-b-w)) var(--md-logo-p) var(--md-logo-p);
+
+		&:hover {
+			background-color: var(--color-lightgrey);
+		}
 	}
 
 	img {

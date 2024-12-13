@@ -43,6 +43,7 @@ body {
 			aspect-ratio: 1;
 			background-color: var(--index-b-c);
 			mask: radial-gradient(var(--index-r) at var(--dir), #0000 100%, #000);
+			transition: background-color 0.2s;
 		}
 	}
 
@@ -66,6 +67,17 @@ body {
 	.logo {
 		&::before,
 		&::after { top: 0; }
+
+		&:hover {
+			@include medium {
+				background-color: var(--color-secondary);
+
+				&::before,
+				&::after {
+					background-color: inherit;
+				}
+			}
+		}
 
 		&::before { 
 			--dir: bottom left;

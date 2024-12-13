@@ -1272,9 +1272,8 @@ img {
   cursor: pointer;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-  /**
-   * Colors
-   */
+  transition-duration: 0.15s;
+  transition-property: color, background-color, box-shadow;
   /**
    * Expanded
    */
@@ -1290,20 +1289,37 @@ img {
     font-size: calc(var(--fs) * 1.15);
   }
 }
+.btn:hover {
+  box-shadow: 0 0 0 0.125rem;
+}
 .btn--primary {
   --bg: var(--color-primary);
   --c: #fff;
   outline-color: var(--bg);
+}
+.btn--primary:hover {
+  --bg: var(--color-primary-lightest);
+  --c: var(--color-primary-dark);
 }
 .btn--grey {
   --bg: var(--color-lightgrey);
   --c: var(--text-color);
   --icon-c: var(--color-grey);
 }
+.btn--grey:hover {
+  --bg: var(--color-secondary-lightest);
+  --c: var(--text-color);
+  --icon-c: var(--bg);
+}
 .btn--white {
   --bg: #fff;
   --c: var(--text-color);
-  --icon-bg: var(--text-color);
+  --icon-bg: var(--c);
+  outline-color: #fff;
+}
+.btn--white:hover {
+  --bg: var(--color-black);
+  --c: #fff;
 }
 .btn--block {
   width: 100%;
@@ -1321,6 +1337,7 @@ img {
   font-size: 2em;
   background-color: var(--icon-bg, #fff);
   color: var(--icon-c, var(--bg));
+  transition: inherit;
 }
 
 /** -----------------------------------------------------------
@@ -5399,6 +5416,9 @@ img {
     --o: -0.5rem;
     gap: var(--sp-2);
     padding: calc(var(--md-logo-p) - var(--index-b-w)) var(--md-logo-p) var(--md-logo-p);
+  }
+  .logo:hover {
+    background-color: var(--color-lightgrey);
   }
 }
 .logo img {

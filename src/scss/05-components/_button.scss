@@ -98,14 +98,22 @@
 	 */
 	&:has(svg) {
 		padding-left: var(--py);
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: var(--py);
+			z-index: -1;
+			width: 2em;
+			border-radius: 50%;
+			background-color: var(--icon-bg, #fff);
+			aspect-ratio: 1;
+		}
 	}
 
 	svg {
 		padding: rem(8px);
-		border-radius: 50%;
-		overflow: visible;
 		font-size: 2em;
-		background-color: var(--icon-bg, #fff);
 		color: var(--icon-c, var(--bg));
 		transition: inherit;
 	}	

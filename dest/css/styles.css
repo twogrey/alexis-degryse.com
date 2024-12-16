@@ -5345,6 +5345,7 @@ img {
   display: flex;
   gap: var(--sp);
   align-items: center;
+  transition: background-color 0.15s;
 }
 @media screen and (min-width: 48rem) {
   .logo {

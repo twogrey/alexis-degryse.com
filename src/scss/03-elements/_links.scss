@@ -8,6 +8,18 @@ a,
 
 	:is(p, ul, ol, blockquote) & {
 		text-decoration: underline;
+
+		&:where(:hover) {
+			text-decoration-style: dotted;
+			text-decoration-thickness: rem(2px);
+		}
+
+		&:has(svg:only-child):where(:hover) {
+			outline-color: currentColor;
+			outline-style: dotted;
+			outline-offset: 0.2rem;
+			outline-width: rem(2px);
+		}
 	}
 }
 

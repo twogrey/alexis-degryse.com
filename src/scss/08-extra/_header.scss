@@ -105,6 +105,12 @@
 	background-color: transparent;
 	cursor: pointer;
 	appearance: none;
+	transition: color 0.15s;
+
+	&:hover {
+		text-decoration: underline;
+		color: var(--color-primary);
+	}
 
 	svg { font-size: 200%; }
 
@@ -239,7 +245,8 @@
 				padding-inline: var(--sp) !important;
 			}
 
-			&:focus-visible {
+			&:focus-visible,
+			&:hover {
 				--text-decoration-color: var(--color-darkgrey) !important;
 			}
 		}

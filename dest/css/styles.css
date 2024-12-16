@@ -996,11 +996,11 @@ body {
 }
 
 *:focus-visible {
-  --o: 0.25rem;
+  --o: 0.2rem;
   outline-color: currentColor;
   outline-style: solid;
   outline-offset: var(--o);
-  outline-width: 0.25rem;
+  outline-width: 0.2rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -1027,6 +1027,18 @@ a,
 :is(p, ul, ol, blockquote) a,
 :is(p, ul, ol, blockquote) .btn-as-link {
   text-decoration: underline;
+}
+:is(p, ul, ol, blockquote) a:where(:hover),
+:is(p, ul, ol, blockquote) .btn-as-link:where(:hover) {
+  text-decoration-style: dotted;
+  text-decoration-thickness: 0.125rem;
+}
+:is(p, ul, ol, blockquote) a:has(svg:only-child):where(:hover),
+:is(p, ul, ol, blockquote) .btn-as-link:has(svg:only-child):where(:hover) {
+  outline-color: currentColor;
+  outline-style: dotted;
+  outline-offset: 0.2rem;
+  outline-width: 0.125rem;
 }
 
 .btn-as-link {
@@ -5490,6 +5502,11 @@ img {
   background-color: transparent;
   cursor: pointer;
   appearance: none;
+  transition: color 0.15s;
+}
+[aria-controls=menu]:hover {
+  text-decoration: underline;
+  color: var(--color-primary);
 }
 [aria-controls=menu] svg {
   font-size: 200%;
@@ -5632,8 +5649,9 @@ img {
     padding-inline: var(--sp) !important;
   }
 }
-.menu > ul a:focus-visible,
-.menu > ul button:focus-visible {
+.menu > ul a:focus-visible, .menu > ul a:hover,
+.menu > ul button:focus-visible,
+.menu > ul button:hover {
   --text-decoration-color: var(--color-darkgrey) !important;
 }
 .menu > ul [aria-current],

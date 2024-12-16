@@ -49,11 +49,11 @@ main {
 }
 
 *:focus-visible {
-	--o: 0.25rem;
+	--o: 0.2rem;
 	outline-color: currentColor;
 	outline-style: solid;
 	outline-offset: var(--o);
-	outline-width: 0.25rem;
+	outline-width: 0.2rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {

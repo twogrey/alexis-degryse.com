@@ -5,6 +5,12 @@
 	--phi: 1.618;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+	@view-transition {
+		navigation: auto;
+	}
+}
+
 body {
 	--text-color: var(--color-black);
 	display: grid;

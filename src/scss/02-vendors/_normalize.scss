@@ -14,9 +14,7 @@ html {
 	-webkit-tap-highlight-color: transparent;
 	text-size-adjust: none;
 	box-sizing: border-box;
-}
-
-html:focus-within {
+	
 	@media (prefers-reduced-motion: no-preference) {
 		scroll-behavior: smooth;
 	}

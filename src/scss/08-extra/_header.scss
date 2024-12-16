@@ -24,6 +24,7 @@
 	@include fluid-fs(var(--min), var(--max));
 	--min: #{rem(20px, true)};
 	--max: #{rem(28px, true)};
+	position: relative;
 	display: flex;
 	gap: var(--sp);
 	align-items: center;
@@ -33,8 +34,16 @@
 		gap: var(--sp-2);
 		padding: calc(var(--md-logo-p) - var(--index-b-w)) var(--md-logo-p) var(--md-logo-p);
 
-		&:hover {
+		&:has(a:hover) {
 			background-color: var(--color-lightgrey);
+		}
+	}
+
+	a {
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
 		}
 	}
 

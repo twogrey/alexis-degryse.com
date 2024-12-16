@@ -7,29 +7,6 @@
  */
 /** --------------------------------------------
  * 
- * Enable/disable imports
- * 
- -------------------------------------------- */
-/**
- * Form
- */
-/**
- * HTML Elements
- */
-/**
- * Objects
- */
-/**
- * Components
- */
-/**
- * Patterns
- */
-/**
- * Utilities
- */
-/** --------------------------------------------
- * 
  * Grid
  * 
  -------------------------------------------- */
@@ -141,10 +118,10 @@ body {
   }
 }
 @media screen and (min-width: 48rem) and (min-width: 48rem) {
-  .logo:hover {
+  .logo:has(a:hover) {
     background-color: var(--color-secondary);
   }
-  .logo:hover::before, .logo:hover::after {
+  .logo:has(a:hover)::before, .logo:has(a:hover)::after {
     background-color: inherit;
   }
 }
@@ -193,7 +170,7 @@ section:nth-of-type(2) {
  *
  */
 .photo {
-  --s: 0.5rem;
+  --s: 1.8cqw;
   position: relative;
   max-width: min(75vw, 20rem);
   margin-inline: auto;
@@ -211,9 +188,14 @@ section:nth-of-type(2) {
 }
 .photo img {
   --c: var(--color-primary-light);
+  position: relative;
   width: 75%;
   margin-inline: auto;
-  filter: drop-shadow(calc(var(--s) * -1) calc(var(--s) * -0.5) var(--c)) drop-shadow(var(--s) calc(var(--s) * -0.5) var(--c)) drop-shadow(0 var(--s) var(--c));
+}
+@supports (--s: 1cqw) and (container-type: inline-size) {
+  .photo img {
+    filter: drop-shadow(calc(var(--s) * -1) calc(var(--s) * -0.5) var(--c)) drop-shadow(var(--s) calc(var(--s) * -0.5) var(--c)) drop-shadow(0 var(--s) var(--c));
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

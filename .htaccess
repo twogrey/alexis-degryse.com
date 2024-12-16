@@ -7,6 +7,7 @@ RewriteRule ^a-propos$ dest/pages/a-propos/index.html
 RewriteRule ^contact$ dest/pages/contact/index.html
 RewriteRule ^credits$ dest/pages/credits/index.html
 RewriteRule ^mentions-legales$ dest/pages/mentions-legales/index.html
+RewriteRule ^plan-du-site$ dest/pages/plan-du-site/index.html
 ErrorDocument 404 /dest/pages/404.html
 
 # Désactiver l'indexation des répertoires

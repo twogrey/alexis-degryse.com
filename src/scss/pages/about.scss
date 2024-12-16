@@ -77,7 +77,7 @@ $assets-base-path: '../../';
 	.tag {
 		justify-self: end;
 		padding: var(--sp-1-4) var(--sp-1-2);
-		border-radius: var(--radius);
+		border-radius: calc(var(--radius) / 2);
 		font-family: $heading-font-family;
 		font-size: 80%;
 		font-weight: $bold;

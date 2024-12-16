@@ -68,8 +68,8 @@ body {
 		&::before,
 		&::after { top: 0; }
 
-		&:hover {
-			@include medium {
+		@include medium {
+			&:has(a:hover) {
 				background-color: var(--color-secondary);
 
 				&::before,
@@ -133,7 +133,7 @@ section {
  */
 
 .photo {
-	--s: #{rem(8px)};
+	--s: 1.8cqw;
 	position: relative;
 	max-width: min(75vw, 20rem);
 	margin-inline: auto;
@@ -152,8 +152,11 @@ section {
 
 	img {
 		--c: var(--color-primary-light);
+		position: relative;
 		width: 75%;
 		margin-inline: auto;
-		filter: drop-shadow(calc(var(--s) * -1) calc(var(--s) * -0.5) var(--c)) drop-shadow(var(--s) calc(var(--s) * -0.5) var(--c)) drop-shadow(0 var(--s) var(--c));
+		@supports (--s: 1cqw) and (container-type: inline-size) {
+			filter: drop-shadow(calc(var(--s) * -1) calc(var(--s) * -0.5) var(--c)) drop-shadow(var(--s) calc(var(--s) * -0.5) var(--c)) drop-shadow(0 var(--s) var(--c));
+		}
 	}
 }

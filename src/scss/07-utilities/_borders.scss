@@ -1,54 +1,53 @@
-@if $enable-borders {
 
-	$default: #{rem(1px)} solid var(--color-grey) !important;
+$default: #{rem(1px)} solid var(--color-grey) !important;
 
-	.border {
-		border: $default;
-	}
+.border {
+	border: $default;
+}
 
-	/**
+/**
 	 * Sides
 	 */
-	.border-0 {
-		border-width: 0 !important;
-	}
+.border-0 {
+	border-width: 0 !important;
+}
 
-	@each $name in('top', 'right', 'bottom', 'left') {
-		.border-#{$name} {
-			border-#{$name}: $default;
-		}
+@each $name in('top', 'right', 'bottom', 'left') {
+	.border-#{$name} {
+		border-#{$name}: $default;
 	}
+}
 
-	@each $name in('top', 'right', 'bottom', 'left') {
-		.border-#{$name}-0 {
-			border-#{$name}: 0 !important;
-		}
+@each $name in('top', 'right', 'bottom', 'left') {
+	.border-#{$name}-0 {
+		border-#{$name}: 0 !important;
 	}
+}
 
-	/**
+/**
 	 * Sizes
 	 */
-	@each $name, $val in('1': rem(1px), '2': rem(2px), '4': rem(4px)) {
-		.border-#{$name} {
-			border-width: #{$val} !important;
-		}
+@each $name, $val in('1': rem(1px), '2': rem(2px), '4': rem(4px)) {
+	.border-#{$name} {
+		border-width: #{$val} !important;
 	}
+}
 
-	/**
+/**
 	 * Colors
 	 */
-	@each $name, $color in($all-colors) {
-		.border-#{$name} {
-			border-color: var(--color-#{$name}) !important;
-		}
+@each $name, $color in($all-colors) {
+	.border-#{$name} {
+		border-color: var(--color-#{$name}) !important;
 	}
-
-	.border-white {
-		border-color: #fff !important;
-	}
-
-	.border-transparent {
-		border-color: transparent !important;
-	}
-
 }
+
+.border-white {
+	border-color: #fff !important;
+}
+
+.border-transparent {
+	border-color: transparent !important;
+}
+
+

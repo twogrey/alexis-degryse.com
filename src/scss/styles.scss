@@ -57,12 +57,8 @@
  */
 
 @import
-	'05-components/badge', 
 	'05-components/loader',
-	'05-components/button',
-	'05-components/pagination',
-	'05-components/panel',
-	'05-components/breadcrumb';
+	'05-components/button';
 
 /** -----------------------------------------------------------
  *
@@ -71,10 +67,6 @@
  */
 
 @import '06-patterns/disclosure',
-	'06-patterns/accordion',
-	'06-patterns/tabs',
-	'06-patterns/modal',
-	'06-patterns/dropdown',
 	'06-patterns/tooltip';
 
 /** -----------------------------------------------------------
@@ -94,8 +86,7 @@
 	'07-utilities/flexbox',
 	'07-utilities/position',
 	'07-utilities/radius',
-	'07-utilities/size',
-	'07-utilities/shadow';
+	'07-utilities/size';
 
 /** -----------------------------------------------------------
  *

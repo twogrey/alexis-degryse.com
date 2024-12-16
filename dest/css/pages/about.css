@@ -7,29 +7,6 @@
  */
 /** --------------------------------------------
  * 
- * Enable/disable imports
- * 
- -------------------------------------------- */
-/**
- * Form
- */
-/**
- * HTML Elements
- */
-/**
- * Objects
- */
-/**
- * Components
- */
-/**
- * Patterns
- */
-/**
- * Utilities
- */
-/** --------------------------------------------
- * 
  * Grid
  * 
  -------------------------------------------- */
@@ -152,7 +129,7 @@
 .list .tag {
   justify-self: end;
   padding: var(--sp-1-4) var(--sp-1-2);
-  border-radius: var(--radius);
+  border-radius: calc(var(--radius) / 2);
   font-family: "Merriweather", Arial, sans-serif;
   font-size: 80%;
   font-weight: 700;

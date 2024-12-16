@@ -1,0 +1,35 @@
+extends ../wrapper.pug
+
+block vars
+	- var metaDesc = 'Vous êtes égaré ? Ce plan du site peut aider à vous orienter.'
+
+block prepend title-page
+	| Plan du site - 
+
+block main
+	.container
+		h1 Plan du site
+		.row.justify-center
+			div(class="col sm:col-8 lg:col-6 fs-1")
+				p.text-center Vous êtes égaré ? Ce plan du site peut aider à vous orienter.
+				ul
+					li
+						a(href="/") Accueil
+					li
+						a(href="/a-propos") À propos
+					li Prestations
+						ul
+							li
+								a(href="/prestations/creation-sites-web") Création de sites web
+							li
+								a(href="/prestations/accessibilite-numerique") Accessibilité numérique
+							li
+								a(href="/prestations/audit-qualite-web") Audit qualité web
+					li Liens utiles
+						ul
+							li
+								a(href="/contact") Contact
+							li
+								a(href="/mentions-legales") Mentions légales
+							li
+								a(href="/credits") Crédits

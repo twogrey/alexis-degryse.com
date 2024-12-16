@@ -14,7 +14,7 @@ a,
 			text-decoration-thickness: rem(2px);
 		}
 
-		&:has(svg:only-child):where(:hover) {
+		&:has(svg:only-child:not([class])):where(:hover) {
 			outline-color: currentColor;
 			outline-style: dotted;
 			outline-offset: 0.2rem;

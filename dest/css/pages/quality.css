@@ -7,29 +7,6 @@
  */
 /** --------------------------------------------
  * 
- * Enable/disable imports
- * 
- -------------------------------------------- */
-/**
- * Form
- */
-/**
- * HTML Elements
- */
-/**
- * Objects
- */
-/**
- * Components
- */
-/**
- * Patterns
- */
-/**
- * Utilities
- */
-/** --------------------------------------------
- * 
  * Grid
  * 
  -------------------------------------------- */
@@ -100,11 +77,17 @@
     justify-content: center;
   }
   .bricks img {
-    position: sticky;
-    top: 50%;
     width: 6.25rem;
     height: var(--brick-h);
   }
+}
+@media screen and (min-width: 75rem) and (prefers-reduced-motion: no-preference) {
+  .bricks img {
+    position: sticky;
+    top: 50%;
+  }
+}
+@media screen and (min-width: 75rem) {
   .bricks img:nth-of-type(1) {
     margin-top: calc(var(--item-h) * 3 + var(--brick-h) * 0.7);
     translate: 90% -70%;

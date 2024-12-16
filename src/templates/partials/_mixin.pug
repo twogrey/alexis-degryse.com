@@ -1,3 +1,4 @@
 mixin tooltip(id, term, text, en)
-	button(class="tooltip" role="tooltip" aria-describedby=id+"-meaning")=term 
-		span(id=id+"-meaning" lang="en")&attributes({"lang='en'": en})=text
+	span.tooltip
+		button(class="tooltip" aria-describedby=id+"-meaning")&attributes({"lang='en'": en})=term 
+		span(id=id+"-meaning" role="tooltip")&attributes({"lang='en'": en})=text

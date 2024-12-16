@@ -25,10 +25,13 @@ $assets-base-path: '../../';
 		justify-content: center;
 
 		img {
-			position: sticky;
-			top: 50%;
 			width: rem(100px);
 			height: var(--brick-h);
+
+			@media (prefers-reduced-motion: no-preference) {
+				position: sticky;
+				top: 50%;
+			}
 
 			&:nth-of-type(1) {
 				margin-top: calc(var(--item-h) * 3 + var(--brick-h) * 0.7);

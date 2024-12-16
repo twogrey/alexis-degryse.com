@@ -1,42 +1,45 @@
 .tooltip {
-	all: unset;
 	position: relative;
-	border-bottom: 1px dotted;
 
-	&:focus-visible {
-		outline: auto;
-	}
+	button {
+		all: unset;
+		border-bottom: 1px dotted;
 
-	span {
-		position: fixed;
-		right: var(--gutter);
-		bottom: var(--gutter);
-		left: var(--gutter);
-		z-index: 100;
-		display: none;
-		padding: var(--sp-1-2);
-		border: 1px solid #fff;
-		font-family: $heading-font-family;
-		font-size: rem(14px);
-		text-align: center;
-		background-color: var(--color-primary-dark);
-		color: #fff;
-
-		@include medium {
-			position: absolute;
-			top: 100%;
-			right: auto;
-			bottom: auto;
-			left: 50%;
-			width: max-content;
-			max-width: 20ch;
-			translate: -50% 0;
+		&:focus-visible {
+			outline: auto;
 		}
-	}
 
-	&:is(:hover, :focus-visible) {
-		span {
-			display: block;
+		+ span { 
+			position: fixed;
+			right: var(--gutter);
+			bottom: var(--gutter);
+			left: var(--gutter);
+			z-index: 100;
+			display: none;
+			padding: var(--sp-1-2);
+			border: 1px solid #fff;
+			font-family: $heading-font-family;
+			font-size: rem(14px);
+			text-align: center;
+			background-color: var(--color-primary-dark);
+			color: #fff;
+
+			@include medium {
+				position: absolute;
+				top: 135%;
+				right: auto;
+				bottom: auto;
+				left: 50%;
+				width: max-content;
+				max-width: 20ch;
+				translate: -50% 0;
+			}
+		}
+
+		&:is(:hover, :focus-visible) {
+			+ span {
+				display: block;
+			}
 		}
 	}
 }

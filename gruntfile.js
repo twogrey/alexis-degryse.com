@@ -22,7 +22,7 @@ module.exports = function (grunt) {
 	const jsBuildComponentsPath = `${jsBuildPath}components/`;
 	const jsBuildPagesPath = `${jsBuildPath}pages/`;
 	const cssBuildPath = `${buildPath}css/`;
-	const pagesBuildPath = `${buildPath}pages/`;
+	const pagesBuildPath = ``;
 
 	const sourcesPath = 'src/';
 
@@ -96,7 +96,7 @@ module.exports = function (grunt) {
 			dist: {
 				files: [ {
 					expand: true,
-					src: [ '**/*.html' ],
+					src: [ `${pagesBuildPath}**/*.html`, '!back-ups/**/*.html', '!node_modules/**/*.html' ],
 					cwd: pagesBuildPath,
 					dest: pagesBuildPath,
 					ext: '.html',
@@ -121,7 +121,7 @@ module.exports = function (grunt) {
 		    		'The “list” role is unnecessary for element “ul”.'
 		    	]
 		  },
-    	all: [ `${pagesBuildPath}**/*.html` ]
+    	all: [ `${pagesBuildPath}**/*.html`, '!back-ups/**/*.html', '!node_modules/**/*.html' ]
     },
 		/**
 	   * [Sass compiler]

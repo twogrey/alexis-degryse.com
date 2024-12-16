@@ -1,0 +1,34 @@
+mixin item(tag, text, link, linkText, date, linkLang, textLang)
+	li
+		span
+			span.tag=tag
+			| 
+			span.tag=date
+			| 
+		span
+			span(lang=textLang)=text
+			<br> 
+			if link
+				a(href=link, lang=linkLang)=linkText
+			else if linkText
+				=linkText
+
+ol(role="list")
+	//-+item("Article", "Contribution au calendrier de l'avent 2024 de HTMHell", "https://www.htmhell.dev/adventcalendar/2022/8/", "Datalists are more powerful than you think", "Décembre 2024", "en")
+	+item("Projet", "Calendrier de l'avent : 12 dessins en CSS", 'https://codepen.io/collection/bGZkbd', "Mes réalisations", "Décembre 2024")
+	+item("Conférence", "Accessibilité numérique à l'université d'Orléans", "https://www.youtube.com/watch?v=aOb1erIjWDg", "Soirée de l'ADIRC", "26 Septembre 2024") 
+	+item("Contribution", "Relecture d'e-book pour Geoffrey Crofte", 'https://shop.geoffreycrofte.com/b/yTHMK/af660bf26574434', "« Formulaires web : Les erreurs à éviter qui vous coûtent cher »", "Décembre 2023")
+	+item("Projet", "Générateur de lorem ipsum  sur le thème du jeu vidéo", 'https://twogrey.github.io/jeux-video-lorem-ipsum/', "Jeux vidéo Lorem ipsum", "Juin 2023")
+	+item("Association", "Membre du collectif Csscade", "https://csscade.fr/", "csscade.fr", "Décembre 2022")
+	+item("Article", "Contribution au calendrier de l'avent 2022 de HTMHell", "https://www.htmhell.dev/adventcalendar/2022/8/", "Improving SEO without knowing where to start", "Décembre 2022", "en")
+	+item("Conférence", "Impacts sur les personnes handicapées créés par des erreurs de conception", false, 'Ineat (en interne)', "Novembre 2022")
+	+item("Projet", "Color picker bookmarklet", 'https://twogrey.github.io/CoPiBoo---Color-Picker-Bookmarklet/', "CoPiBoo", "Juin 2022", "en", "en")
+	+item("Conférence", "Les règles Opquast orientées SEO", false, 'Ineat (en interne)', "Juin 2022")
+	+item("Projet", "Liste des commandes clavier sur NVDA dans un contexte de navigation web", 'https://twogrey.github.io/NVDA-cheatsheet/', "Fiche mémo des commandes clavier sur NVDA", "Mai 2022")
+	+item("Projet", "Classé 14 sur 2696 joueurs", 'https://cssbattle.dev/battle/13', "CSS Battle 13", "Janvier 2022", "en")
+	+item("Projet", "Classé 8 sur 405 joueurs", 'https://cssbattle.dev/battle/12', "CSS Battle 12", "Novembre 2021", "en")
+	+item("Formation", "10 jours d'initiation à l'intégration web pour 15 apprenants en reconversion professionnelle", 'https://info.lenord.fr/grace-a-leur-envie-ils-deviendront-developpeurs-web-en-4-mois-', "Programme School d'Ineat Academy", "Janvier 2021")
+	+item("Articles", "Contributions sur le blog d'Ineat", 'https://blog.ineat-group.com/author/alexisdeg/', "Mes articles", "De 2019 à 2021")
+	+item("Projet", "Challenge : Daily CSS Images", 'https://codepen.io/collection/DNRBNz?sort_by=itemcreatedat', "Mes réalisations", "Janvier 2017", "fr", "en")
+	+item("Projet", "Participation au hackathon d'Adeo", "/dest/img/hackathome-2014.jpg", "Hackathome : améliorer l'habitat", "Juin 2014")
+	+item("Articles", "Rédacteur sur Frandroid", 'https://www.frandroid.com/author/alexisdegryse', "Mes articles", "2012")

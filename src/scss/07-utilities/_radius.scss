@@ -1,14 +1,11 @@
 :root {
-	--radius: #{rem(4px)};
+	--radius: #{rem(10px)};
 }
 
-@if $enable-radius {
-	.radius {
-		border-radius: var(--radius) !important;
-	}
+.radius {
+	border-radius: var(--radius) !important;
+}
 
-	.rounded {
-		border-radius: rem(5000px) !important;
-	}
-
+.rounded {
+	border-radius: rem(5000px) !important;
 }

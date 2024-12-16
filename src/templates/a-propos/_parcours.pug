@@ -1,0 +1,18 @@
+mixin item(tag, year, text)
+	li
+		span
+			span.tag !{tag}
+			| 
+			span.tag=year
+			| 
+		span !{text}
+
+ol(role="list")
+	+item("Astek", "2024", "Intégrateur web<br> Référent accessibilité web") 
+	+item("Ineat Group", "2017", "Intégrateur web<br> Référent accessibilité web") 
+	+item("Hobbynote", "2015", "Intégrateur web") 
+	+item("Ineat Conseil", "2011", "Intégrateur web<br> Webdesigner") 
+	+item("Plaine images", "2010", "Chargé de communication en ligne <br>CDD") 
+	+item("EuraTechnologies<br>DigiPort", "2009", "Chargé de communication en ligne <br>Alternance") 
+	+item("Efficom", "2009", "Licence<br> Concepteur Intégrateur web") 
+	+item("Université de Lille", "2007", "DUT<br> SID (Statistique et Informatique Décisionnelle)")

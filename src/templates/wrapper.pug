@@ -1,35 +1,39 @@
 doctype html
 
-include partials/mixin.pug 
-
-html(lang="en", class="touch")
-	head
-		include partials/head.pug 
+- var prestation = ['creation-sites-web', 'accessibilite-numerique', 'audit-qualite-web'];
  
-	block vars
+block vars
+
+include partials/_mixin.pug 
+
+html(lang="fr")
+	head
+		title 
+			block title-page
+				| Alexis Degryse - Conception web et accessibilité numérique
+		include partials/_head.pug 
 
 	body(class=bodyClass)
 
-		include partials/skip-links.pug 
+		include partials/_skip-links.pug 
 
-		include partials/header.pug 
+		include partials/_header.pug 
 			
 		block before-main
 
-		main#content(role="main")
+		main#contenu(role="main")
 			block main
 			
 		block after-main
 
-		include partials/footer.pug 
+		include partials/_footer.pug 
 
 		div(hidden)
-			#new-window This link opens a new tab.
-			#french-content In French.
+			#new-window Ce lien ouvre un nouvel onglet.
+			#english-content En anglais.
 
 		//- Scripts
 		block scripts-footer 
-			script(src="dest/js/scripts.min.js")
-			script(src="dest/js/components/offcanvas.min.js")
-			script(src="dest/js/components/modals.min.js")
+			script(src="/dest/js/scripts.min.js")
+			script(src="/dest/js/components/disclosure.min.js")
 			script(async, defer, src="https://scripts.withcabin.com/hello.js")

@@ -1,0 +1,35 @@
+doctype html
+
+include partials/mixin.pug 
+
+html(lang="en", class="touch")
+	head
+		include partials/head.pug 
+ 
+	block vars
+
+	body(class=bodyClass)
+
+		include partials/skip-links.pug 
+
+		include partials/header.pug 
+			
+		block before-main
+
+		main#content(role="main")
+			block main
+			
+		block after-main
+
+		include partials/footer.pug 
+
+		div(hidden)
+			#new-window This link opens a new tab.
+			#french-content In French.
+
+		//- Scripts
+		block scripts-footer 
+			script(src="dest/js/scripts.min.js")
+			script(src="dest/js/components/offcanvas.min.js")
+			script(src="dest/js/components/modals.min.js")
+			script(async, defer, src="https://scripts.withcabin.com/hello.js")

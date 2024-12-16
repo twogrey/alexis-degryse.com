@@ -4,16 +4,13 @@
 	}
 }
 
-@if $enable-colors {
-
-	@each $name, $color in($all-colors) {
-		.text-#{$name} {
-			color: var(--color-#{$name}) !important;
-		}
+@each $name, $color in($all-colors) {
+	.text-#{$name} {
+		color: var(--color-#{$name}) !important;
 	}
-
-	.text-white {
-		color: #fff !important;
-	}
-
 }
+
+.text-white {
+	color: #fff !important;
+}
+

@@ -1,0 +1,43 @@
+footer(role="contentinfo", id="pied-de-page", class="footer")
+	svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 240" preserveAspectRatio="none" class="d-none md:d-block" aria-hidden="true")
+		path(d="M2103.79,197.44C1837.02,153.6,1662.56,66.67,1490.78,30.56c-164.51-34.69-336.12-32.67-501.01,0.78-115.68,23.47-227.33,62.14-343.78,83.72A1288.44,1288.44,0,0,1,0,54.7V256H2560V204.44C2413.87,253.87,2240.65,237.43,2103.79,197.44Z")
+	.bg-primary-dark.text-white
+		div(class="container py-3")
+			.row
+				div(class="col-12 md:col-4 lg:col-6")
+					.row
+						div(class="col-auto d-none lg:d-block")
+							img(src="/dest/img/svg/logo-ad.svg", alt="", width="52", height="76", class="footer-logo")
+						.col
+							p.h3.fw-bold Alexis Degryse
+							p 
+								| Entrepreneur individuel<br>
+								| Intégrateur web freelance basé à Lille<br>
+								| Consultant en accessibilité numérique<br>
+								| SIREN 931 007 991 - APE 6201Z
+							p
+								svg(aria-hidden="true", class="text-primary-light mr-0.5 fs-larger va-m") 
+									use(xlink:href="/dest/img/sprite.svg#icon-envelop") 
+								a(href="mailto:alexis.degryse@gmail.com") alexis.degryse@gmail.com
+				div(class="col-12 md:col-4 lg:col-3 py-2 md:py-0")
+					h2.h3 Mes réseaux
+					ul(class="row" role="list")
+						mixin network(url, icon, text, en)
+							li(class="col-auto")
+								a(href=url rel="me" class="h1 text-white" aria-label=text)&attributes({"aria-describedby='english-content'": en})
+									svg(aria-hidden="true")
+										use(xlink:href="/dest/img/sprite.svg#icon-"+icon) 
+						+network('https://bsky.app/profile/twogrey.bsky.social', 'bluesky', 'Bluesky')
+						+network('https://h4.io/@twogrey', 'mastodon', 'Mastodon')
+						+network('https://www.linkedin.com/in/alexis-degryse/', 'linkedin', 'LinkedIn')
+						+network('https://codepen.io/twogrey', 'codepen', 'Codepen', true)
+				div(class="col-12 md:col-4 lg:col-3")
+					h2.h3 Liens utiles
+					ul(class="nmt-0.25")
+						mixin useful-link(url, text)
+							li(class="py-0.25")
+								a(href=url)=text
+						+useful-link('/contact', 'Contact')
+						+useful-link('/mentions-legales', 'Mentions légales')
+						+useful-link('/credits', 'Crédits')
+						+useful-link('/plan-du-site', 'Plan du site')

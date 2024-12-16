@@ -1,0 +1,35 @@
+header(role="banner", class="header")
+	div(class="container pos-relative pt md:pt-0") 
+		.row.align-center
+			div(class="col-auto")
+				div(class="logo")
+					img(src="/dest/img/svg/logo-ad.svg", alt="", width="52", height="76")
+					div
+						span 
+							a(href="/", aria-label="Alexis Degryse, retour à l'accueil") Alexis Degryse
+						span Intégrateur web<br><span aria-hidden="true">&nbsp;·&nbsp;</span>Accessibilité numérique 
+			div(class="col-12 md:col-auto ml-a md:mx-a lg:col lg:pl-4 pos-static") 
+				nav(role="navigation", class="menu", aria-label="Principale")
+					button(type="button", aria-controls="menu", aria-expanded="false", class="md:d-none js-disclosure")
+						svg(class="icon", aria-hidden="true", viewBox="0 0 13 7")
+							rect
+							rect
+							rect
+						| Menu
+					ul(role="list", id="menu", style="height: calc-size(auto, size)")  
+						li
+							a(href="/a-propos")&attributes({"aria-current=page": currentPage === 'a-propos'}) À propos
+						li
+							button(type="button", class="btn-as-link", aria-expanded="false", aria-controls="prestations-nav", class="js-disclosure") 
+								| Prestations
+								svg(class="icon chevron ml-a", aria-hidden="true")
+									use(xlink:href="/dest/img/sprite.svg#icon-chevron-down")
+							ul(id="prestations-nav", role="list", style="height: calc-size(auto, size + var(--item-p))")
+								li
+									a(href="/prestations/"+prestation[0])&attributes({"aria-current=page": currentPage === prestation[0]}) Création de sites web
+								li
+									a(href="/prestations/"+prestation[1])&attributes({"aria-current=page": currentPage === prestation[1]}) Accessibilité numérique
+								li
+									a(href="/prestations/"+prestation[2])&attributes({"aria-current=page": currentPage === prestation[2]}) Audit qualité web
+						li
+							a(href="/contact")&attributes({"aria-current=page": currentPage === 'contact'}) Contact 

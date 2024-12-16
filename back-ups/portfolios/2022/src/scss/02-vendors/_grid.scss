@@ -1,0 +1,156 @@
+/** --------------------------------------------
+ * 
+ * Spacing variables
+ * 
+ -------------------------------------------- */
+
+:root {
+	--sp-1-4: calc(var(--sp) / 4);
+	--sp-1-3: calc(var(--sp) / 3);
+	--sp-1-2: calc(var(--sp) / 2);
+	--sp: #{$spacing};
+	--sp-2: calc(var(--sp) * 2);
+	--sp-3: calc(var(--sp) * 3);
+	--sp-4: calc(var(--sp) * 4);
+	--sp-5: calc(var(--sp) * 5);
+	--sp-unitless: #{strip-unit($spacing)};
+}
+
+/** --------------------------------------------
+ * 
+ *  Layout
+ * 
+ -------------------------------------------- */ 
+
+:root {
+	--mq-sm-unitless: #{strip-unit($small-screen)};
+	--mq-md-unitless: #{strip-unit($medium-screen)};
+	--mq-lg-unitless: #{strip-unit($large-screen)};
+	--gutter: var(--sp);
+
+	@include medium {
+		--gutter: var(--sp-2);
+	}
+}
+
+.container {
+	width: 100%;
+	max-width: $large-plus-screen;
+	padding-right: var(--gutter);
+	padding-left: var(--gutter);
+	margin-right: auto;
+	margin-left: auto;
+
+	&--fluid {
+		max-width: none;
+	}
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: calc(var(--gutter) / -2);
+	margin-left: calc(var(--gutter) / -2);
+}
+
+.no-gutters {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.no-gutters>.col,
+.no-gutters>[class*='col-'] {
+	padding-right: 0;
+	padding-left: 0;
+} 
+
+/** --------------------------------------------
+ * 
+ *  Columns
+ * 
+ -------------------------------------------- */
+
+.col,
+[class*='col-'] {
+	position: relative;
+	width: 100%;
+	padding-right: calc(var(--gutter) / 2);
+	padding-left: calc(var(--gutter) / 2);
+	margin-bottom: var(--gutter);
+}
+
+.col {
+	flex-grow: 1;
+	flex-basis: 0;
+	max-width: 100%;
+}
+
+.col-auto {
+	flex: 0 0 auto;
+	width: auto;
+	max-width: 100%;
+}
+
+@each $name, $prefix in($grid-mq) {
+	@include mq(map-get($mq, $name)) {
+		.#{$prefix}\:col {
+			flex-grow: 1;
+			flex-basis: 0;
+			max-width: 100%;
+		}
+
+		.#{$prefix}\:col-auto {
+			flex: 0 0 auto;
+			width: auto;
+			max-width: 100%;
+		}
+	}
+}
+
+@for $i from 1 through $nb-cols {
+	$val: percentage($i/$nb-cols);
+
+	.col-#{$i} {
+		flex: 0 0 $val;
+		max-width: $val;
+	} 
+
+	@each $name, $prefix in($grid-mq) {
+		@include mq(map-get($mq, $name)) {
+			.#{$prefix}\:col-#{$i} {
+				flex: 0 0 var(--#{$prefix}-w, #{$val});
+				max-width: var(--#{$prefix}-w, #{$val});
+			}
+		}
+	}
+} 
+
+/** --------------------------------------------
+ * 
+ * Offset
+ * 
+ -------------------------------------------- */
+
+@each $name, $prefix in($grid-mq) {
+	@include mq(map-get($mq, $name)) {
+		.#{$prefix}\:offset-0 {
+			margin-left: 0;
+		}
+	}
+}
+
+@for $i from 1 through ($nb-cols - 1) {
+	$val: percentage($i/$nb-cols);
+
+	.offset-#{$i} {
+		margin-left: $val;
+	}
+
+	@each $name, $prefix in($grid-mq) {
+		@include mq(map-get($mq, $name)) {
+			.#{$prefix}\:offset-#{$i} {
+				margin-left: $val;
+			}
+		}
+	}
+}

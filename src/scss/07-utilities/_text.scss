@@ -33,11 +33,11 @@
 }
 
 .fs-1 {
-	font-size: 1.375rem !important;
+	font-size: rem(20px) !important;
 }
 
 .fs-2 {
-	font-size: 1.1875rem !important;
+	font-size: rem(18px) !important;
 }
 
 .fs-3 {
@@ -45,15 +45,15 @@
 }
 
 .fs-4 {
-	font-size: 0.8125rem !important;
+	font-size: rem(14px) !important;
 }
 
 .fs-5 {
-	font-size: 0.6875rem !important;
+	font-size: rem(12px) !important;
 }
 
 .fs-fluid {
-	font-size: clamp(calc(var(--min) * 1rem), calc(var(--min) * 100 / var(--mq-sm-unitless) * 0.5vw), calc(var(--max) * 1rem)) !important;
+	@include fluid-fs(var(--min), var(--max));
 }
 
 /** --------------------------------------------
@@ -101,6 +101,10 @@
 	text-transform: uppercase !important;
 }
 
+.text-petite-caps {
+	font-variant: petite-caps !important;
+}
+
 /** --------------------------------------------
  * 
  * Font weight & italic
@@ -111,17 +115,23 @@
 	font-weight: $regular !important;
 }
 
-.fw-semibold {
-	font-weight: $semibold !important;
-}
-
 .fw-bold {
 	font-weight: $bold !important;
-} 
+}
 
-.fst-i {
-	font-style: italic !important;
-} 
+/** --------------------------------------------
+ * 
+ * Font family
+ * 
+ -------------------------------------------- */
+
+.text-system {
+	font-family: $typo-font-family !important;
+}
+
+.text-serif {
+	font-family: $heading-font-family !important;
+}
 
 /** --------------------------------------------
  * 
@@ -134,25 +144,15 @@
 }
 
 .lh-sm {
-	line-height: 1.25 !important;
+	line-height: 1.1 !important;
 }
 
 .lh-base {
-	line-height: 1.5 !important;
+	line-height: var(--phi) !important;
 }
 
-.lh-lg {
-	line-height: 2 !important;
-}
-
-/** --------------------------------------------
- * 
- * Serif font
- * 
- -------------------------------------------- */
-
-.text-serif {
-	font-family: $typo-font-family-serif !important;
+.va-m {
+	vertical-align: middle;
 }
 
 /** --------------------------------------------

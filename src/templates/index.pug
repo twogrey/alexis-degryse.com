@@ -1,100 +1,66 @@
 extends wrapper.pug
 
 block append styles
-	link(href="dest/css/pages/index.min.css", rel="stylesheet")
+	link(href="/dest/css/pages/index.min.css", rel="stylesheet")
 
-block title-page
-	title Alexis DEGRYSE - French UI Developer
+block vars
+	- var bodyClass = 'index-page'; 
+	- var metaDesc = 'Je vous accompagne dans la création de votre site web et votre démarche de prise en compte de l’accessibilité numérique.'
 
 block main
-	section(aria-labelledby="about-me-title", id="about-me", class="about-me bg-black")
-		h2(id="about-me-title", class="sr-only") About me
-		img(src="dest/img/about-me-bg--lg.webp", srcset="dest/img/about-me-bg.webp 768w, dest/img/about-me-bg--md.webp 1200w, dest/img/about-me-bg--lg.webp 1868w", sizes="100vw", class="about-me__bg", alt="", data-initial-width="1868", data-initial-height="1280")
-		div(aria-hidden="true", class="headphone")
-			svg(class="icon headphone__icon")
-				use(xlink:href="dest/img/sprite.svg#icon-note-1")
-			svg(class="icon headphone__icon")
-				use(xlink:href="dest/img/sprite.svg#icon-code")
-			svg(class="icon headphone__icon")
-				use(xlink:href="dest/img/sprite.svg#icon-note-3")
-			svg(class="icon headphone__icon")
-				use(xlink:href="dest/img/sprite.svg#icon-mushroom")
-			svg(class="icon headphone__icon")
-				use(xlink:href="dest/img/sprite.svg#icon-note-2")
-			svg(class="icon headphone__icon")
-				use(xlink:href="dest/img/sprite.svg#icon-triforce")
-			svg(class="icon headphone__icon")
-				use(xlink:href="dest/img/sprite.svg#icon-note-1")
-			svg(class="icon headphone__icon")
-				use(xlink:href="dest/img/sprite.svg#icon-pokeball")
-			svg(class="icon headphone__icon")
-				use(xlink:href="dest/img/sprite.svg#icon-note-2")
-			svg(class="icon headphone__icon")
-				use(xlink:href="dest/img/sprite.svg#icon-dragonball")
-		.container
-			h3.sr-only Presentation
-			div(class="row justify-center lg:justify-start")
-				div(class="col-12 mb-0 md:col-10 lg:col-6")
-					.about-me__content
-						.h2-like.text-serif Hello !
-						p.fs-1 My name is <strong class="text-primary-lightest fw-semibold">Alexis Degryse</strong>.
-						p I’m an experienced <strong class="text-primary-lightest fw-semibold">UI developer</strong class="text-primary-lightest fw-semibold"> ( <strong class="text-primary-lightest fw-semibold" lang="fr">intégrateur web</strong class="text-primary-lightest fw-semibold"><span class="sr-only"> in french</span> <svg aria-hidden="true" class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 21"><path d="M2.4 0C1.1 0 0 1.1 0 2.4v16.2C0 19.9 1.1 21 2.4 21h8.3V0H2.4z" fill="#41479b"/><path d="M10.7 0h10.7v21H10.7V0z" fill="#f5f5f5"/><path d="M29.6 0h-8.3v21h8.3c1.3 0 2.4-1.1 2.4-2.4V2.4C32 1.1 30.9 0 29.6 0z" fill="#ff4b55"/></svg> ) and I currently work with INEAT Group (located in Lille, France) as Tech Lead. I’m in charge of technical support of all interface-related topics (semantic, accessibility, ergonomics, SEO, performance, responsive, animation, etc.).
-						p I sometimes do some other stuff like <strong class="text-primary-lightest fw-semibold">job interviews</strong class="text-primary-lightest fw-semibold">, <strong class="text-primary-lightest fw-semibold">teaching</strong class="text-primary-lightest fw-semibold"> and <strong class="text-primary-lightest fw-semibold">career management</strong class="text-primary-lightest fw-semibold">.
-					.about-me__content.mt
-						p I’m really into <strong class="text-primary-lightest fw-semibold">HTML</strong class="text-primary-lightest fw-semibold"> &amp; <strong class="text-primary-lightest fw-semibold">CSS</strong class="text-primary-lightest fw-semibold">. Those languages, which are - as I like to say - easy to learn but hard to master, are my daily tools and constitute the main thread of my self-learning.
-						p I do my best to keep my skills updated in order to always provide the most suitable solutions for any project and give best advices about the <strong class="text-primary-lightest fw-semibold">implications</strong class="text-primary-lightest fw-semibold"> and <strong class="text-primary-lightest fw-semibold">feasibility</strong class="text-primary-lightest fw-semibold"> of UI ideas.
-					.text-center.mt
-						a(href="#skills", class="btn btn--primary btn--large btn--rounded", aria-label="See more about me")
-							svg(class="icon", aria-hidden="true")
-								use(xlink:href="dest/img/sprite.svg#icon-chevron-down")
-		div
-			h3(class="sr-only") You can find me on
-			ul(class="about-me__networks list-unstyled mb-0", role="list")
-				li
-					a(href="https://twitter.com/twogrey", target="_blank", rel="noopener noreferrer", aria-label="Twitter", aria-describedby="new-window")
-						svg(class="icon", aria-hidden="true")
-							use(xlink:href="dest/img/sprite.svg#icon-twitter")
-				li
-					a(href="https://h4.io/@twogrey", target="_blank", rel="noopener noreferrer", aria-label="Mastodon", aria-describedby="new-window")
-						svg(class="icon", aria-hidden="true")
-							use(xlink:href="dest/img/sprite.svg#icon-mastodon")
-				li
-					a(href="https://codepen.io/twogrey", target="_blank", rel="noopener noreferrer", aria-label="Codepen", aria-describedby="new-window")
-						svg(class="icon", aria-hidden="true")
-							use(xlink:href="dest/img/sprite.svg#icon-codepen")
-				li
-					a(href="https://www.linkedin.com/in/alexis-degryse/", target="_blank", rel="noopener noreferrer", aria-label="Linkedin", aria-describedby="new-window")
-						svg(class="icon", aria-hidden="true")
-							use(xlink:href="dest/img/sprite.svg#icon-linkedin")
-				li
-					a(href="mailto:alexis.degryse@gmail.com", aria-label="Contact me by email at the following address : alexis.degryse@gmail.com")
-						svg(class="icon", aria-hidden="true")
-							use(xlink:href="dest/img/sprite.svg#icon-envelop")
-	.skewed.skewed--bottom
-		section(aria-labelledby="skills-title", id="skills", class="skills py-3 md:py-4 lg:py-5")
-			.container
-				.row
-					div(class="col-12 mb-0 lg:mb-2")
-						h2(id="skills-title", class="h2-gradient mb-2 md:mb-3 lg:mb-4") Experienced with
-						include partials/skills.pug
-	section(aria-labelledby="certifications-title", id="certifications", class="py-3 md:py-4 lg:py-5 bg-lightgrey text-black")
-		.container
-			.row
-				div(class="col-12 text-center mb-2 md:mb-3 lg:mb-4")
-					h2(id="certifications-title", class="h2-rect") 
-						span Certifications
-			include partials/certifications.pug
-	.skewed.skewed--both
-		section(aria-labelledby="extra-stuff-title", id="extra-stuff", class="py-3 md:py-4 lg:py-5 bg-black")
-			.container
-				.row
-					div(class="col-12 text-center mb-2 md:mb-3 lg:mb-4 lg:mt-2")
-						h2(id="extra-stuff-title", class="h2-gradient") Extra stuff
-				include partials/extra-stuff.pug
-	section(aria-labelledby="career-title", id="career", class="py-3 md:py-4 lg:py-5 bg-lightgrey text-black")
-		.container
-			.row
-				div(class="col-12 text-center mb-2 md:mb-3 lg:mb-4")
-					h2(id="career-title", class="h2-rect") 
-						span Career
-			include partials/career.pug
+	section
+		div(class="container lg:pt-2")
+			.row.align-center.justify-center
+				div(class="col-12 lg:col-5 py-3 lg:pt-2 lg:pb-4")
+					h1.h2 Intégrateur web soucieux de l’assurance qualité web <span class="text-secondary" aria-hidden="true">●</span>
+					p.h3.fw-regular.text-system.lh-base Je vous accompagne dans la création de votre site web et votre démarche de prise en compte de l’accessibilité numérique.
+					.row
+						.col-auto
+							a(href="#prestations", class="btn btn--primary") 
+								svg(aria-hidden="true")
+									use(xlink:href="/dest/img/sprite.svg#icon-sparkles")
+								| Mes prestations
+						.col-auto
+							a(href="/contact", class="btn btn--grey") 
+								svg(aria-hidden="true")
+									use(xlink:href="/dest/img/sprite.svg#icon-envelop")
+								| Me contacter
+				div(class="col-12 md:col-9 lg:col-7 align-end-self")
+					img(src="/dest/img/svg/illustration-homepage.svg", width="706", height="519", alt="")
+
+	section#prestations
+		div(class="container pb-3 lg:pb-4")
+			h2(class="py-3 mb-0 text-center") Mes prestations
+			.row.justify-center
+				mixin presta(img, imgW, imgH, title, content, url, urlText)
+					div(class="col-12 md:col-6 lg:col-4")
+						article(class="d-flex flex-column align-center bg-white p-2 radius text-center h-100")
+							img(src="/dest/img/svg/"+img+".svg", width=imgW, height=imgH, loading="lazy", alt="")
+							h3.text-primary-dark=title
+							.text-left.mb-2 !{content}
+							a(href=url, class="btn btn--primary mt-a")
+								svg(aria-hidden="true", class="p-0.5")
+									use(xlink:href="/dest/img/sprite.svg#icon-chevron-right")
+								=urlText
+				+presta("prestation-site", "240", "200", "Création de sites web", "<p>Vous avez des maquettes graphiques (ou un thème de CMS) prêtes à être intégrées pour démarrer le développement de votre nouveau site ?</p><p><b>Je réalise vos pages web</b> de manière respectueuse des standards de <strong>qualité web</strong>.</p>", "/prestations/creation-sites-web", "Créer mon site")
+				+presta("prestation-accessibilite", "221", "200", "Accessibilité numérique", "<p>Vous souhaitez mettre en place une démarche d’amélioration de l’accessibilité sur votre projet ?</p><p>Je peux <strong>sensibiliser</strong> vos équipes, <strong>auditer</strong> des livrables graphiques ou développements existants, ou tout simplement vous <strong>accompagner</strong> et vous conseiller tout au long de la vie de votre projet.</p>", "/prestations/accessibilite-numerique", "Se faire accompagner")
+				+presta("prestation-qualite-web", "145", "200", "Audit qualité web", "<p>Vous avez déjà un site web ? Je peux vous rédiger un compte-rendu des manquements relatifs à l’<strong>assurance qualité web</strong>.</p><p>Et ainsi vous proposer des pistes de <strong>corrections</strong> et d’<strong>améliorations</strong> en matière d’accessibilité, de SEO, d’éco-conception, d’ergonomie, de respect des données personnelles, d’éditorial, et bien d’autres.</p>", "/prestations/audit-qualite-web", "Auditer mon site") 
+
+	section.bg-white
+		div(class="container py-3 lg:py-4")
+			.row.justify-evenly
+				div(class="col-12 sm:col-8 md:col-7")
+					h2(class="text-center sm:text-left") Qui suis-je ?
+					p Je m’appelle <strong>Alexis</strong>, 35 ans, marié, jeune papa, gaga des animaux, baigné dans la culture populaire japonaise des années 90, rêvant d’un numérique responsable, j’ai la chance d’exercer le métier d’<strong>intégrateur web</strong> depuis une quinzaine d'années.
+					p Passionné depuis toujours par ce que le web est en mesure d’apporter au monde, je suis féru de <strong>HTML</strong> et <strong>CSS</strong> depuis mes débuts.<br>Ces langages, faciles à utiliser mais difficiles à maitriser, sont mes outils au quotidien et constituent le fil principal de ma veille. J’adore discuter de sémantique, d’animations, de SEO, d’accessibilité, d’éco-conception, de responsive et d'ergonomie.
+					a(href="/a-propos", class="btn btn--grey")
+						svg(aria-hidden="true")
+							use(xlink:href="/dest/img/sprite.svg#icon-user")
+						| En apprendre plus
+				div(class="col-8 sm:col-4 md:col-5 sm:order-first align-center-self pt sm:pt-0" style="container-type: inline-size")
+					.photo
+						img(src="/dest/img/photo-about-1.webp", alt="", loading="lazy", width="342", height="700")
+
+
+
+

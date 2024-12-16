@@ -1,0 +1,60 @@
+extends ../wrapper.pug
+
+block vars
+	- var currentPage = 'a-propos'
+	- var metaDesc = 'Rêvant d’un numérique responsable, j’ai la chance d’exercer le métier d’intégrateur web depuis une quinzaine d\'années.'
+
+block append styles
+	link(href="/dest/css/pages/about.min.css", rel="stylesheet")
+
+block prepend title-page
+	| À propos - 
+
+block main
+	.presentation
+		.container
+			h1 À propos
+			.row.justify-center
+				div(class="col sm:col-10 lg:col-8 fs-2") 
+					- const birthDate = new Date(1989, 10, 28)
+					- const today = new Date()
+					- let age = today.getFullYear() - birthDate.getFullYear()
+					- if (today < new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate())) {
+						- age--
+					- }
+					h2.sr-only Mon profil
+					h3(class="mt-0") Introduction
+					p Je m’appelle <strong>Alexis</strong>, #{age} ans, marié, jeune papa, gaga des animaux, baigné dans la culture populaire japonaise des années 90, rêvant d’un numérique responsable, j’ai la chance d’exercer le métier d’<strong>intégrateur web</strong> depuis une quinzaine d'années.
+					h3 Profil professionnel
+					p Passionné depuis toujours par ce que le web est en mesure d’apporter au monde, je suis féru de <strong>HTML</strong> et <strong>CSS</strong> depuis mes débuts.<br>Ces langages, faciles à utiliser mais difficiles à maîtriser, sont mes outils au quotidien et constituent le fil principal de ma veille. J’adore discuter de sémantique, d’animations, de SEO, d’accessibilité, d’éco-conception, de responsive et d'ergonomie.
+					p Je m'assure de placer les <b>enjeux</b> et <b>impacts</b> pour les utilisateurs et utilisatrices au centre de toute décision graphique et fonctionnelle en m'efforçant de fournir des interfaces conformes aux standards, pensées pour le SEO, accessibles aux personnes handicapées, éco-conçues, robustes dans le temps, dépourvues de tout biais cognitif, et enfin, ergonomiques.
+					p Je veille à maintenir mes compétences à jour afin de toujours proposer les solutions les plus adaptées et de donner les meilleurs conseils sur les implications et la faisabilité des besoins et idées liées à l'<strong>UX</strong>.
+					h3 Accessibilité numérique
+					p En 2017 suite à mon premier pas dans le monde de la <strong>qualité web</strong> grâce à <a href="https://www.opquast.com/rendre-le-web-meilleur/">Opquast</a>, je me spécialise en <strong>accessibilité numérique</strong>.
+					p Je ressens une profonde frustration en constatant tous les jours que des erreurs de conception empêchent d’autres personnes de profiter du web aussi (relativement) facilement que moi. Cette pensée m’anime chaque seconde de mes journées de travail et de mes pérégrinations d’internaute.
+	.container.list
+		mixin title(text, icon)
+			h2.h3.d-flex.align-center 
+				svg(aria-hidden="true", class="mr fs-larger text-secondary")
+					use(xlink:href="/dest/img/sprite.svg#icon-"+icon)
+				=text
+		.text-center.py.my-2
+			div(class="d-inline-block py-0.25 px-3 bg-primary-lightest rounded")
+		.row(style="row-gap: var(--sp-3)")
+			section(class="col-12 lg:col-6")
+				+title("Interventions, publications et projets", "rocket")
+				include _projects.pug
+			div(class="col-12 lg:offset-1 lg:col-5")
+				.row(style="row-gap: var(--sp-3)")
+					section(class="col-12 md:col-6 lg:col-12")
+						+title("Formations", "formation")
+						include _formations.pug
+					section(class="col-12 md:col-6 lg:col-12")
+						+title("Certifications", "certificate")
+						include _certifications.pug
+			section(class="col-12 md:col-6")
+				+title("Parcours", "tie")
+				include _parcours.pug
+			section(class="col-12 md:col-6 lg:offset-1 lg:col-5")
+				+title("Clients", "briefcase")
+				include _clients.pug 

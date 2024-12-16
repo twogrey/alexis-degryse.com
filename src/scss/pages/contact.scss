@@ -1,0 +1,118 @@
+$assets-base-path: '../../';
+
+@import '../abstracts';
+
+.flying {
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: rem(-5px);
+		z-index: 1;
+		width: 3.25rem;
+		background: svg('paper-flying.svg') no-repeat;
+		aspect-ratio: 66/119;
+	}
+}
+
+div:has(> form) {
+	--b-w: #{rem(4px)};
+	border: var(--b-w) solid var(--color-secondary-lightest);
+
+	@include medium {
+		border-color: var(--color-secondary);
+		box-shadow: 
+			calc(var(--b-w) * 4) 0 0 calc(var(--b-w) * -2) white, 
+			calc(var(--b-w) * 6) 0 0 calc(var(--b-w) * -3) var(--color-secondary-light), 
+			calc(var(--b-w) * 9) 0 0 calc(var(--b-w) * -4) white, 
+			calc(var(--b-w) * 11) 0 0 calc(var(--b-w) * -5) var(--color-secondary-lightest),
+			calc(var(--b-w) * -4) 0 0 calc(var(--b-w) * -2) white, 
+			calc(var(--b-w) * -6) 0 0 calc(var(--b-w) * -3) var(--color-secondary-light), 
+			calc(var(--b-w) * -9) 0 0 calc(var(--b-w) * -4) white, 
+			calc(var(--b-w) * -11) 0 0 calc(var(--b-w) * -5) var(--color-secondary-lightest);
+	}		
+}
+
+.form-group {
+	margin-bottom: 1.5rem;
+}
+
+label {
+	display: block;
+	padding-bottom: 0.75rem;
+	font-weight: $bold;
+	line-height: 1.25;
+
+	span {
+		display: block;
+		margin-top: 0.5em;
+		font-size: 85%;
+		font-weight: $regular;
+	}
+}
+
+[type='email'],
+[type='text'],
+textarea {
+	--thickness: #{rem(3px)};
+	width: 100%;
+	min-width: 0;
+	max-width: 100%;
+	height: 2.75rem;
+	padding: 0 var(--sp-1-2);
+	border: var(--thickness) solid transparent;
+	margin: 0;
+	border-radius: 0;
+	background-color: #fff;
+	box-shadow: 0 var(--thickness) var(--color-primary);
+	appearance: none;
+
+	&:hover {
+		box-shadow: 0 0 0 var(--thickness) var(--color-primary);
+	}
+
+	&:focus-visible {
+		border-color: var(--color-primary);
+		box-shadow: 0 0 0 var(--thickness) var(--color-primary-lightest);
+		outline: none;
+	}
+}
+
+textarea {
+	display: block;
+	height: auto;
+	padding-block: var(--sp-1-3);
+	line-height: 1.5;
+	resize: vertical;
+}
+
+.feedback {
+	padding: var(--sp);
+	overflow: hidden;
+	background-color: var(--bg);
+	color: var(--c);
+
+	svg { margin-right: var(--sp-1-2); }
+
+	&:has(span:empty) { 
+		display: none;
+	}
+
+	&.success {
+		--c: #157446;
+		--bg: #b3e3cc;
+
+		use:last-of-type { display: none; }
+	}
+
+	&.error {
+		--c: #a32929;
+		--bg: #fbbdbd;
+
+		use:first-of-type { display: none; }
+	}
+}
+
+

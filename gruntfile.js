@@ -56,13 +56,12 @@ module.exports = function (grunt) {
 				src: [
 					`${cssBuildPath}**/*.css`,
 					`${jsBuildPath}**/*.js`,
-					`*.html`,
-					'../../views/**/*.html',
+					`${pagesBuildPath}**/*.html`
 				],
 			},
 			options: {
 				watchTask: true,
-				proxy: 'http://localhost/alexis-degryse.com/',
+				proxy: 'http://alexis-degryse.local/',
 			},
 		},
 		/**
@@ -78,9 +77,9 @@ module.exports = function (grunt) {
 			dist: {
 				files: [ {
 					expand: true,
-					src: [ 'index.pug' ],
-					cwd: `${templatesPath}/`,
-					dest: `./`,
+					src: [ '**/*.pug', '!wrapper.pug', '!**/_*.pug' ],
+					cwd: templatesPath,
+					dest: pagesBuildPath,
 					ext: '.html',
 				} ],
 			},
@@ -92,14 +91,14 @@ module.exports = function (grunt) {
 			options: {
 				removeComments: true,
 				collapseWhitespace: true,
-				collapseInlineTagWhitespace: false,
+				conservativeCollapse: true,
 			},
 			dist: {
 				files: [ {
 					expand: true,
-					src: [ 'index.html' ],
-					cwd: `./`,
-					dest: `./`,
+					src: [ '**/*.html' ],
+					cwd: pagesBuildPath,
+					dest: pagesBuildPath,
 					ext: '.html',
 				} ],
 			}
@@ -115,14 +114,14 @@ module.exports = function (grunt) {
 		    	[
 		    		'The “dialog” element is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
 		    		'The “date” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
-		    		'Consider using the “h1” element as a top-level heading only (all “h1” elements are treated as top-level headings by many screen readers and other tools).',
 		    		'The “banner” role is unnecessary for element “header”.',
 		    		'The “contentinfo” role is unnecessary for element “footer”.',
 		    		'The “main” role is unnecessary for element “main”.',
-		    		'The “navigation” role is unnecessary for element “nav”.'
+		    		'The “navigation” role is unnecessary for element “nav”.',
+		    		'The “list” role is unnecessary for element “ul”.'
 		    	]
 		  },
-    	all: [ 'index.html' ]
+    	all: [ `${pagesBuildPath}**/*.html` ]
     },
 		/**
 	   * [Sass compiler]
@@ -199,7 +198,7 @@ module.exports = function (grunt) {
 	           * [Optimize CSS size]
 	           */
 						cssnano({
-							safe: true,
+							safe: true
 						}),
 						/**
 		         * [Extract all @media rules and emit them as separate files]

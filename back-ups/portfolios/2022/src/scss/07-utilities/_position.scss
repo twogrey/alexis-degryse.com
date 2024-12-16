@@ -1,0 +1,21 @@
+@if $enable-position {
+
+	$position-values: (
+		'-static'   : 'static', 
+		'-relative' : 'relative' );
+
+	@each $pos-name, $pos-value in($position-values) {
+		.pos#{$pos-name} {
+			position: #{$pos-value} !important;
+		}
+
+		@each $name, $prefix in($grid-mq) {
+			@include mq(map-get($mq, $name)) {
+				.#{$prefix}\:pos#{$pos-name} {
+					position: #{$pos-value} !important;
+				}
+			}
+		}
+	}
+
+}

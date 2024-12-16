@@ -1,34 +1,42 @@
-@if $enable-lists {
-	ol {		
-		li {
-			&::marker {
-				font-weight: $bold;
-			}
+ol {		
+	li {
+		&::marker {
+			font-weight: $bold;
 		}
-	}  
+	}
+}  
+
+ul,
+ol {
+	padding-left: 0;
+	list-style-position: inside;
+
+	ul,
+	ol {
+		padding-left: var(--sp);
+		margin-block: 0;
+	}
+}
+
+ul {
+	::marker {
+		color: var(--color-grey);
+	}
+}
+
+ol {
+	::marker {
+		color: var(--color-primary);
+	}
+}
+
+.list-unstyled {
+	list-style: none;
 
 	ul,
 	ol {
 		padding-left: 0;
-		margin: 0 0 $text-margin-bottom;
-		list-style-position: inside;
-
-		ul,
-		ol {
-			padding-left: var(--sp);
-			margin-top: 0;
-			margin-bottom: 0;
-		}
-	}
-
-	.list-unstyled {
+		margin-top: 0;
 		list-style: none;
-
-		ul,
-		ol {
-			padding-left: 0;
-			margin-top: 0;
-			list-style: none;
-		}
 	}
 }

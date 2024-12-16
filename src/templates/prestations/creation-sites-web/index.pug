@@ -1,0 +1,57 @@
+extends ../../wrapper.pug
+
+block vars
+	- var currentPage = prestation[0]
+	- var metaDesc = 'Maquettes prêtes à être intégrées pour lancer le développement de votre site ? Je réalise vos pages web de manière respectueuse des standards de qualité web.'
+
+block append styles
+	link(href="/dest/css/pages/prestations.min.css", rel="stylesheet")
+	link(href="/dest/css/pages/creation.min.css", rel="stylesheet")
+
+block prepend title-page
+	| Création de sites web - 
+
+block main
+	.container
+		h1 Création de sites web
+		p(class="h4 fw-regular text-system lh-base md:text-center") Vous avez des maquettes graphiques (ou un thème de CMS) prêtes à être intégrées pour démarrer le développement de votre nouveau site ?<br><b>Je réalise vos pages web</b> de manière respectueuse des standards de <strong>qualité web</strong>.
+		h2.sr-only Mes engagements
+		.row.create
+			div(class="col-12 md:col-6 lg:col-5 md:d-flex") 
+				article
+					svg(aria-hidden="true") 
+						use(xlink:href="/dest/img/sprite.svg#icon-website") 
+					div
+						h3(class="fs-2 text-system lh-base fw-regular lg:text-center") Ce que je fournis à <span class="highlighted-term">vos&nbsp;utilisateurs</span>, un site :
+						ul
+							li Avec une empreinte environnementale minimisée ;
+							li Utilisable par les personnes handicapées ;
+							li Au référencement soigné ;
+							li Dépourvu de tout biais cognitif ;
+							li Soucieux des données personnelles ;
+							li Respectueux des standards de qualité web.
+			div(class="col-12 md:col-6 lg:col-5 md:d-flex")
+				article
+					svg(aria-hidden="true") 
+						use(xlink:href="/dest/img/sprite.svg#icon-user")
+					div 
+						h3(class="fs-2 text-system lh-base fw-regular lg:text-center") Ce que je <span class="highlighted-term">vous</span> fournis :
+						ul
+							li Devis personnalisé selon vos besoins et moyens ;
+							li Complète autonomie quant à l’administration de votre site et de ses contenus ;
+							li Suivi statistique de la fréquentation de vos visiteurs ;
+							li Un accompagnement sur-mesure ;
+							li De la disponibilité et de la réactivité pendant et après la mise en ligne de votre site.
+		.row(class="d-none lg:d-flex justify-center")
+			div(class="col-10")
+				svg(aria-hidden="true" class="d-block h-a w-100" viewBox="0 0 426.11 108.85")
+					rect(fill="#ebebeb" y="0" width="426.11" height="42.74")
+					path(fill="#d6dadc" d="M220.115,21.37c0,3.899-3.161,7.06-7.06,7.06s-7.06-3.161-7.06-7.06,3.161-7.06,7.06-7.06h0c3.899,0,7.06,3.161,7.06,7.06Z")
+					polygon(fill="#ebebeb" points="276.31 94.98 149.79 94.98 153.01 70.9 153.17 69.76 153.46 67.5 153.61 66.36 153.92 64.1 153.96 63.75 154.07 62.97 154.37 60.71 154.52 59.57 156.77 42.75 269.33 42.75 271.45 58.62 271.55 59.38 271.9 62.01 272 62.78 272.14 63.75 272.36 65.41 272.46 66.17 272.81 68.81 272.91 69.57 276.31 94.98")
+					polygon(fill="#d6dadc" points="272.14 63.75 154.52 59.57 156.77 42.75 269.33 42.75 272.14 63.75") 
+					rect(fill="#d6dadc" x="130.02" y="94.97" width="166.06" height="13.88")
+	include ../../partials/_devis.pug
+	section.bg-white
+		div(class="container text-center pt-3 md:pb-3 lg:py-4")
+			h2 Vous avez déjà un site ?
+			p.h3.text-system.fw-regular.lh-base Je peux vous rédiger un compte-rendu des manquements relatifs à l’<a href="/prestations/audit-qualite-web">assurance qualité web</a> ainsi qu’à l’<a href="/prestations/accessibilite-numerique">accessibilité numérique</a>.

@@ -1,0 +1,22 @@
+@if $enable-skip-links {
+	.skip-links {
+		--i: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: var(--z-max);
+		padding: var(--sp) var(--sp-2);
+		border-right: rem(1px) solid var(--color-primary);
+		border-bottom: rem(1px) solid var(--color-primary);
+		margin-bottom: 0;
+		background-color: #fff;
+		color: var(--color-black);
+		transform: translateY(calc(100% * (var(--i) - 1)));
+		transition: transform 0.2s;
+
+		&:focus-within {
+			--i: 1;
+		}
+	}
+
+}

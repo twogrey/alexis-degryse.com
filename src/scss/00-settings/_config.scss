@@ -1,78 +1,5 @@
 /** --------------------------------------------
  * 
- * Enable/disable imports
- * 
- -------------------------------------------- */
-
-/**
- * Form
- */
-$enable-form-choices: false;
-$enable-form-fieldset: false;
-$enable-form-textual-fields: false;
-$enable-form-file: false;
-$enable-form-prepend-append: false;
-$enable-form-input-action: false;
-$enable-form-input-with-icon: false;
-
-/**
- * HTML Elements
- */
-$enable-blockquote: true;
-$enable-descriptions: false;
-$enable-headings: true;
-$enable-hr: false;
-$enable-lists: true;
-$enable-table: false;
-
-/**
- * Objects
- */
-$enable-skip-links: true;
-$enable-preserve-ratio: true;
-
-/**
- * Components
- */
-$enable-badge: false;
-$enable-breadcrumb: false;
-$enable-button: true;
-$enable-loader: false;
-$enable-pagination: false;
-$enable-panel: false;
-
-/**
- * Patterns
- */
-$enable-accordion: false;
-$enable-dropdown: false;
-$enable-modal: true;
-$enable-offcanvas: true;
-$enable-slider: false;
-$enable-tabs: false;
-$enable-tooltip: false; // default direction is top
-$enable-tooltip-top-mq: false;
-$enable-tooltip-bottom: false;
-$enable-tooltip-bottom-mq: false;
-$enable-tooltip-left: false;
-$enable-tooltip-left-mq: false;
-$enable-tooltip-right: false;
-$enable-tooltip-right-mq: false;
-
-
-/**
- * Utilities
- */
-$enable-colors: true;
-$enable-backgrounds: true;
-$enable-borders: true;
-$enable-flexbox: true;
-$enable-position: true;
-$enable-radius: true;
-$enable-shadow: true;
-
-/** --------------------------------------------
- * 
  * Grid
  * 
  -------------------------------------------- */
@@ -84,6 +11,8 @@ $enable-shadow: true;
 $nb-cols: 12;
 
 $spacing: 1rem;
+
+$phi: 1.618;
 
 /**
  * Breakpoints

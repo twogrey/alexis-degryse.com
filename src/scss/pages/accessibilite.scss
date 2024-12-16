@@ -1,0 +1,21 @@
+$assets-base-path: '../../';
+
+@import '../abstracts';
+
+main {
+	@include large {
+		padding-bottom: 0;
+	}
+
+	img {
+		background-image: linear-gradient(#f0f0f0 1px, transparent 1px), linear-gradient(to right, #f0f0f0 1px, #fff 1px);
+		background-position: center;
+		background-size: 3rem 3rem;
+	}
+}
+
+.footer {
+	@include large {
+		--svg-fill: var(--color-primary);
+	}
+}

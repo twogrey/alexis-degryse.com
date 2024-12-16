@@ -1,48 +1,33 @@
 a,
 .btn-as-link {
 	text-decoration: none;
-	color: var(--color-primary-lightest);
+	color: var(--color-primary);
+	transition-timing-function: ease;
+	transition-duration: 0.2s;
+	transition-property: color, border-color, background-color;
 
-	.text-black & {
-		color: var(--color-primary);
-	}
-
-	html:not(.touch) & {
-		transition-timing-function: ease;
-		transition-duration: 0.2s;
-		transition-property: color, border-color, background-color;
-	}
-
-	p & {
+	:is(p, ul, ol, blockquote) & {
 		text-decoration: underline;
 
-		&:focus-visible {
+		&:where(:hover) {
+			text-decoration-style: dotted;
+			text-decoration-thickness: rem(2px);
+		}
+
+		&:has(svg:only-child:not([class])):where(:hover) {
 			outline-color: currentColor;
 			outline-style: dotted;
+			outline-offset: 0.2rem;
 			outline-width: rem(2px);
-		}
-	}
-
-	&:hover {
-		text-decoration: underline;
-	}
-
-	&:not(.btn):focus-visible,
-	&:not(.btn):hover,
-	&.is-active {
-		color: var(--color-primary-light);
-
-		.text-black & {
-			color: var(--color-primary-dark);
 		}
 	}
 }
 
 .btn-as-link {
+	appearance: none;
 	padding: 0;
 	border: 0;
 	line-height: inherit;
 	background-color: transparent;
-	box-shadow: none;
 	cursor: pointer;
 }

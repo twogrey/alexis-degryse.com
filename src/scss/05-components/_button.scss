@@ -99,7 +99,7 @@
 	&:has(svg) {
 		padding-left: var(--py);
 
-		&::before {
+		&::before { // need this for safari...
 			content: '';
 			position: absolute;
 			left: var(--py);

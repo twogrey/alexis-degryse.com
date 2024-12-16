@@ -113,9 +113,10 @@
 	font-weight: bold;
 	text-transform: uppercase;
 	background-color: transparent;
+	color: inherit;
 	cursor: pointer;
-	appearance: none;
 	transition: color 0.15s;
+	appearance: none;
 
 	&:hover {
 		text-decoration: underline;
@@ -241,7 +242,10 @@
 			width: 100%;
 			padding: var(--item-p) 0;
 			font-family: $heading-font-family;
-			text-decoration: var(--text-decoration-color) underline solid rem(3px);
+			text-decoration-color: var(--text-decoration-color);
+			text-decoration-line: underline;
+			text-decoration-style: solid;
+			text-decoration-thickness: rem(3px);
 			text-underline-offset: rem(4px);
 			color: var(--text-color);
 			outline: none;

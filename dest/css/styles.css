@@ -5429,9 +5429,10 @@ img {
   font-weight: bold;
   text-transform: uppercase;
   background-color: transparent;
+  color: inherit;
   cursor: pointer;
-  appearance: none;
   transition: color 0.15s;
+  appearance: none;
 }
 [aria-controls=menu]:hover {
   text-decoration: underline;
@@ -5560,7 +5561,10 @@ img {
   width: 100%;
   padding: var(--item-p) 0;
   font-family: "Merriweather", Arial, sans-serif;
-  text-decoration: var(--text-decoration-color) underline solid 0.1875rem;
+  text-decoration-color: var(--text-decoration-color);
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0.1875rem;
   text-underline-offset: 0.25rem;
   color: var(--text-color);
   outline: none;

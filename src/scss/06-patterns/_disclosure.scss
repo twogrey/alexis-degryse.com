@@ -1,5 +1,14 @@
 :where(.js-disclosure:not([aria-expanded='true']) + *) {
-	display: none;
+	height: 0;
+	visibility: hidden;
+}
+
+.js-disclosure + * {
+	overflow: hidden;
+	@supports (interpolate-size: allow-keywords) {
+		transition: 0.4s ease;
+		transition-property: height, visibility;
+	}
 }
 
 .js-disclosure:has(.chevron) { // sass-lint:disable

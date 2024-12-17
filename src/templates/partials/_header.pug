@@ -8,7 +8,7 @@ header(role="banner", class="header")
 						span 
 							a(href="/", aria-label="Alexis Degryse, retour à l'accueil") Alexis Degryse
 						span Intégrateur web<br><span aria-hidden="true">&nbsp;·&nbsp;</span>Accessibilité numérique 
-			div(class="col-12 md:col-auto ml-a md:mx-a lg:col lg:pl-4 pos-static") 
+			div(class="col-12 md:col-auto ml-a md:mx-a lg:col lg:pl-4 pos-static pt") 
 				nav(role="navigation", class="menu", aria-label="Principale")
 					button(type="button", aria-controls="menu", aria-expanded="false", class="md:d-none js-disclosure")
 						svg(class="icon", aria-hidden="true", viewBox="0 0 13 7")
@@ -16,7 +16,7 @@ header(role="banner", class="header")
 							rect
 							rect
 						| Menu
-					ul(role="list", id="menu", style="height: calc-size(auto, size)")  
+					ul(role="list", id="menu")  
 						li
 							a(href="/a-propos")&attributes({"aria-current=page": currentPage === 'a-propos'}) À propos
 						li
@@ -24,7 +24,7 @@ header(role="banner", class="header")
 								| Prestations
 								svg(class="icon chevron ml-a", aria-hidden="true")
 									use(xlink:href="/dest/img/sprite.svg#icon-chevron-down")
-							ul(id="prestations-nav", role="list", style="height: calc-size(auto, size + var(--item-p))")
+							ul(id="prestations-nav", role="list")
 								li
 									a(href="/prestations/"+prestation[0])&attributes({"aria-current=page": currentPage === prestation[0]}) Création de sites web
 								li

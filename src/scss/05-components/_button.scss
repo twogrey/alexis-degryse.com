@@ -61,7 +61,10 @@
 		--bg: #fff;
 		--c: var(--text-color);
 		--icon-bg: var(--c);
-		outline-color: #fff;
+
+		.bg-primary & {
+			outline-color: #fff;
+		}
 
 		&:hover {
 			--bg: var(--color-black);

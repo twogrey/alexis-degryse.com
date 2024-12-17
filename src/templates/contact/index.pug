@@ -34,8 +34,8 @@ block main
 							input(type="text", id="name", name="name", autocomplete="name")
 						.form-group
 							label(for="email") Votre adresse e-mail
-								span Format : nom@domaine.fr
-							input(type="email", id="email", name="email", required, autocomplete="email")
+								span Format : nom@domaine.fr (exemple : jean-pierre@gmail.com)
+							input(type="email", id="email", name="email", required, autocomplete="email", pattern="[^@\s]+@[^@\s]+\.[^@\s]+")
 						.form-group
 							label(for="message") Votre message
 							textarea(name="message", id="message", required)

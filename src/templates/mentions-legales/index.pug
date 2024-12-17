@@ -3,6 +3,11 @@ extends ../wrapper.pug
 block vars
 	- var metaDesc = 'Le site alexis-degryse.com est la propriété de et édité par Alexis Degryse, auditeur et intégrateur web freelance, détenteur de la micro-entreprise éponyme.'
 
+block og
+	meta(property="og:url", content="https://alexis-degryse.com/mentions-legales")
+	meta(property="og:title", content="Mentions légales - Alexis Degryse - Conception web et accessibilité numérique")
+	meta(property="og:description", content=metaDesc)
+
 block prepend title-page
 	| Mentions légales - 
 

@@ -4,6 +4,11 @@ block vars
 	- var currentPage = 'contact'
 	- var metaDesc = 'Je serais ravi de collaborer avec vous si votre projet et mes valeurs convergent ! Faites-moi part de votre besoin.'
 
+block og
+	meta(property="og:url", content="https://alexis-degryse.com/"+currentPage)
+	meta(property="og:title", content="Contact - Alexis Degryse - Conception web et accessibilité numérique")
+	meta(property="og:description", content=metaDesc)
+
 block append styles
 	link(href="/dest/css/pages/contact.min.css", rel="stylesheet")
 

@@ -3,6 +3,11 @@ extends ../wrapper.pug
 block vars
 	- var metaDesc = 'Retrouvez ici les sources de certains éléments graphiques utilisés sur ce site.'
 
+block og
+	meta(property="og:url", content="https://alexis-degryse.com/credits")
+	meta(property="og:title", content="Crédits - Alexis Degryse - Conception web et accessibilité numérique")
+	meta(property="og:description", content=metaDesc)
+
 block prepend title-page
 	| Crédits - 
 

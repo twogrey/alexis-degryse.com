@@ -4,12 +4,17 @@ block vars
 	- var currentPage = prestation[1]
 	- var metaDesc = 'Vous souhaitez mettre en place une démarche d’amélioration de l’accessibilité sur votre projet ? Sensibilisation, audit, accompagnement.'
 
+block og
+	meta(property="og:url", content="https://alexis-degryse.com/prestations/"+currentPage)
+	meta(property="og:title", content="Accessibilité numérique - Prestations - Alexis Degryse")
+	meta(property="og:description", content=metaDesc)
+
 block append styles
 	link(href="/dest/css/pages/prestations.min.css", rel="stylesheet")
 	link(href="/dest/css/pages/accessibilite.min.css", rel="stylesheet")
 
-block prepend title-page
-	| Accessibilité numérique - 
+block title-page
+	| Accessibilité numérique - Prestations - Alexis Degryse
 
 block main
 	div(class="container lg:pb-4")

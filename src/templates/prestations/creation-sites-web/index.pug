@@ -4,12 +4,17 @@ block vars
 	- var currentPage = prestation[0]
 	- var metaDesc = 'Maquettes prêtes à être intégrées pour lancer le développement de votre site ? Je réalise vos pages web de manière respectueuse des standards de qualité web.'
 
+block og
+	meta(property="og:url", content="https://alexis-degryse.com/prestations/"+currentPage)
+	meta(property="og:title", content="Création de sites web - Prestations - Alexis Degryse")
+	meta(property="og:description", content=metaDesc)
+
 block append styles
 	link(href="/dest/css/pages/prestations.min.css", rel="stylesheet")
 	link(href="/dest/css/pages/creation.min.css", rel="stylesheet")
 
-block prepend title-page
-	| Création de sites web - 
+block title-page
+	| Création de sites web - Prestations - Alexis Degryse
 
 block main
 	.container

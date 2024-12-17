@@ -3,6 +3,11 @@ extends ../wrapper.pug
 block vars
 	- var metaDesc = 'Vous êtes égaré ? Ce plan du site peut aider à vous orienter.'
 
+block og
+	meta(property="og:url", content="https://alexis-degryse.com/plan-du-site")
+	meta(property="og:title", content="Plan du site - Alexis Degryse - Conception web et accessibilité numérique")
+	meta(property="og:description", content=metaDesc)
+
 block prepend title-page
 	| Plan du site - 
 

@@ -4,6 +4,11 @@ block vars
 	- var currentPage = 'a-propos'
 	- var metaDesc = 'Rêvant d’un numérique responsable, j’ai la chance d’exercer le métier d’intégrateur web depuis une quinzaine d\'années.'
 
+block og
+	meta(property="og:url", content="https://alexis-degryse.com/"+currentPage)
+	meta(property="og:title", content="À propos - Alexis Degryse - Conception web et accessibilité numérique")
+	meta(property="og:description", content=metaDesc)
+
 block append styles
 	link(href="/dest/css/pages/about.min.css", rel="stylesheet")
 

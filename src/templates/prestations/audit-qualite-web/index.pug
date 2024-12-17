@@ -4,12 +4,17 @@ block vars
 	- var currentPage = prestation[2]
 	- var metaDesc = 'Je vous propose des pistes d’améliorations en matière d’accessibilité, de SEO, d’éco-conception, d’ergonomie, d’éditorial, et bien d’autres.'
 
+block og 
+	meta(property="og:url", content="https://alexis-degryse.com/prestations/"+currentPage)
+	meta(property="og:title", content="Audit qualité web - Prestations - Alexis Degryse")
+	meta(property="og:description", content=metaDesc)
+
 block append styles
 	link(href="/dest/css/pages/prestations.min.css", rel="stylesheet")
 	link(href="/dest/css/pages/quality.min.css", rel="stylesheet")
 
-block prepend title-page
-	| Audit qualité web - 
+block title-page
+	| Audit qualité web - Prestations - Alexis Degryse
 
 block main
 	.container

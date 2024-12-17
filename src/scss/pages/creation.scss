@@ -83,24 +83,35 @@ main {
 			}
 		}
 
-		svg {
+		.icon {
+			--p: 1rem;
 			position: absolute;
 			top: calc(var(--b-w) / -2);
 			left: 50%;
-			padding: 1rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			aspect-ratio: 1;
+			padding: var(--p);
 			border-radius: 50%;
-			overflow: visible;
-			font-size: var(--icon-s);
+			font-size: calc(var(--icon-s) - var(--p) * 2);
 			background-color: var(--b-c);
 			color: var(--color-secondary-dark);
 			translate: -50% -50%;
-			aspect-ratio: 1;
 
 			@include large {
 				position: static;
-				translate: none;
-				display: block;
+				width: fit-content;
 				margin: 0 auto var(--sp-2);
+				translate: none;
+			}
+		}
+
+		svg {
+			&::before {
+				content: '';
+				position: absolute;
+				inset: 0;
 			}
 		}
 	}

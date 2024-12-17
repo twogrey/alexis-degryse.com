@@ -4,7 +4,7 @@ let feedback = document.querySelector(".feedback");
 let feedbackText = feedback.querySelector("span");
  
 function handleSubmit(event) {
-	feedbackText.textContent = '';
+	feedbackText.innerHTML = '';
 	feedback.classList.remove('success', 'error');
 	form.setAttribute('inert', '');
 	event.preventDefault();
@@ -17,16 +17,16 @@ function handleSubmit(event) {
 		}
 	}).then(response => {
 		if (response.ok) {
-			feedbackText.textContent = "Votre message a bien été envoyé. Je vous remercie et tâcherai d'y répondre au plus vite.";
+			feedbackText.innerHTML = "Votre message a bien été envoyé. Je vous remercie et tâcherai d'y répondre au plus vite.";
 			feedback.classList.add('success');
 			form.reset();
 		} else {
-			feedbackText.textContent = failFeeback;
+			feedbackText.innerHTML = failFeeback;
 			feedback.classList.add('error');
 		}
 		form.removeAttribute('inert');
 	}).catch(error => {
-		feedbackText.textContent = failFeeback;
+		feedbackText.innerHTML = failFeeback;
 		feedback.classList.add('error');
 		form.removeAttribute('inert');
 	});

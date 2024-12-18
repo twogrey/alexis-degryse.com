@@ -54,7 +54,7 @@
 		@author Harry Roberts
 		@see https://csswizardry.com/2016/05/the-importance-of-important/
 */
-@media screen and (min-width: 75rem) {
+@media screen and (min-width: 48rem) {
   main {
     padding-bottom: 0;
   }
@@ -65,7 +65,7 @@ main img {
   background-size: 3rem 3rem;
 }
 
-@media screen and (min-width: 75rem) {
+@media screen and (min-width: 48rem) {
   .footer {
     --svg-fill: var(--color-primary);
   }

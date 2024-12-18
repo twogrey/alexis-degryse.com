@@ -1426,9 +1426,11 @@ img {
   border-radius: 50%;
   background-color: var(--icon-bg, #fff);
   aspect-ratio: 1;
+  transition: inherit;
 }
 .btn svg {
   padding: 0.5rem;
+  overflow: visible;
   font-size: 2em;
   color: var(--icon-c, var(--bg));
   transition: inherit;
@@ -5698,6 +5700,10 @@ img {
 }
 .footer a {
   color: inherit;
+}
+
+#ecoindex-badge-link {
+  outline-color: #fff;
 }
 
 /*# sourceMappingURL=styles.css.map */

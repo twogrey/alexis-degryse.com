@@ -3,7 +3,7 @@ $assets-base-path: '../../';
 @import '../abstracts';
 
 main {
-	@include large {
+	@include medium {
 		padding-bottom: 0;
 	}
 
@@ -15,7 +15,7 @@ main {
 }
 
 .footer {
-	@include large {
+	@include medium {
 		--svg-fill: var(--color-primary);
 	}
 }

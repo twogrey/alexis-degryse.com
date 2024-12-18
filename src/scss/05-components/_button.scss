@@ -111,11 +111,13 @@
 			border-radius: 50%;
 			background-color: var(--icon-bg, #fff);
 			aspect-ratio: 1;
+			transition: inherit;
 		}
 	}
 
 	svg {
 		padding: rem(8px);
+		overflow: visible;
 		font-size: 2em;
 		color: var(--icon-c, var(--bg));
 		transition: inherit;

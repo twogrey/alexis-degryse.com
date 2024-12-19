@@ -25,7 +25,7 @@ footer(role="contentinfo", id="pied-de-page", class="footer")
 					h2.h3 Mes réseaux
 					ul(class="row" role="list")
 						mixin network(url, icon, text, en)
-							li(class="col-auto")
+							li(class="col-auto pr")
 								a(href=url rel="me" class="h1 text-white" aria-label=text)&attributes({"aria-describedby='english-content'": en})
 									svg(aria-hidden="true")
 										use(xlink:href="/dest/img/sprite.svg#icon-"+icon) 

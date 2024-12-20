@@ -1465,22 +1465,21 @@ img {
 }
 
 .tooltip {
-  position: relative;
-}
-.tooltip button {
   all: unset;
-  border-bottom: 1px dotted;
+  border: 1px dotted transparent;
+  border-bottom-color: initial;
+  cursor: pointer;
 }
-.tooltip button:focus-visible {
+.tooltip:focus-visible {
   outline: auto;
 }
-.tooltip button + span {
-  position: fixed;
-  right: var(--gutter);
-  bottom: var(--gutter);
-  left: var(--gutter);
+.tooltip:has(+ span:popover-open) {
+  border-color: initial;
+}
+.tooltip + span {
+  all: unset;
+  position: absolute;
   z-index: 100;
-  display: none;
   padding: var(--sp-1-2);
   border: 1px solid #fff;
   font-family: "Merriweather", Arial, sans-serif;
@@ -1489,20 +1488,32 @@ img {
   background-color: var(--color-primary-dark);
   color: #fff;
 }
-@media screen and (min-width: 48rem) {
-  .tooltip button + span {
-    position: absolute;
-    top: 135%;
-    right: auto;
-    bottom: auto;
-    left: 50%;
-    width: max-content;
-    max-width: 20ch;
-    translate: -50% 0;
+@supports (position-area: bottom) {
+  .tooltip + span {
+    visibility: hidden;
+    position-area: bottom;
+    position-try: right, left, end;
   }
 }
-.tooltip button:is(:hover, :focus-visible) + span {
-  display: block;
+@supports not (position-area: bottom) {
+  .tooltip + span {
+    display: none;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .tooltip + span {
+    max-width: 20ch;
+  }
+}
+@supports (position-area: bottom) {
+  .tooltip + span:popover-open {
+    visibility: visible;
+  }
+}
+@supports not (position-area: bottom) {
+  .tooltip + span:popover-open {
+    display: block;
+  }
 }
 
 /** -----------------------------------------------------------

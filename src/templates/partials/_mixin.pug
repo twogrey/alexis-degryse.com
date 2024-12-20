@@ -1,4 +1,3 @@
 mixin tooltip(id, term, text, en)
-	span.tooltip
-		button(class="tooltip" aria-describedby=id+"-meaning")&attributes({"lang='en'": en})=term 
-		span(id=id+"-meaning" role="tooltip")&attributes({"lang='en'": en})=text
+	button(class="tooltip" id=id+"-toggle" popovertarget=id+"-meaning" style="anchor-name:--"+id+"-anchor")&attributes({"lang='en'": en})=term 
+	span(id=id+"-meaning" popover anchor=id+"-toggle" style="position-anchor:--"+id+"-anchor")&attributes({"lang='en'": en})=text

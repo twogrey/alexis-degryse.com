@@ -1,43 +1,49 @@
 .tooltip {
-	position: relative;
+	all: unset;
+	border: 1px dotted transparent;
+	border-bottom-color: initial;
+	cursor: pointer;
 
-	button {
+	&:focus-visible {
+		outline: auto;
+	}
+
+	&:has(+ span:popover-open) {
+		border-color: initial;
+	}
+
+	+ span { 
 		all: unset;
-		border-bottom: 1px dotted;
+		position: absolute;
+		z-index: 100;
+		padding: var(--sp-1-2);
+		border: 1px solid #fff;
+		font-family: $heading-font-family;
+		font-size: rem(14px);
+		text-align: center;
+		background-color: var(--color-primary-dark);
+		color: #fff;
 
-		&:focus-visible {
-			outline: auto;
+		@supports (position-area: bottom) {
+			visibility: hidden;
+			position-area: bottom;
+			position-try: right, left, end;
 		}
 
-		+ span { 
-			position: fixed;
-			right: var(--gutter);
-			bottom: var(--gutter);
-			left: var(--gutter);
-			z-index: 100;
+		@supports not (position-area: bottom) {
 			display: none;
-			padding: var(--sp-1-2);
-			border: 1px solid #fff;
-			font-family: $heading-font-family;
-			font-size: rem(14px);
-			text-align: center;
-			background-color: var(--color-primary-dark);
-			color: #fff;
-
-			@include medium {
-				position: absolute;
-				top: 135%;
-				right: auto;
-				bottom: auto;
-				left: 50%;
-				width: max-content;
-				max-width: 20ch;
-				translate: -50% 0;
-			}
 		}
 
-		&:is(:hover, :focus-visible) {
-			+ span {
+		@include medium {
+			max-width: 20ch;
+		}
+
+		&:popover-open {
+			@supports (position-area: bottom) {
+				visibility: visible;
+			}
+
+			@supports not (position-area: bottom) {
 				display: block;
 			}
 		}

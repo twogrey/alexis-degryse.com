@@ -22,6 +22,7 @@
       ],
       "order/properties-order":[
          "content",
+         "all",
          "box-sizing",
          "position",
          "top",

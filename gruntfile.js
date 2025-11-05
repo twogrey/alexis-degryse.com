@@ -61,7 +61,7 @@ module.exports = function (grunt) {
 			},
 			options: {
 				watchTask: true,
-				proxy: 'http://alexis-degryse.local/',
+				proxy: 'http://alexis-degryse/',
 			},
 		},
 		/**
